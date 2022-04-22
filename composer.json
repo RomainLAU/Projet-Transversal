@@ -1,0 +1,21 @@
+{
+    "name": "romain/projet-transversal",
+    "autoload": {
+        "psr-4": {
+            "Mvc\\": "src/",
+            "Config\\": "config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RomainLAU",
+            "email": "romain.laurent@epitech.digital"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6",
+        "twig/twig": "^2.0",
+        "symfony/asset": "^6.0",
+        "symfony/var-dumper": "^6.0"
+    }
+}

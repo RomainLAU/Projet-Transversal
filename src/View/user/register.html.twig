@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}User Register{% endblock %}
+
+
+{% block content %}
+
+    <h1>Register new user</h1>
+
+    <form action="" method="POST" class="big-form">
+        <input type="text" placeholder="pseudo" name="pseudo" id="pseudo">
+        <input type="text" placeholder="lastname" name="lastname" id="lastname">
+        <input type="text" placeholder="firstname" name="firstname" id="firstname">
+        <input type="text" placeholder="mail" name="mail" id="mail">
+        <input type="password" placeholder="password" name="password" id="password">
+        <input type="password" placeholder="Confirm Password" name="passwordConfirm" id="passwordConfirm">
+        <input type="submit" value="Register" id="register" name="register">
+    </form>
+
+
+
+{% endblock %}

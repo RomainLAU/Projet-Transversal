@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style/reset.css" rel="stylesheet" type="text/css" />
+    {% block stylesheets %}{% endblock %}
+</head>
+<body id="body">
+
+<header>
+    {% block header %}
+
+        {% if session %}
+
+            {% if session.user.role == 'admin' %}
+
+                <a href="/">Accueil</a>
+                <a href="/profile">Profile</a>
+                <a href="/createTournament">Create Tournament As Admin</a>
+                <a href="/listTournament">List Tournaments</a> 
+                <a href="/buyToken">Buy Tokens</a>
+                <a href="/deconnection">Disconnect</a>
+                <p>You have {{session.user.token}} tokens</p>
+
+            {% elseif session.user.role == 'host' %}
+
+                <a href="/">Accueil</a>
+                <a href="/profile">Profile</a>
+                <a href="/createTournament">Create Tournament As Host</a>
+                <a href="/listTournament">List Tournaments</a> 
+                <a href="/buyToken">Buy Tokens</a>
+                <a href="/deconnection">Disconnect</a>
+                <p>You have {{session.user.token}} tokens</p>
+
+            {% elseif session.user.role == 'user' %}
+
+                    <a href="/">Accueil</a>
+                    <a href="/profile">Profile</a>
+                    <a href="/listTournament">List Tournaments</a>
+                    <a href="/buyToken">Buy Tokens</a>
+                    <a href="/deconnection">Disconnect</a>
+                    <p>You have {{session.user.token}} tokens</p>
+
+            {% endif %}
+
+        {% else %}
+
+            <a href="/">Accueil</a>
+            <a href="/listTournament">List Tournament</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+    
+        {% endif %}
+
+    {% endblock %}
+</header>
+    
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+
+    <footer>
+        RLTournament &copy; Copyright
+    </footer>
+{% endblock %}
+</body>
+</html>
