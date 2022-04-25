@@ -20,7 +20,7 @@ class UserController extends Controller
         if (isset($_POST['register']) && strlen($_POST['lastname'] > 0) && strlen($_POST['firstname']) > 0 && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) && strlen($_POST['password']) > 5 && $_POST['passwordConfirm'] === $_POST['password']) {
 
            
-            $this->userModel->createUser($_POST['pseudo'],$_POST['lastname'], $_POST['firstname'], $_POST['mail'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+            $this->userModel->createUser($_POST['lastname'], $_POST['firstname'], $_POST['mail'], password_hash($_POST['password'], PASSWORD_DEFAULT));
 
             header('location: /login');
             exit();
@@ -40,20 +40,17 @@ class UserController extends Controller
 
                 $_SESSION['user'] = [
                     'id' => $account['id'],
-                    'pseudo' => $account['pseudo'],
                     'lastname' => $account['lastname'],
                     'firstname' => $account['firstname'],
                     'mail' => $account['mail'],
-                    'role' => $account['role'],
-                    'token' => $account['token'],
-                    'timeRole' => $account['timeRole'],
+                    'beez' => $account['beez'],
                 ];
 
-                if ($_SESSION['user']['timeRole'] === date('Y-m-d')) {
+                // if ($_SESSION['user']['timeRole'] === date('Y-m-d')) {
 
-                    $this->userModel->changeRole();
-                    $_SESSION['user']['role'] = 'user';
-                }
+                //     $this->userModel->changeRole();
+                //     $_SESSION['user']['role'] = 'user';
+                // }
 
                 header('Location: /');
                 exit();
