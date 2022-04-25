@@ -7,7 +7,7 @@
     <h1>Accueil</h1>
 
     {% if session %}
-        <h4>Hello {{session.user.pseudo}} !</h4>
+        <h4>Hello {{ session.user.lastname }} {{ session.user.firstname }} !</h4>
     {% endif %}
 
 {% endblock %}

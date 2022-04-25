@@ -9,7 +9,7 @@ class Model {
 
     public function __construct() {
 
-        $this->pdo = new PDO('mysql:host=database;dbname=tournoi;charset=UTF8', "root", "tiger", [
+        $this->pdo = new PDO('mysql:host=database;dbname=BeeBrave;charset=UTF8', "root", "tiger", [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::MYSQL_ATTR_FOUND_ROWS => true
             ]
