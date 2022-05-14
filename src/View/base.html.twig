@@ -8,6 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style/reset.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {% block stylesheets %}{% endblock %}
 </head>
 <body id="body">
@@ -54,13 +55,6 @@
     
 
 {% block content %}
-{% endblock %}
-
-{% block footer %}
-
-    <footer>
-        BeeBrave &copy; Copyright
-    </footer>
 {% endblock %}
 </body>
 </html>

@@ -26,9 +26,12 @@ $router->before('GET', '/profile', function() {
     }
 });
 
-$router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
-
 $router->get('/', 'Mvc\Controller\AccueilController@displayAccueil');
+
+$router->get('/trajet', 'Mvc\Controller\TrajetController@listTrajets');
+$router->post('/trajet', 'Mvc\Controller\TrajetController@createTrajet');
+
+$router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
 
 $router->get('/register', 'Mvc\Controller\UserController@register');
 $router->post('/register', 'Mvc\Controller\UserController@register');

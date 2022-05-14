@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Trajets{% endblock %}
+
+{% block content %}
+
+    <h1>Trajets</h1>
+
+    <button>Créer</button>
+
+        <script>
+            let createButton = document.querySelector('button')
+
+            createButton.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'Créer un nouveau trajet',
+                    html: `
+                        <form action="" method="post" id="createForm" name="createForm">
+                            <label for="trajetType">Type de trajet: </label>
+                            <select name="trajetType" id="trajetType">
+                                <option value="0">Visite Culturelle</option>
+                                <option value="1">Visite Culturelle</option>
+                                <option value="2">Visite Culturelle</option>
+                                <option value="3">Visite Culturelle</option>
+                            </select>
+                            <br>
+                            <label for="date">Date: </label>
+                            <input type="date" id="date" name="date">
+                            <br>
+                            <label for="lieu">Lieu: </label>
+                            <input type="text" id="lieu" placeholder="Ex: 6 Cité Paradis, 75010 Paris">
+                            <br>
+                            <label for="duree">Durée de l'activité: </label>
+                            <input type="text" id="duree" placeholder="Ex: 1h30">
+                            <br>
+                            <label for="description">Description: </label>
+                            <textarea name="description" id="description" cols="30" rows="10" placeholder="Donnez plus de détails sur le parcours..."></textarea>
+                            <br>
+                            <label for="tags">Tags: </label>
+                            <input type="text" id="tags" name="tags" placeholder="Ex: #Paris">
+                            <input type="submit" hidden>
+                        </form>`,
+                    showConfirmButton: true,
+                    confirmButtonText: 'Poster',
+                    showCloseButton: true
+                }).then((result) => {
+                    console.log(result)
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            position: 'top',
+                            title: 'Votre trajet a bien été enregistré',
+                            text: 'Voir mes trajets',
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
+
+                    }
+                })
+            })
+        </script>
+
+{% endblock %}
