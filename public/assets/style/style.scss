@@ -1,3 +1,6 @@
+$main-green : green;
+$light-green : rgb(85, 172, 85);
+
 #body{
     font-family: sans-serif;
     font-size: 16px;
@@ -96,6 +99,10 @@
                 border-bottom: solid 1px grey;
                 justify-content: space-between;
 
+                h2{
+                    padding: 1rem;
+                }
+
                 #cross{
                     margin-right: 1em;
                     position: relative;
@@ -120,7 +127,7 @@
 
                     &:hover{
                         div{
-                            background-color: green;
+                            background-color: $main-green;
                         }
                     }
                 }
@@ -169,9 +176,52 @@
                     cursor: pointer;
 
                     &:hover{
-                        background-color: green;
+                        background-color: $main-green;
                     }
                 }
+            }
+        }
+    }
+
+    #top-part{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10em;
+
+        #popupButton{
+            width: 7.5em;
+            height: 1.8em;
+            background-color: $main-green;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.3em;
+            cursor: pointer;
+            border: none;
+
+            &:hover{
+                background-color: $light-green;
+                color: black;
+            }
+        }
+    }
+
+    #journeys{
+        display: flex;
+        column-gap: 4em;
+        row-gap: 2em;
+        flex-wrap: wrap;
+        margin-left: 25em;
+
+        .journey{
+            display: flex;
+            background-color: white;
+            border: solid 1px lightgrey;
+            border-radius: 10px;
+            width: 30em;
+            height: 12.5em;
+
+            img{
+                width: 40%;
             }
         }
     }
