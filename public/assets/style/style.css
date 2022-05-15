@@ -34,47 +34,9 @@
   padding: 2rem;
   font-size: 1.5em;
 }
-#body #tournament-list {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-}
-#body #tournament-list .finishtournament {
-  list-style-type: none;
-  padding: 1em;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
-}
-#body #tournament-list .finishtournament b {
-  font-weight: bold;
-}
-#body #tournament-list .livetournament {
-  background-color: #b0c2b0;
-  list-style-type: none;
-  padding: 1em;
-  border-radius: 10px;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
-}
-#body #tournament-list .livetournament b {
-  font-weight: bold;
-}
-#body #tournament-list .deleteButton {
-  color: red;
-}
-#body .participants li {
-  list-style-type: none;
-}
 #body #profile {
   padding: 2rem;
-  background-color: #d2d2d2;
+  background-color: rgb(210, 210, 210);
 }
 #body #profile #becomeHost {
   padding: 2em 0;
@@ -99,90 +61,90 @@
 #body .big-form input {
   height: 2em;
 }
-#body #tournamentDetails {
-  padding: 2rem;
+#body #dark-background {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
 }
-#body #tournamentDetails h5 {
-  font-weight: bold;
+#body #dark-background #createForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px lightgray;
+  background-color: rgb(255, 255, 250);
+  border-radius: 10px;
 }
-#body #tournamentDetails h4 {
-  padding: 1.5em 0;
-}
-#body #tournamentDetails ul {
-  margin: 0.5em 0;
+#body #dark-background #createForm #formHeader {
   display: flex;
-  flex-direction: column;
-  row-gap: 0.5em;
+  align-items: center;
+  border-bottom: solid 1px grey;
+  justify-content: space-between;
 }
-#body #tournamentDetails #winner {
-  color: green;
+#body #dark-background #createForm #formHeader #cross {
+  margin-right: 1em;
+  position: relative;
+  cursor: pointer;
 }
-#body #tournamentDetails #createMatch {
-  padding: 1em 0;
+#body #dark-background #createForm #formHeader #cross div {
+  width: 2em;
+  height: 0.5em;
+  background-color: rgb(233, 233, 233);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-#body #tournamentDetails ol {
+#body #dark-background #createForm #formHeader #cross #firstBar {
+  transform: rotate(45deg);
+}
+#body #dark-background #createForm #formHeader #cross #secondBar {
+  transform: rotate(-45deg);
+}
+#body #dark-background #createForm #formHeader #cross:hover div {
+  background-color: green;
+}
+#body #dark-background #createForm form {
+  padding: 2em;
   display: flex;
   flex-direction: column;
   row-gap: 1em;
-  margin-top: 1em;
 }
-#body #tournamentDetails ol .livematch {
-  background-color: #b0c2b0;
-  list-style-type: none;
-  padding: 1em;
+#body #dark-background #createForm form div {
+  display: flex;
+  column-gap: 1em;
+}
+#body #dark-background #createForm form div select {
+  border-radius: 5px;
+  background-color: white;
+  flex-grow: 1;
+}
+#body #dark-background #createForm form label {
+  font-size: 1.5em;
+}
+#body #dark-background #createForm form input {
   border-radius: 10px;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
 }
-#body #tournamentDetails ol .livematch b {
-  font-weight: bold;
+#body #dark-background #createForm form textarea {
+  border-radius: 5px;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
 }
-#body #tournamentDetails ol .finishedmatch {
-  background-color: rgba(0, 0, 0, 0.2);
-  list-style-type: none;
-  padding: 1em;
-  border-radius: 10px;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
+#body #dark-background #createForm form #postButton {
+  align-self: center;
+  width: 30%;
+  height: 1.5em;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
 }
-#body #tournamentDetails ol .finishedmatch b {
-  font-weight: bold;
-}
-#body #createMatchForm {
-  padding: 2rem;
-}
-#body #createMatchForm p {
-  text-align: center;
-  margin-bottom: 1em;
-  font-style: italic;
-}
-#body #createMatchForm form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#body #createMatchForm form input, #body #createMatchForm form select, #body #createMatchForm form option {
-  height: 2em;
-}
-#body #createMatchForm form label {
-  padding: 0.5em 0;
-}
-#body #createMatchForm form #isMatchFinished {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-}
-#body #buyTokenForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  row-gap: 1em;
+#body #dark-background #createForm form #postButton:hover {
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */

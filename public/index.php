@@ -28,8 +28,8 @@ $router->before('GET', '/profile', function() {
 
 $router->get('/', 'Mvc\Controller\AccueilController@displayAccueil');
 
-$router->get('/trajet', 'Mvc\Controller\TrajetController@listTrajets');
-$router->post('/trajet', 'Mvc\Controller\TrajetController@createTrajet');
+$router->get('/journey', 'Mvc\Controller\JourneyController@listJourneys');
+$router->post('/journey', 'Mvc\Controller\JourneyController@createJourney');
 
 $router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
 
