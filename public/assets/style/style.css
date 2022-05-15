@@ -41,13 +41,6 @@
 #body #profile #becomeHost {
   padding: 2em 0;
 }
-#body footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2rem;
-  text-align: center;
-}
 #body .big-form {
   padding: 2rem;
   max-width: 100vw;
