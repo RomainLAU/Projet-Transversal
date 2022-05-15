@@ -3,6 +3,7 @@
   font-size: 16px;
   height: 100vh;
   position: relative;
+  background-color: rgb(255, 255, 250);
 }
 #body b {
   font-weight: bold;
@@ -153,6 +154,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10em;
+  align-items: center;
 }
 #body #top-part #popupButton {
   width: 7.5em;
@@ -181,10 +183,50 @@
   border: solid 1px lightgrey;
   border-radius: 10px;
   width: 30em;
-  height: 12.5em;
+  overflow: hidden;
 }
 #body #journeys .journey img {
-  width: 40%;
+  width: 35%;
+  object-fit: cover;
+}
+#body #journeys .journey .right-part {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-grow: 1;
+  padding: 1em 0.5em;
+}
+#body #journeys .journey .right-part .top-right-part {
+  display: flex;
+}
+#body #journeys .journey .right-part .top-right-part .journey-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-grow: 1;
+}
+#body #journeys .journey .right-part .top-right-part .journey-details .data {
+  border-bottom: solid 1px lightgrey;
+}
+#body #journeys .journey .right-part .top-right-part .side-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding-left: 1em;
+}
+#body #journeys .journey .right-part .top-right-part .side-buttons p {
+  cursor: pointer;
+}
+#body #journeys .journey .right-part .participateButton {
+  align-self: flex-end;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(70, 70, 70);
+  border-radius: 5px;
+  padding: 0.3em 0.6em;
+}
+#body #journeys .journey .right-part .participateButton:hover {
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */

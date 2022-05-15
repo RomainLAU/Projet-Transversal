@@ -1,11 +1,13 @@
 $main-green : green;
 $light-green : rgb(85, 172, 85);
+$light-background: rgb(255, 255, 250);
 
 #body{
     font-family: sans-serif;
     font-size: 16px;
     height: 100vh;
     position: relative;
+    background-color: $light-background;
 
     b{
         font-weight: bold;
@@ -90,7 +92,7 @@ $light-green : rgb(85, 172, 85);
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;
-            background-color: rgb(255, 255, 250);
+            background-color: $light-background;
             border-radius: 10px;
 
             #formHeader{
@@ -187,6 +189,7 @@ $light-green : rgb(85, 172, 85);
         display: flex;
         justify-content: space-between;
         padding: 0 10em;
+        align-items: center;
 
         #popupButton{
             width: 7.5em;
@@ -218,10 +221,58 @@ $light-green : rgb(85, 172, 85);
             border: solid 1px lightgrey;
             border-radius: 10px;
             width: 30em;
-            height: 12.5em;
+            overflow: hidden;
 
             img{
-                width: 40%;
+                width: 35%;
+                object-fit: cover;
+            }
+
+            .right-part{
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+                flex-grow: 1;
+                padding: 1em 0.5em;
+
+                .top-right-part{
+                    display: flex;
+
+                    .journey-details{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1em;
+                        flex-grow: 1;
+
+                        .data{
+                            border-bottom: solid 1px lightgrey;
+                        }
+                    }
+        
+                    .side-buttons{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1em;
+                        padding-left: 1em;
+        
+                        p{
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .participateButton{
+                    align-self: flex-end;
+                    text-decoration: none;
+                    color: white;
+                    background-color: rgb(70, 70, 70);
+                    border-radius: 5px;
+                    padding: 0.3em 0.6em;
+
+                    &:hover{
+                        background-color: $main-green;
+                    }
+                }
             }
         }
     }
