@@ -1,8 +1,13 @@
+$main-green : green;
+$light-green : rgb(85, 172, 85);
+$light-background: rgb(255, 255, 250);
+
 #body{
     font-family: sans-serif;
     font-size: 16px;
     height: 100vh;
     position: relative;
+    background-color: $light-background;
 
     b{
         font-weight: bold;
@@ -79,7 +84,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;
-            background-color: rgb(255, 255, 250);
+            background-color: $light-background;
             border-radius: 10px;
 
             #formHeader{
@@ -87,6 +92,10 @@
                 align-items: center;
                 border-bottom: solid 1px grey;
                 justify-content: space-between;
+
+                h2{
+                    padding: 1rem;
+                }
 
                 #cross{
                     margin-right: 1em;
@@ -112,7 +121,7 @@
 
                     &:hover{
                         div{
-                            background-color: green;
+                            background-color: $main-green;
                         }
                     }
                 }
@@ -161,7 +170,99 @@
                     cursor: pointer;
 
                     &:hover{
-                        background-color: green;
+                        background-color: $main-green;
+                    }
+                }
+            }
+        }
+    }
+
+    #top-part{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10em;
+        align-items: center;
+
+        #popupButton{
+            width: 7.5em;
+            height: 1.8em;
+            background-color: $main-green;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.3em;
+            cursor: pointer;
+            border: none;
+
+            &:hover{
+                background-color: $light-green;
+                color: black;
+            }
+        }
+    }
+
+    #journeys{
+        display: flex;
+        column-gap: 4em;
+        row-gap: 2em;
+        flex-wrap: wrap;
+        margin-left: 25em;
+
+        .journey{
+            display: flex;
+            background-color: white;
+            border: solid 1px lightgrey;
+            border-radius: 10px;
+            width: 30em;
+            overflow: hidden;
+
+            img{
+                width: 35%;
+                object-fit: cover;
+            }
+
+            .right-part{
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+                flex-grow: 1;
+                padding: 1em 0.5em;
+
+                .top-right-part{
+                    display: flex;
+
+                    .journey-details{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1em;
+                        flex-grow: 1;
+
+                        .data{
+                            border-bottom: solid 1px lightgrey;
+                        }
+                    }
+        
+                    .side-buttons{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1em;
+                        padding-left: 1em;
+        
+                        p{
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .participateButton{
+                    align-self: flex-end;
+                    text-decoration: none;
+                    color: white;
+                    background-color: rgb(70, 70, 70);
+                    border-radius: 5px;
+                    padding: 0.3em 0.6em;
+
+                    &:hover{
+                        background-color: $main-green;
                     }
                 }
             }

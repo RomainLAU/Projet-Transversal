@@ -55,16 +55,44 @@
     </div>
 </div>
 
-    <h1>Trajets</h1>
-
-    <button id="popupButton">Créer</button>
+    <div id="top-part">
+        <h1>Trajets</h1>
+        <button id="popupButton">Créer</button>
+    </div>
+    
+    <h2>Récents</h2>
 
     <div id="journeys">
-        {% for journey in journeys %}
-            {% for item in journey %}
-                <li>{{ item }}</li>
+
+            {% for journey in journeys %}
+                <div class="journey">
+                    <img src="/assets/images/map-picture.png" alt="map">
+                    <div class="right-part">
+                        <div class="top-right-part">
+                            <div class="journey-details">
+                                <p>Point de départ:</p>
+                                <p class="data">
+                                    {{ journey.place }}
+                                </p>
+                                <p>Date et heure de départ:</p>
+                                <p class="data">
+                                    {{ journey.date }}
+                                </p>
+                                <p>Description:</p>
+                                <p class="data">
+                                    {{ journey.description }}
+                                </p>
+                            </div>
+                            <div class="side-buttons">
+                                <p>🤍</p>
+                                <p>ℹ️</p>
+                            </div>
+                        </div>
+                        <a href="" class="participateButton">Participer</a>
+                    </div>
+                </div>
             {% endfor %}
-        {% endfor %}
+
     </div>
 
 {% endblock %}
