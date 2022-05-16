@@ -19,7 +19,6 @@ class UserController extends Controller
 
         if (isset($_POST['register']) && strlen($_POST['lastname'] > 0) && strlen($_POST['firstname']) > 0 && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) && strlen($_POST['password']) > 5 && $_POST['passwordConfirm'] === $_POST['password']) {
 
-           
             $this->userModel->createUser($_POST['lastname'], $_POST['firstname'], $_POST['mail'], password_hash($_POST['password'], PASSWORD_DEFAULT));
 
             header('location: /login');

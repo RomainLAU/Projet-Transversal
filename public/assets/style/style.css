@@ -3,6 +3,7 @@
   font-size: 16px;
   height: 100vh;
   position: relative;
+  background-color: rgb(255, 255, 250);
 }
 #body b {
   font-weight: bold;
@@ -157,6 +158,7 @@
   padding: 2rem;
   font-size: 1.5em;
 }
+<<<<<<< HEAD
 #body #tournament-list {
   padding: 2rem;
   display: flex;
@@ -195,6 +197,8 @@
 #body .participants li {
   list-style-type: none;
 }
+=======
+>>>>>>> main
 #body #profile {
   padding: 2rem;
   background-color: rgb(210, 210, 210);
@@ -215,90 +219,178 @@
 #body .big-form input {
   height: 2em;
 }
-#body #tournamentDetails {
-  padding: 2rem;
+#body #dark-background {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
 }
-#body #tournamentDetails h5 {
-  font-weight: bold;
+#body #dark-background #createForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px lightgray;
+  background-color: rgb(255, 255, 250);
+  border-radius: 10px;
 }
-#body #tournamentDetails h4 {
-  padding: 1.5em 0;
-}
-#body #tournamentDetails ul {
-  margin: 0.5em 0;
+#body #dark-background #createForm #formHeader {
   display: flex;
-  flex-direction: column;
-  row-gap: 0.5em;
+  align-items: center;
+  border-bottom: solid 1px grey;
+  justify-content: space-between;
 }
-#body #tournamentDetails #winner {
-  color: green;
+#body #dark-background #createForm #formHeader h2 {
+  padding: 1rem;
 }
-#body #tournamentDetails #createMatch {
-  padding: 1em 0;
+#body #dark-background #createForm #formHeader #cross {
+  margin-right: 1em;
+  position: relative;
+  cursor: pointer;
 }
-#body #tournamentDetails ol {
+#body #dark-background #createForm #formHeader #cross div {
+  width: 2em;
+  height: 0.5em;
+  background-color: rgb(233, 233, 233);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#body #dark-background #createForm #formHeader #cross #firstBar {
+  transform: rotate(45deg);
+}
+#body #dark-background #createForm #formHeader #cross #secondBar {
+  transform: rotate(-45deg);
+}
+#body #dark-background #createForm #formHeader #cross:hover div {
+  background-color: green;
+}
+#body #dark-background #createForm form {
+  padding: 2em;
   display: flex;
   flex-direction: column;
   row-gap: 1em;
-  margin-top: 1em;
 }
+<<<<<<< HEAD
 #body #tournamentDetails ol .livematch {
   background-color: rgb(176, 194, 176);
   list-style-type: none;
   padding: 1em;
+=======
+#body #dark-background #createForm form div {
+  display: flex;
+  column-gap: 1em;
+}
+#body #dark-background #createForm form div select {
+  border-radius: 5px;
+  background-color: white;
+  flex-grow: 1;
+}
+#body #dark-background #createForm form label {
+  font-size: 1.5em;
+}
+#body #dark-background #createForm form input {
+>>>>>>> main
   border-radius: 10px;
-  width: fit-content;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
+}
+#body #dark-background #createForm form textarea {
+  border-radius: 5px;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
+}
+#body #dark-background #createForm form #postButton {
+  align-self: center;
+  width: 30%;
+  height: 1.5em;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#body #dark-background #createForm form #postButton:hover {
+  background-color: green;
+}
+#body #top-part {
   display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
+  justify-content: space-between;
+  padding: 0 10em;
+  align-items: center;
 }
-#body #tournamentDetails ol .livematch b {
-  font-weight: bold;
-}
-#body #tournamentDetails ol .finishedmatch {
-  background-color: rgba(0, 0, 0, 0.2);
-  list-style-type: none;
-  padding: 1em;
+#body #top-part #popupButton {
+  width: 7.5em;
+  height: 1.8em;
+  background-color: green;
+  color: white;
   border-radius: 10px;
-  width: fit-content;
+  font-size: 1.3em;
+  cursor: pointer;
+  border: none;
+}
+#body #top-part #popupButton:hover {
+  background-color: rgb(85, 172, 85);
+  color: black;
+}
+#body #journeys {
   display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
+  column-gap: 4em;
+  row-gap: 2em;
+  flex-wrap: wrap;
+  margin-left: 25em;
 }
-#body #tournamentDetails ol .finishedmatch b {
-  font-weight: bold;
-}
-#body #createMatchForm {
-  padding: 2rem;
-}
-#body #createMatchForm p {
-  text-align: center;
-  margin-bottom: 1em;
-  font-style: italic;
-}
-#body #createMatchForm form {
+#body #journeys .journey {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  width: 30em;
+  overflow: hidden;
 }
-#body #createMatchForm form input, #body #createMatchForm form select, #body #createMatchForm form option {
-  height: 2em;
+#body #journeys .journey img {
+  width: 35%;
+  object-fit: cover;
 }
-#body #createMatchForm form label {
-  padding: 0.5em 0;
-}
-#body #createMatchForm form #isMatchFinished {
+#body #journeys .journey .right-part {
   display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-}
-#body #buyTokenForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   row-gap: 1em;
+  flex-grow: 1;
+  padding: 1em 0.5em;
+}
+#body #journeys .journey .right-part .top-right-part {
+  display: flex;
+}
+#body #journeys .journey .right-part .top-right-part .journey-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-grow: 1;
+}
+#body #journeys .journey .right-part .top-right-part .journey-details .data {
+  border-bottom: solid 1px lightgrey;
+}
+#body #journeys .journey .right-part .top-right-part .side-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding-left: 1em;
+}
+#body #journeys .journey .right-part .top-right-part .side-buttons p {
+  cursor: pointer;
+}
+#body #journeys .journey .right-part .participateButton {
+  align-self: flex-end;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(70, 70, 70);
+  border-radius: 5px;
+  padding: 0.3em 0.6em;
+}
+#body #journeys .journey .right-part .participateButton:hover {
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */

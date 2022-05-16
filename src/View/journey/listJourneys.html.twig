@@ -1,0 +1,98 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Trajets{% endblock %}
+
+{% block content %}
+
+<div id="dark-background">
+    <div id="createForm">
+        <div id="formHeader">
+            <div></div>
+            <h2>Créer un nouveau trajet</h2>
+            <div id="cross">
+                <div id="firstBar"></div>
+                <div id="secondBar"></div>
+            </div>
+        </div>
+        <form action="" method="post" name="createForm">
+            <div>
+                <label for="trajetType">Type de trajet: </label>
+                <select name="trajetType" id="trajetType">
+                    <option value="1">Visite Culturelle</option>
+                    <option value="2">Visite Culturelle</option>
+                    <option value="3">Visite Culturelle</option>
+                    <option value="4">Visite Culturelle</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="date">Date: </label>
+                <input type="date" id="date" name="date">
+            </div>
+            
+            <div>
+                <label for="place">Lieu: </label>
+                <input type="text" id="place" name="place" placeholder="Ex: 6 Cité Paradis, 75010 Paris">
+            </div>
+            
+            <div>
+                <label for="duration">Durée de l'activité: </label>
+                <input type="text" id="duration" name="duration" placeholder="Ex: 1h30">
+            </div>
+            
+            <div>
+                <label for="description">Description: </label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Donnez plus de détails sur le parcours..."></textarea>
+            </div>
+            
+            <div>
+                <label for="tags">Tags: </label>
+                <input type="text" id="tags" name="tags" placeholder="Ex: #Paris">
+            </div>
+
+            <input type="submit" value="Poster" id="postButton" name="postButton">
+        </form>
+    </div>
+</div>
+
+    <div id="top-part">
+        <h1>Trajets</h1>
+        <button id="popupButton">Créer</button>
+    </div>
+    
+    <h2>Récents</h2>
+
+    <div id="journeys">
+
+            {% for journey in journeys %}
+                <div class="journey">
+                    <img src="/assets/images/map-picture.png" alt="map">
+                    <div class="right-part">
+                        <div class="top-right-part">
+                            <div class="journey-details">
+                                <p>Point de départ:</p>
+                                <p class="data">
+                                    {{ journey.place }}
+                                </p>
+                                <p>Date et heure de départ:</p>
+                                <p class="data">
+                                    {{ journey.date }}
+                                </p>
+                                <p>Description:</p>
+                                <p class="data">
+                                    {{ journey.description }}
+                                </p>
+                            </div>
+                            <div class="side-buttons">
+                                <p>🤍</p>
+                                <p>ℹ️</p>
+                            </div>
+                        </div>
+                        <a href="" class="participateButton">Participer</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+    </div>
+
+{% endblock %}
