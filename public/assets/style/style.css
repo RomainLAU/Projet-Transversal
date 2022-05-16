@@ -198,8 +198,8 @@
   row-gap: 1em;
   flex-grow: 1;
 }
-#body #journeys .journey .right-part .top-right-part .journey-details .data {
-  border-bottom: solid 1px lightgrey;
+#body #journeys .journey .right-part .top-right-part .journey-details :not(.data) {
+  font-weight: bold;
 }
 #body #journeys .journey .right-part .top-right-part .side-buttons {
   display: flex;

@@ -236,8 +236,8 @@ $light-background: rgb(255, 255, 250);
                         row-gap: 1em;
                         flex-grow: 1;
 
-                        .data{
-                            border-bottom: solid 1px lightgrey;
+                        :not(.data){
+                            font-weight: bold;
                         }
                     }
         
