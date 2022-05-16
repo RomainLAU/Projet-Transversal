@@ -27,4 +27,41 @@ class JourneyModel extends Model
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getFavoriteJourneys() {
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` WHERE `user_id` = :user_id');
+        $statement->execute([
+            'user_id' => $_SESSION['user']['id'],
+        ]);
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function findFavoriteJourney($journeyId) {
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` WHERE `user_id` = :user_id AND `journey_id` = :journey_id');
+        $statement->execute([
+            'user_id' => $_SESSION['user']['id'],
+            'journey_id' => $journeyId,
+        ]);
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function deleteFavoriteJourney($favoriteId) {
+
+        $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `id` = :favoriteId');
+        $statement->execute([
+            'favoriteId' => $favoriteId,
+        ]);
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function addFavoriteJourney($journeyId) {
+        $statement = $this->pdo->prepare('INSERT INTO `user_has_favorite_journeys` (`user_id`, `journey_id`) VALUES (:user_id, :journey_id)');
+        $statement->execute([
+            'user_id' => $_SESSION['user']['id'],
+            'journey_id' => $journeyId,
+        ]);
+    }
 }

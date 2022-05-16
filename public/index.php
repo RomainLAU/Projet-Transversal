@@ -31,6 +31,8 @@ $router->get('/', 'Mvc\Controller\AccueilController@displayAccueil');
 $router->get('/journey', 'Mvc\Controller\JourneyController@listJourneys');
 $router->post('/journey', 'Mvc\Controller\JourneyController@createJourney');
 
+$router->get('/journey/favorite/(\d+)', 'Mvc\Controller\JourneyController@addJourneyToFavorites');
+
 $router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
 
 $router->get('/register', 'Mvc\Controller\UserController@register');

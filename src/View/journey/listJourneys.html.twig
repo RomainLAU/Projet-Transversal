@@ -66,6 +66,8 @@
 
             {% for journey in journeys %}
                 <div class="journey">
+                    {% set break = false %}
+                    {% set isFavorite = false %}
                     <img src="/assets/images/map-picture.png" alt="map" class="map">
                     <div class="right-part">
                         <div class="top-right-part">
@@ -84,7 +86,19 @@
                                 </p>
                             </div>
                             <div class="side-buttons">
-                                <img src="/assets/images/empty-heart.png" alt="favorite icon">
+                                {% for favoriteJourney in favoriteJourneys if not break %}
+                                    {% if journey.id in favoriteJourney and session.user.id in favoriteJourney %}
+                                        {% set break = true %}
+                                        {% set isFavorite = true %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if isFavorite == true %}
+                                    <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+                                {% else %}
+                                    <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
+                                {% endif %}
+
                                 <img src="/assets/images/information.png" alt="information icon">
                             </div>
                         </div>
