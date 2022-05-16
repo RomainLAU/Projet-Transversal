@@ -1,13 +1,7 @@
-{% extends "base.html.twig" %}
+{% extends "/base.html.twig" %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Welcome{% endblock %}
+
 
 {% block content %}
-
-    <h1>Accueil</h1>
-
-    {% if session %}
-        <h4>Hello {{ session.user.lastname }} {{ session.user.firstname }} !</h4>
-    {% endif %}
-
 {% endblock %}
