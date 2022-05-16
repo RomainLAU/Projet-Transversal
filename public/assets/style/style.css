@@ -158,47 +158,6 @@
   padding: 2rem;
   font-size: 1.5em;
 }
-<<<<<<< HEAD
-#body #tournament-list {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-}
-#body #tournament-list .finishtournament {
-  list-style-type: none;
-  padding: 1em;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
-}
-#body #tournament-list .finishtournament b {
-  font-weight: bold;
-}
-#body #tournament-list .livetournament {
-  background-color: rgb(176, 194, 176);
-  list-style-type: none;
-  padding: 1em;
-  border-radius: 10px;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.2em;
-}
-#body #tournament-list .livetournament b {
-  font-weight: bold;
-}
-#body #tournament-list .deleteButton {
-  color: red;
-}
-#body .participants li {
-  list-style-type: none;
-}
-=======
->>>>>>> main
 #body #profile {
   padding: 2rem;
   background-color: rgb(210, 210, 210);
@@ -273,12 +232,6 @@
   flex-direction: column;
   row-gap: 1em;
 }
-<<<<<<< HEAD
-#body #tournamentDetails ol .livematch {
-  background-color: rgb(176, 194, 176);
-  list-style-type: none;
-  padding: 1em;
-=======
 #body #dark-background #createForm form div {
   display: flex;
   column-gap: 1em;
@@ -292,7 +245,6 @@
   font-size: 1.5em;
 }
 #body #dark-background #createForm form input {
->>>>>>> main
   border-radius: 10px;
   border: solid 1px lightgrey;
   flex-grow: 1;
