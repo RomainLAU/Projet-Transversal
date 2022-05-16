@@ -19,6 +19,7 @@ $light-background: rgb(255, 255, 250);
         background-color: black;
         height: 10vh;
         width: 100vw;
+        position: fixed;
 
         img {
             height: 90%;
@@ -364,7 +365,7 @@ $light-background: rgb(255, 255, 250);
             width: 30em;
             overflow: hidden;
 
-            img{
+            .map{
                 width: 35%;
                 object-fit: cover;
             }
@@ -396,7 +397,7 @@ $light-background: rgb(255, 255, 250);
                         row-gap: 1em;
                         padding-left: 1em;
         
-                        p{
+                        img{
                             cursor: pointer;
                         }
                     }
