@@ -8,12 +8,135 @@
   font-weight: bold;
 }
 #body header {
-  padding: 2rem;
   display: flex;
-  column-gap: 1em;
+  justify-content: space-between;
+  background-color: black;
+  height: 10vh;
+  width: 100vw;
 }
-#body header a {
-  color: blue;
+#body header img {
+  height: 90%;
+  width: 11%;
+  margin-left: 8%;
+}
+#body header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 38%;
+  margin-right: 2%;
+  margin-top: 3.2em;
+}
+#body header nav li {
+  list-style: none;
+}
+#body header nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  padding-bottom: 1.5em;
+  border-bottom: 4px solid transparent;
+}
+#body header nav li a:hover {
+  border-bottom: 4px solid #CFEE9E;
+}
+#body header .cote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #CFEE9E;
+  margin-right: 3%;
+  margin-top: 1%;
+  width: 18%;
+}
+#body header .cote a {
+  color: #CFEE9E;
+  text-decoration: none;
+}
+#body header .cote .dl {
+  border: 1px solid #CFEE9E;
+  border-radius: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #CFEE9E;
+}
+#body header .cote .dl a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+#body footer {
+  height: 64vh;
+  width: 100vw;
+  background-color: black;
+  border: 1px solid red;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#body footer img {
+  height: 14%;
+  width: 11%;
+  margin-top: 3vh;
+}
+#body footer p {
+  color: white;
+  font-weight: bold;
+  margin-top: 3%;
+}
+#body footer .store {
+  height: 6vh;
+  width: 23vw;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between;
+}
+#body footer .store .playstore {
+  height: 100%;
+  width: 46%;
+}
+#body footer .store .playstore img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#body footer .store .applestore {
+  height: 100%;
+  width: 46%;
+}
+#body footer .store .applestore img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#body footer .trait-blanc {
+  margin-top: 2%;
+  border-bottom: 1px solid #6b6968;
+  height: 4px;
+  width: 85%;
+}
+#body footer .footer-links-rs {
+  height: 14vh;
+  width: 78vw;
+  border: 1px solid red;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between;
+}
+#body footer .footer-links-rs .links {
+  height: 100%;
+  width: 70%;
+  border: 1px solid green;
+}
+#body footer .footer-links-rs .rs {
+  height: 100%;
+  width: 16%;
+  border: 1px solid yellow;
 }
 #body h1 {
   font-weight: bold;
@@ -54,7 +177,7 @@
   font-weight: bold;
 }
 #body #tournament-list .livetournament {
-  background-color: #b0c2b0;
+  background-color: rgb(176, 194, 176);
   list-style-type: none;
   padding: 1em;
   border-radius: 10px;
@@ -74,17 +197,10 @@
 }
 #body #profile {
   padding: 2rem;
-  background-color: #d2d2d2;
+  background-color: rgb(210, 210, 210);
 }
 #body #profile #becomeHost {
   padding: 2em 0;
-}
-#body footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2rem;
-  text-align: center;
 }
 #body .big-form {
   padding: 2rem;
@@ -127,7 +243,7 @@
   margin-top: 1em;
 }
 #body #tournamentDetails ol .livematch {
-  background-color: #b0c2b0;
+  background-color: rgb(176, 194, 176);
   list-style-type: none;
   padding: 1em;
   border-radius: 10px;
