@@ -289,6 +289,7 @@
   padding: 0.4em 0.8em;
   column-gap: 1em;
   margin-top: 8em;
+  cursor: pointer;
 }
 #body #journeys-body #journeys-left-part #filter-part h3 {
   padding: 0;
@@ -353,6 +354,10 @@
   border-radius: 8px;
   font-size: 1.05em;
 }
+#body #journeys-body #journeys-left-part #filter-form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #8DAB7F;
+}
 #body #journeys-body #journeys-left-part #filter-form a {
   align-self: center;
   justify-self: flex-end;
@@ -384,28 +389,76 @@
   height: 37px;
   cursor: pointer;
 }
-#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label:hover {
-  background-color: #C9D5B5;
-}
-#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label:hover img {
-  opacity: 0.8;
-}
-#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #train {
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=train] {
   background-image: url("../images/train.png");
   width: 38px;
   height: 37px;
 }
-#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #train input:checked + #train {
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #train:checked ~ label[for=train], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=train]:hover {
   background-image: url("../images/train-checked.png");
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=rer] {
+  background-image: url("../images/rer.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #rer:checked ~ label[for=rer], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=rer]:hover {
+  background-image: url("../images/rer-checked.png");
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=metro] {
+  background-image: url("../images/metro.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #metro:checked ~ label[for=metro], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=metro]:hover {
+  background-image: url("../images/metro-checked.png");
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=tram] {
+  background-image: url("../images/tram.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #tram:checked ~ label[for=tram], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=tram]:hover {
+  background-image: url("../images/tram-checked.png");
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=bus] {
+  background-image: url("../images/bus.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #bus:checked ~ label[for=bus], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=bus]:hover {
+  background-image: url("../images/bus-checked.png");
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=velo] {
+  background-image: url("../images/velo.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #velo:checked ~ label[for=velo], #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label[for=velo]:hover {
+  background-image: url("../images/velo-checked.png");
 }
 #body #journeys-body #journeys-right-part {
   display: flex;
   flex-direction: column;
 }
+#body #journeys-body #journeys-right-part h2 {
+  margin-left: 2em;
+}
+#body #journeys-body #journeys-right-part form #globalSearch {
+  width: 70%;
+  height: 2.75em;
+  border: solid 1px lightgrey;
+  border-radius: 20px;
+  margin-left: 6em;
+}
 #body #journeys-body #journeys-right-part #top-part {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#body #journeys-body #journeys-right-part #top-part h1 {
+  margin-left: 1.2em;
+  font-size: 2.2em;
 }
 #body #journeys-body #journeys-right-part #top-part #popupButton {
   width: 7.5em;
@@ -416,6 +469,7 @@
   font-size: 1.3em;
   cursor: pointer;
   border: none;
+  margin-right: 5em;
 }
 #body #journeys-body #journeys-right-part #top-part #popupButton:hover {
   background-color: #CFEE9E;
@@ -426,14 +480,14 @@
   column-gap: 4em;
   row-gap: 2em;
   flex-wrap: wrap;
-  margin-left: 25em;
+  margin-left: 5em;
 }
 #body #journeys-body #journeys-right-part #journeys .journey {
   display: flex;
   background-color: white;
   border: solid 1px lightgrey;
   border-radius: 10px;
-  width: 30em;
+  width: 44%;
   overflow: hidden;
 }
 #body #journeys-body #journeys-right-part #journeys .journey .map {
@@ -477,6 +531,21 @@
   padding: 0.3em 0.6em;
 }
 #body #journeys-body #journeys-right-part #journeys .journey .right-part .participateButton:hover {
+  background-color: #8DAB7F;
+}
+#body #journeys-body #journeys-right-part #see-more {
+  margin-top: 2em;
+  width: 6em;
+  font-size: 1.5em;
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+}
+#body #journeys-body #journeys-right-part #see-more:hover {
   background-color: #8DAB7F;
 }
 

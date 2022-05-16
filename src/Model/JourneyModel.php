@@ -22,7 +22,7 @@ class JourneyModel extends Model
     }
 
     public function getJourneys() {
-        $statement = $this->pdo->prepare('SELECT * FROM `journey`');
+        $statement = $this->pdo->prepare('SELECT * FROM `journey` LIMIT 6');
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -52,7 +52,7 @@ class JourneyModel extends Model
         $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `id` = :favoriteId');
         $statement->execute([
             'favoriteId' => $favoriteId,
-        ]);
+        ]);        
 
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
@@ -63,5 +63,68 @@ class JourneyModel extends Model
             'user_id' => $_SESSION['user']['id'],
             'journey_id' => $journeyId,
         ]);
+    }
+
+    public function journeyFilter($valideFilters) {
+
+        $query = 'SELECT * FROM `journey` INNER JOIN journey_type ON journey_type_id = journey_type.id WHERE';
+
+        $queriesToAdd = [];
+
+        foreach($valideFilters as $filters => $filter) {
+            if ($filters == 'around') {
+                $queriesToAdd[] = ' `place` LIKE "%' . $filter . '%"';
+            } else if ($filters == 'date') {
+                $queriesToAdd[] = ' `date` LIKE "%' . $filter . '%"';
+            } else if ($filters == 'start') {
+                $queriesToAdd[] = ' `date` LIKE "%' . $filter . '%"';
+            } else if ($filters == 'activity') {
+
+                $queriesToAdd[] = ' `journey_type`.type LIKE "%';
+                $activityLen = count($filter) - 1;
+                $counter = 0;
+
+                foreach($filter as $activities => $activity) {
+                    if ($counter == $activityLen) {
+                        $queriesToAdd[] = $activity . '%"';
+                    } else {
+                        $queriesToAdd[] = $activity . '%" OR `journey_type`.type LIKE "%';
+                        $counter++;
+                    }
+                }
+            } else if ($filters == 'vehicule') {
+                $queriesToAdd[] = ' `tags` LIKE "%';
+                $vehiculeLen = count($filter) - 1;
+                $counter = 0;
+
+                foreach($filter as $vehicules => $vehicule) {
+                    if ($counter == $vehiculeLen) {
+                        $queriesToAdd[] = $vehicule . '%"';
+                    } else {
+                        $queriesToAdd[] = $vehicule . '%" OR `tags` LIKE "%';
+                        $counter++;
+                    }
+                }
+            }
+        }
+
+        $queriesToAddLen = count($queriesToAdd) - 1;
+        $counter = 0;
+        foreach($queriesToAdd as $queryToAdd) {
+            if ($queriesToAddLen == $counter) {
+                $query .= $queryToAdd;
+            } else if (substr($queryToAdd, -1) == '"') {
+                $query .= $queryToAdd . ' AND';
+                $counter++;
+            } else if (substr($queryToAdd, -1) == '%') {
+                $query .= $queryToAdd;
+                $counter++;
+            }
+        }
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }

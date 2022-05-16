@@ -352,6 +352,7 @@ $secondary-dark-green: #394032;
                 padding: 0.4em 0.8em;
                 column-gap: 1em;
                 margin-top: 8em;
+                cursor: pointer;
 
                 h3{
                     padding: 0;
@@ -427,6 +428,11 @@ $secondary-dark-green: #394032;
                     padding: 0.2em 2em;
                     border-radius: 8px;
                     font-size: 1.05em;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: $main-green;
+                    }
                 }
 
                 a{
@@ -462,23 +468,66 @@ $secondary-dark-green: #394032;
                         border-radius: 50%;
                         height: 37px;
                         cursor: pointer;
-
-                        &:hover{
-                            background-color: $secondary-light-green;
-                            img{
-                                opacity: 0.8;
-                            }
-                        }
                     }
 
-                    #train{
+                    label[for=train]{
                         background-image: url('../images/train.png');
                         width: 38px;
                         height: 37px;
+                    }
 
-                        input:checked + #train{
-                            background-image: url('../images/train-checked.png');
-                        }
+                    #train:checked ~ label[for=train], label[for=train]:hover{
+                        background-image: url('../images/train-checked.png');
+                    }
+
+                    label[for=rer]{
+                        background-image: url('../images/rer.png');
+                        width: 38px;
+                        height: 37px;
+                    }
+
+                    #rer:checked ~ label[for=rer], label[for=rer]:hover{
+                        background-image: url('../images/rer-checked.png');
+                    }
+
+                    label[for=metro]{
+                        background-image: url('../images/metro.png');
+                        width: 38px;
+                        height: 37px;
+                    }
+
+                    #metro:checked ~ label[for=metro], label[for=metro]:hover{
+                        background-image: url('../images/metro-checked.png');
+                    }
+
+                    label[for=tram]{
+                        background-image: url('../images/tram.png');
+                        width: 38px;
+                        height: 37px;
+                    }
+
+                    #tram:checked ~ label[for=tram], label[for=tram]:hover{
+                        background-image: url('../images/tram-checked.png');
+                    }
+
+                    label[for=bus]{
+                        background-image: url('../images/bus.png');
+                        width: 38px;
+                        height: 37px;
+                    }
+
+                    #bus:checked ~ label[for=bus], label[for=bus]:hover{
+                        background-image: url('../images/bus-checked.png');
+                    }
+
+                    label[for=velo]{
+                        background-image: url('../images/velo.png');
+                        width: 38px;
+                        height: 37px;
+                    }
+
+                    #velo:checked ~ label[for=velo], label[for=velo]:hover{
+                        background-image: url('../images/velo-checked.png');
                     }
                 }
             }
@@ -487,11 +536,30 @@ $secondary-dark-green: #394032;
         #journeys-right-part{
             display: flex;
             flex-direction: column;
+
+            h2{
+                margin-left: 2em;
+            }
+
+            form{
+                #globalSearch{
+                    width: 70%;
+                    height: 2.75em;
+                    border: solid 1px lightgrey;
+                    border-radius: 20px;
+                    margin-left: 6em;
+                }
+            }
             
             #top-part{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                h1{
+                    margin-left: 1.2em;
+                    font-size: 2.2em;
+                }
 
                 #popupButton{
                     width: 7.5em;
@@ -502,6 +570,7 @@ $secondary-dark-green: #394032;
                     font-size: 1.3em;
                     cursor: pointer;
                     border: none;
+                    margin-right: 5em;
 
                     &:hover{
                         background-color: $light-green;
@@ -515,14 +584,14 @@ $secondary-dark-green: #394032;
                 column-gap: 4em;
                 row-gap: 2em;
                 flex-wrap: wrap;
-                margin-left: 25em;
+                margin-left: 5em;
 
                 .journey{
                     display: flex;
                     background-color: white;
                     border: solid 1px lightgrey;
                     border-radius: 10px;
-                    width: 30em;
+                    width: 44%;
                     overflow: hidden;
 
                     .map{
@@ -576,6 +645,23 @@ $secondary-dark-green: #394032;
                             }
                         }
                     }
+                }
+            }
+
+            #see-more{
+                margin-top: 2em;
+                width: 6em;
+                font-size: 1.5em;
+                align-self: center;
+                background-color: #394032;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0.2em 0.4em;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $main-green;
                 }
             }
         }

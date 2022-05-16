@@ -19,15 +19,16 @@
                     <label for="trajetType">Type de trajet: </label>
                     <select name="trajetType" id="trajetType">
                         <option value="1">Visite Culturelle</option>
-                        <option value="2">Visite Culturelle</option>
-                        <option value="3">Visite Culturelle</option>
-                        <option value="4">Visite Culturelle</option>
+                        <option value="2">Balade</option>
+                        <option value="3">Jogging</option>
+                        <option value="4">Randonnée</option>
+                        <option value="5">Course à pied</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label for="date">Date: </label>
-                    <input type="date" id="date" name="date">
+                    <label for="date">Date et heure: </label>
+                    <input type="text" id="date" name="date" placeholder="YYYY-MM-DD HH:MM">
                 </div>
                 
                 <div>
@@ -62,7 +63,7 @@
                 <h3>Filtre</h3>
             </div>
             <div id="filters">
-                <form action="/journey/search/place" method="post" id="filter-form">
+                <form action="/journey/search/" method="post" id="filter-form">
                     <div id="place">
                         <h4>Lieu précis</h4>
                         <label for="around">Autour de</label>
@@ -75,34 +76,23 @@
                     <hr>
                     <div id="activity-type">
                         <h4>Type d'activité</h4>
-                        <label><input type="checkbox" name="activity[]" value="balade"><p>Balade</p></label>
-                        <label><input type="checkbox" name="activity[]" value="balade"><p>Visite culturelle</p></label>
-                        <label><input type="checkbox" name="activity[]" value="balade"><p>Jogging</p></label>
-                        <label><input type="checkbox" name="activity[]" value="balade"><p>Randonnée</p></label>
-                        <label><input type="checkbox" name="activity[]" value="balade"><p>Course à pied</p></label>
+                        <label><input type="checkbox" name="activity[]" value="balade" id="balade"><p>Balade</p></label>
+                        <label><input type="checkbox" name="activity[]" value="visite culturelle"><p>Visite culturelle</p></label>
+                        <label><input type="checkbox" name="activity[]" value="jogging"><p>Jogging</p></label>
+                        <label><input type="checkbox" name="activity[]" value="randonnee"><p>Randonnée</p></label>
+                        <label><input type="checkbox" name="activity[]" value="course a pied"><p>Course à pied</p></label>
                         <p>+ de choix</p>
                     </div>
                     <hr>
                     <div id="vehicules">
                         <h4>En empruntant</h4>
                         <div id="vehicule-inputs">
-                            <label id="train"><input type="checkbox" name="vehicule[]" value="train">
-                            </label>
-                            <label id="rer"><input type="checkbox" name="vehicule[]" value="rer" hidden>
-                                <img src="/assets/images/rer.png" alt="RER">
-                            </label>
-                            <label id="metro"><input type="checkbox" name="vehicule[]" value="metro" hidden>
-                                <img src="/assets/images/metro.png" alt="Metro">
-                            </label>
-                            <label id="tram"><input type="checkbox" name="vehicule[]" value="tram" hidden>
-                                <img src="/assets/images/tram.png" alt="Tram">
-                            </label>
-                            <label id="bus"><input type="checkbox" name="vehicule[]" value="bus" hidden>
-                                <img src="/assets/images/bus.png" alt="Bus">
-                            </label>
-                            <label id="velo"><input type="checkbox" name="vehicule[]" value="velo" hidden>
-                                <img src="/assets/images/velo.png" alt="Vélo">
-                            </label>
+                            <input type="checkbox" name="vehicule[]" value="train" id="train" hidden><label for="train"></label>
+                            <input type="checkbox" name="vehicule[]" value="rer" hidden id="rer"><label for="rer"></label>
+                            <input type="checkbox" name="vehicule[]" value="metro" hidden id="metro"><label for="metro"></label>
+                            <input type="checkbox" name="vehicule[]" value="tram" hidden id="tram"><label for="tram"></label>
+                            <input type="checkbox" name="vehicule[]" value="bus" hidden id="bus"><label for="bus"></label>
+                            <input type="checkbox" name="vehicule[]" value="velo" hidden id="velo"><label for="velo"></label>
                         </div>
                     </div>
 
@@ -125,51 +115,56 @@
             <h2>Récents</h2>
 
             <div id="journeys">
+                {% if journeys|length > 0 %}
+                    {% for journey in journeys %}
+                        <div class="journey">
+                            {% set break = false %}
+                            {% set isFavorite = false %}
+                            <img src="/assets/images/map-picture.png" alt="map" class="map">
+                            <div class="right-part">
+                                <div class="top-right-part">
+                                    <div class="journey-details">
+                                        <p>Point de départ:</p>
+                                        <p class="data">
+                                            {{ journey.place }}
+                                        </p>
+                                        <p>Date et heure de départ:</p>
+                                        <p class="data">
+                                            {{ journey.date }}
+                                        </p>
+                                        <p>Description:</p>
+                                        <p class="data">
+                                            {{ journey.description }}
+                                        </p>
+                                    </div>
+                                    <div class="side-buttons">
+                                        {% for favoriteJourney in favoriteJourneys if not break %}
+                                            {% if journey.id in favoriteJourney and session.user.id in favoriteJourney %}
+                                                {% set break = true %}
+                                                {% set isFavorite = true %}
+                                            {% endif %}
+                                        {% endfor %}
 
-                {% for journey in journeys %}
-                    <div class="journey">
-                        {% set break = false %}
-                        {% set isFavorite = false %}
-                        <img src="/assets/images/map-picture.png" alt="map" class="map">
-                        <div class="right-part">
-                            <div class="top-right-part">
-                                <div class="journey-details">
-                                    <p>Point de départ:</p>
-                                    <p class="data">
-                                        {{ journey.place }}
-                                    </p>
-                                    <p>Date et heure de départ:</p>
-                                    <p class="data">
-                                        {{ journey.date }}
-                                    </p>
-                                    <p>Description:</p>
-                                    <p class="data">
-                                        {{ journey.description }}
-                                    </p>
-                                </div>
-                                <div class="side-buttons">
-                                    {% for favoriteJourney in favoriteJourneys if not break %}
-                                        {% if journey.id in favoriteJourney and session.user.id in favoriteJourney %}
-                                            {% set break = true %}
-                                            {% set isFavorite = true %}
+                                        {% if isFavorite == true %}
+                                            <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+                                        {% else %}
+                                            <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
                                         {% endif %}
-                                    {% endfor %}
 
-                                    {% if isFavorite == true %}
-                                        <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
-                                    {% else %}
-                                        <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
-                                    {% endif %}
-
-                                    <img src="/assets/images/information.png" alt="information icon">
+                                        <img src="/assets/images/information.png" alt="information icon">
+                                    </div>
                                 </div>
+                                <a href="" class="participateButton">Participer</a>
                             </div>
-                            <a href="" class="participateButton">Participer</a>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <h3>Il n'y a aucun trajets qui correspondent à vos critères...</h3>
+                {% endif %}
 
             </div>
+
+            <button id="see-more">Voir plus</button>
         </div>
     </div>
 

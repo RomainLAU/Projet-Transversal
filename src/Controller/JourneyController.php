@@ -59,4 +59,46 @@ class JourneyController extends Controller
         header('location: /journey');
         exit();
     }
+
+    public function filterJourneys() {
+
+        $validFilters = [];
+
+        foreach ($_POST as $filters => $filter) {
+            if (is_string($filter) && strlen($filter) > 0) {
+                $validFilters[$filters] = strtolower($filter);
+            } else if (is_array($filter) && count($filter) > 0) {
+                foreach($filter as $values => $value) {
+                    $validFilters[$filters][] = strtolower($value);
+                }
+            }
+        }
+
+        if (count($validFilters) > 0) {
+            $filteredJourneys = $this->journeyModel->journeyFilter($validFilters);
+            $favoriteJourneys = $this->journeyModel->getFavoriteJourneys();
+
+            echo $this->twig->render('/journey/listJourneys.html.twig', [
+                'journeys' => $filteredJourneys,
+                'favoriteJourneys' => $favoriteJourneys,
+            ]);
+        } else {
+            $journeys = $this->journeyModel->getJourneys();
+            $favoriteJourneys = $this->journeyModel->getFavoriteJourneys();
+
+            if (!is_array($favoriteJourneys) || count($favoriteJourneys) == 0) {
+                $favoriteJourneys = [
+                    'id' => 0,
+                    'user_id' => 0,
+                    'journey_id' => 0,
+                ];
+            }
+    
+    
+            echo $this->twig->render('/journey/listJourneys.html.twig', [
+                'journeys' => $journeys,
+                'favoriteJourneys' => $favoriteJourneys,
+            ]);
+        }
+    }
 }
