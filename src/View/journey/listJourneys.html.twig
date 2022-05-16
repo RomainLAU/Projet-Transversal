@@ -4,109 +4,173 @@
 
 {% block content %}
 
-<div id="dark-background">
-    <div id="createForm">
-        <div id="formHeader">
-            <div></div>
-            <h2>Créer un nouveau trajet</h2>
-            <div id="cross">
-                <div id="firstBar"></div>
-                <div id="secondBar"></div>
+    <div id="dark-background">
+        <div id="createForm">
+            <div id="formHeader">
+                <div></div>
+                <h2>Créer un nouveau trajet</h2>
+                <div id="cross">
+                    <div id="firstBar"></div>
+                    <div id="secondBar"></div>
+                </div>
+            </div>
+            <form action="" method="post" name="createForm">
+                <div>
+                    <label for="trajetType">Type de trajet: </label>
+                    <select name="trajetType" id="trajetType">
+                        <option value="1">Visite Culturelle</option>
+                        <option value="2">Visite Culturelle</option>
+                        <option value="3">Visite Culturelle</option>
+                        <option value="4">Visite Culturelle</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="date">Date: </label>
+                    <input type="date" id="date" name="date">
+                </div>
+                
+                <div>
+                    <label for="place">Lieu: </label>
+                    <input type="text" id="place" name="place" placeholder="Ex: 6 Cité Paradis, 75010 Paris">
+                </div>
+                
+                <div>
+                    <label for="duration">Durée de l'activité: </label>
+                    <input type="text" id="duration" name="duration" placeholder="Ex: 1h30">
+                </div>
+                
+                <div>
+                    <label for="description">Description: </label>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Donnez plus de détails sur le parcours..."></textarea>
+                </div>
+                
+                <div>
+                    <label for="tags">Tags: </label>
+                    <input type="text" id="tags" name="tags" placeholder="Ex: #Paris">
+                </div>
+
+                <input type="submit" value="Poster" id="postButton" name="postButton">
+            </form>
+        </div>
+    </div>
+
+    <div id="journeys-body">
+        <div id="journeys-left-part">
+            <div id="filter-part">
+                <img src="/assets/images/filter.png" alt="filters">
+                <h3>Filtre</h3>
+            </div>
+            <div id="filters">
+                <form action="/journey/search/place" method="post">
+                    <div id="place">
+                        <h4>Lieu précis</h4>
+                        <label for="around">Autour de</label>
+                        <input type="text" name="around">
+                        <label for="date">Date le</label>
+                        <input type="text" name="date">
+                        <label for="start">Départ à</label>
+                        <input type="text" name="start">
+                    </div>
+                    <div id="activity-type">
+                        <h4>Type d'activité</h4>
+                        <label><input type="checkbox" name="activity[]" value="balade">Balade</label>
+                        <label><input type="checkbox" name="activity[]" value="balade">Visite culturelle</label>
+                        <label><input type="checkbox" name="activity[]" value="balade">Jogging</label>
+                        <label><input type="checkbox" name="activity[]" value="balade">Randonnée</label>
+                        <label><input type="checkbox" name="activity[]" value="balade">Course à pied</label>
+                        <p>+ de choix</p>
+                    </div>
+                    <div id="vehicules">
+                        <h4>En empruntant</h4>
+                        <div id="vehicule-inputs">
+                            <label><input type="checkbox" name="vehicule[]" value="train" hidden>
+                                <img src="/assets/images/train.png" alt="Train">
+                            </label>
+                            <label><input type="checkbox" name="vehicule[]" value="rer" hidden>
+                                <img src="/assets/images/rer.png" alt="RER">
+                            </label>
+                            <label><input type="checkbox" name="vehicule[]" value="metro" hidden>
+                                <img src="/assets/images/metro.png" alt="Metro">
+                            </label>
+                            <label><input type="checkbox" name="vehicule[]" value="tram" hidden>
+                                <img src="/assets/images/tram.png" alt="Tram">
+                            </label>
+                            <label><input type="checkbox" name="vehicule[]" value="bus" hidden>
+                                <img src="/assets/images/bus.png" alt="Bus">
+                            </label>
+                            <label><input type="checkbox" name="vehicule[]" value="velo" hidden>
+                                <img src="/assets/images/velo.png" alt="Vélo">
+                            </label>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Valider" id="filter-button">
+                </form>
             </div>
         </div>
-        <form action="" method="post" name="createForm">
-            <div>
-                <label for="trajetType">Type de trajet: </label>
-                <select name="trajetType" id="trajetType">
-                    <option value="1">Visite Culturelle</option>
-                    <option value="2">Visite Culturelle</option>
-                    <option value="3">Visite Culturelle</option>
-                    <option value="4">Visite Culturelle</option>
-                </select>
-            </div>
-            
-            <div>
-                <label for="date">Date: </label>
-                <input type="date" id="date" name="date">
-            </div>
-            
-            <div>
-                <label for="place">Lieu: </label>
-                <input type="text" id="place" name="place" placeholder="Ex: 6 Cité Paradis, 75010 Paris">
-            </div>
-            
-            <div>
-                <label for="duration">Durée de l'activité: </label>
-                <input type="text" id="duration" name="duration" placeholder="Ex: 1h30">
-            </div>
-            
-            <div>
-                <label for="description">Description: </label>
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="Donnez plus de détails sur le parcours..."></textarea>
-            </div>
-            
-            <div>
-                <label for="tags">Tags: </label>
-                <input type="text" id="tags" name="tags" placeholder="Ex: #Paris">
+
+        <div id="journeys-right-part">
+            <div id="top-part">
+                <h1>Trajets</h1>
+                <button id="popupButton">Créer</button>
             </div>
 
-            <input type="submit" value="Poster" id="postButton" name="postButton">
-        </form>
-    </div>
-</div>
+            <form action="/journey/search" method="post">
+                <input type="text" name="globalSearch" id="globalSearch">
+            </form>
 
-    <div id="top-part">
-        <h1>Trajets</h1>
-        <button id="popupButton">Créer</button>
-    </div>
-    
-    <h2>Récents</h2>
+            <h2>Récents</h2>
 
-    <div id="journeys">
+            <div id="journeys">
 
-            {% for journey in journeys %}
-                <div class="journey">
-                    {% set break = false %}
-                    {% set isFavorite = false %}
-                    <img src="/assets/images/map-picture.png" alt="map" class="map">
-                    <div class="right-part">
-                        <div class="top-right-part">
-                            <div class="journey-details">
-                                <p>Point de départ:</p>
-                                <p class="data">
-                                    {{ journey.place }}
-                                </p>
-                                <p>Date et heure de départ:</p>
-                                <p class="data">
-                                    {{ journey.date }}
-                                </p>
-                                <p>Description:</p>
-                                <p class="data">
-                                    {{ journey.description }}
-                                </p>
-                            </div>
-                            <div class="side-buttons">
-                                {% for favoriteJourney in favoriteJourneys if not break %}
-                                    {% if journey.id in favoriteJourney and session.user.id in favoriteJourney %}
-                                        {% set break = true %}
-                                        {% set isFavorite = true %}
+                {% for journey in journeys %}
+                    <div class="journey">
+                        {% set break = false %}
+                        {% set isFavorite = false %}
+                        <img src="/assets/images/map-picture.png" alt="map" class="map">
+                        <div class="right-part">
+                            <div class="top-right-part">
+                                <div class="journey-details">
+                                    <p>Point de départ:</p>
+                                    <p class="data">
+                                        {{ journey.place }}
+                                    </p>
+                                    <p>Date et heure de départ:</p>
+                                    <p class="data">
+                                        {{ journey.date }}
+                                    </p>
+                                    <p>Description:</p>
+                                    <p class="data">
+                                        {{ journey.description }}
+                                    </p>
+                                </div>
+                                <div class="side-buttons">
+                                    {% for favoriteJourney in favoriteJourneys if not break %}
+                                        {% if journey.id in favoriteJourney and session.user.id in favoriteJourney %}
+                                            {% set break = true %}
+                                            {% set isFavorite = true %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if isFavorite == true %}
+                                        <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+                                    {% else %}
+                                        <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
                                     {% endif %}
-                                {% endfor %}
 
-                                {% if isFavorite == true %}
-                                    <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
-                                {% else %}
-                                    <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
-                                {% endif %}
-
-                                <img src="/assets/images/information.png" alt="information icon">
+                                    <img src="/assets/images/information.png" alt="information icon">
+                                </div>
                             </div>
+                            <a href="" class="participateButton">Participer</a>
                         </div>
-                        <a href="" class="participateButton">Participer</a>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
+            </div>
+        </div>
     </div>
+
+
 
 {% endblock %}

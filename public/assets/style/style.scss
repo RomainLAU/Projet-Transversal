@@ -1,6 +1,8 @@
-$main-green : green;
-$light-green : rgb(85, 172, 85);
-$light-background: rgb(255, 255, 250);
+$main-green : #8DAB7F;
+$light-green : #CFEE9E;
+$light-background: #FDFFF8;
+$secondary-light-green: #C9D5B5;
+$secondary-dark-green: #394032;
 
 #body{
     font-family: sans-serif;
@@ -20,11 +22,14 @@ $light-background: rgb(255, 255, 250);
         height: 10vh;
         width: 100vw;
         position: fixed;
+        top: 0;
+        margin-bottom: 10vh;
 
         img {
+            font-size: 16px;
             height: 90%;
             width: 11%;
-            margin-left: 8%;
+            margin-left: 10em;
         }
 
         nav {
@@ -327,93 +332,153 @@ $light-background: rgb(255, 255, 250);
         }
     }
 
-    #top-part{
+    #journeys-body{
         display: flex;
-        justify-content: space-between;
-        padding: 0 10em;
-        align-items: center;
-
-        #popupButton{
-            width: 7.5em;
-            height: 1.8em;
-            background-color: $main-green;
-            color: white;
-            border-radius: 10px;
-            font-size: 1.3em;
-            cursor: pointer;
-            border: none;
-
-            &:hover{
-                background-color: $light-green;
-                color: black;
-            }
-        }
-    }
-
-    #journeys{
-        display: flex;
-        column-gap: 4em;
-        row-gap: 2em;
-        flex-wrap: wrap;
-        margin-left: 25em;
+        flex-direction: row;
         margin-top: 10vh;
 
-        .journey{
+        #journeys-left-part{
             display: flex;
-            background-color: white;
-            border: solid 1px lightgrey;
-            border-radius: 10px;
-            width: 30em;
-            overflow: hidden;
+            flex-direction: column;
+            max-width: 10vw;
+            font-size: 16px;
+            margin-left: 12em;
 
-            .map{
-                width: 35%;
-                object-fit: cover;
+            #filter-part{
+                display: flex;
+                align-items: center;
             }
 
-            .right-part{
+            #place, #activity-type{
                 display: flex;
                 flex-direction: column;
-                row-gap: 1em;
-                flex-grow: 1;
-                padding: 1em 0.5em;
 
-                .top-right-part{
+                h4{
+                    text-align: left;
+                    padding: 0;
+                }
+            }
+
+            #vehicules{
+                display: flex;
+                flex-direction: column;
+
+                h4{
+                    text-align: left;
+                    padding: 0;
+                }
+
+                #vehicule-inputs{
                     display: flex;
+                    flex-direction: row;
+                    column-gap: 1em;
+                    flex-wrap: wrap;
 
-                    .journey-details{
+                    label{
+                        border-radius: 50%;
+                        height: 37px;
+                        &:hover{
+                            background-color: $secondary-light-green;
+                            img{
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #journeys-right-part{
+            display: flex;
+            flex-direction: column;
+            
+            #top-part{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                #popupButton{
+                    width: 7.5em;
+                    height: 1.8em;
+                    background-color: $main-green;
+                    color: white;
+                    border-radius: 10px;
+                    font-size: 1.3em;
+                    cursor: pointer;
+                    border: none;
+
+                    &:hover{
+                        background-color: $light-green;
+                        color: black;
+                    }
+                }
+            }
+
+            #journeys{
+                display: flex;
+                column-gap: 4em;
+                row-gap: 2em;
+                flex-wrap: wrap;
+                margin-left: 25em;
+
+                .journey{
+                    display: flex;
+                    background-color: white;
+                    border: solid 1px lightgrey;
+                    border-radius: 10px;
+                    width: 30em;
+                    overflow: hidden;
+
+                    .map{
+                        width: 35%;
+                        object-fit: cover;
+                    }
+
+                    .right-part{
                         display: flex;
                         flex-direction: column;
                         row-gap: 1em;
                         flex-grow: 1;
+                        padding: 1em 0.5em;
 
-                        :not(.data){
-                            font-weight: bold;
+                        .top-right-part{
+                            display: flex;
+
+                            .journey-details{
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 1em;
+                                flex-grow: 1;
+
+                                :not(.data){
+                                    font-weight: bold;
+                                }
+                            }
+                
+                            .side-buttons{
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 1em;
+                                padding-left: 1em;
+                
+                                img{
+                                    cursor: pointer;
+                                }
+                            }
                         }
-                    }
-        
-                    .side-buttons{
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 1em;
-                        padding-left: 1em;
-        
-                        img{
-                            cursor: pointer;
+
+                        .participateButton{
+                            align-self: flex-end;
+                            text-decoration: none;
+                            color: white;
+                            background-color: rgb(70, 70, 70);
+                            border-radius: 5px;
+                            padding: 0.3em 0.6em;
+
+                            &:hover{
+                                background-color: $main-green;
+                            }
                         }
-                    }
-                }
-
-                .participateButton{
-                    align-self: flex-end;
-                    text-decoration: none;
-                    color: white;
-                    background-color: rgb(70, 70, 70);
-                    border-radius: 5px;
-                    padding: 0.3em 0.6em;
-
-                    &:hover{
-                        background-color: $main-green;
                     }
                 }
             }
