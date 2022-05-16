@@ -14,45 +14,33 @@
 </head>
 <body id="body">
 
-<header>
-    {% block header %}
+    <header>
+        {% block header %}
 
-        {% if session %}
-
-            <a href="/">Accueil</a>
-            <a href="/profile">Profile</a>
-            <a href="/deconnection">Disconnect</a>
-
-            {# {% if session.user.role == 'admin' %}
-
-                <a href="/">Accueil</a>
-                <a href="/profile">Profile</a>
-                <a href="/deconnection">Disconnect</a>
-
-            {% elseif session.user.role == 'host' %}
-
-                <a href="/">Accueil</a>
-                <a href="/profile">Profile</a>
-                <a href="/deconnection">Disconnect</a>
-
-            {% elseif session.user.role == 'user' %}
-
-                    <a href="/">Accueil</a>
-                    <a href="/profile">Profile</a>
-                    <a href="/deconnection">Disconnect</a>
-
-            {% endif %} #}
-
-        {% else %}
-
-            <a href="/">Accueil</a>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+                <img src="assets/images/logo-blanc.png" alt="logo-bee-brave">
     
-        {% endif %}
+                <nav>
+        
+                    <li><a href="#">Trajets</a></li>
+                    <li><a href="#">Associations</a></li>
+                    <li><a href="#">Nos valeurs</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Premium</a></li>
+        
+                </nav>
 
-    {% endblock %}
-</header>
+                <div class="cote">
+
+                    <a href="#">Connexion</a>
+
+                    <div class="dl">
+                        <a href="#">Télécharger l'application</a>
+                    </div>
+
+                </div>
+    
+        {% endblock %}
+    </header>
     
 
 {% block content %}
@@ -60,6 +48,58 @@
 
 {% block footer %}
 
+<<<<<<< HEAD
+    <footer>
+        
+        <img src="assets/images/logo-blanc.png">
+
+        <p>AVEC L'APPLICATION MOBILE BEEBRAVE, AMELIOREZ VOTRE EXPERIENCE DE VISITE</p>
+
+
+        <div class="store">
+
+            <div class="playstore">
+
+                <img src="assets/images/playstore.png" alt="logo-playstore">
+
+            </div>
+
+
+            <div class="applestore">
+
+                <img src="assets/images/applestore.png" alt="logo-applestore">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-links-rs">
+
+            <div class="links">
+
+
+            </div>
+
+
+            <div class="rs">
+
+
+            </div>
+            
+
+        </div>
+
+        <div class="trait-blanc">
+
+        </div>
+
+        <p>©️ All rights reserved</p>
+
+    </footer>
+=======
+>>>>>>> main
 {% endblock %}
 </body>
 </html>
