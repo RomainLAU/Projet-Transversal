@@ -1,6 +1,5 @@
 #body {
   font-family: sans-serif;
-  font-size: 16px;
   height: 100vh;
   position: relative;
   background-color: #FDFFF8;
@@ -19,9 +18,7 @@
   margin-bottom: 10vh;
 }
 #body header img {
-  font-size: 16px;
-  height: 90%;
-  width: 11%;
+  object-fit: cover;
   margin-left: 10em;
 }
 #body header nav {
@@ -30,7 +27,7 @@
   align-items: center;
   color: white;
   width: 38%;
-  margin-right: 2%;
+  margin-right: 10em;
   margin-top: 3.2em;
 }
 #body header nav li {
@@ -52,7 +49,7 @@
   justify-content: space-between;
   align-items: center;
   color: #CFEE9E;
-  margin-right: 3%;
+  margin-right: 12em;
   margin-top: 1%;
   width: 18%;
 }
@@ -279,44 +276,127 @@
   display: flex;
   flex-direction: column;
   max-width: 10vw;
-  font-size: 16px;
   margin-left: 12em;
+  row-gap: 2em;
 }
 #body #journeys-body #journeys-left-part #filter-part {
   display: flex;
   align-items: center;
+  background-color: white;
+  width: fit-content;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  padding: 0.4em 0.8em;
+  column-gap: 1em;
+  margin-top: 8em;
 }
-#body #journeys-body #journeys-left-part #place, #body #journeys-body #journeys-left-part #activity-type {
+#body #journeys-body #journeys-left-part #filter-part h3 {
+  padding: 0;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+#body #journeys-body #journeys-left-part #filter-form {
+  border-radius: 10px;
+  width: 12em;
+  background-color: white;
+  border: solid 1px lightgrey;
+  padding-bottom: 4em;
   display: flex;
   flex-direction: column;
 }
-#body #journeys-body #journeys-left-part #place h4, #body #journeys-body #journeys-left-part #activity-type h4 {
-  text-align: left;
-  padding: 0;
+#body #journeys-body #journeys-left-part #filter-form div h4 {
+  align-self: center;
+  font-size: 0.8em;
+  padding: 0.6em;
+}
+#body #journeys-body #journeys-left-part #filter-form div input {
+  margin-bottom: 1em;
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+  height: 1.5em;
+}
+#body #journeys-body #journeys-left-part #filter-form div label {
+  display: flex;
+  position: relative;
+}
+#body #journeys-body #journeys-left-part #filter-form div label p {
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  font-size: 0.9em;
+}
+#body #journeys-body #journeys-left-part #filter-form #place, #body #journeys-body #journeys-left-part #filter-form #activity-type {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em 0.8em;
+}
+#body #journeys-body #journeys-left-part #filter-form #place p, #body #journeys-body #journeys-left-part #filter-form #activity-type p {
+  font-size: 0.9em;
+  cursor: pointer;
+  width: fit-content;
+}
+#body #journeys-body #journeys-left-part #filter-form #place {
+  border-radius: 10px 10px 0 0;
+  padding: 0.4em 0.8em;
+}
+#body #journeys-body #journeys-left-part #filter-form hr {
+  width: 100%;
+}
+#body #journeys-body #journeys-left-part #filter-form input[type=submit] {
+  align-self: center;
+  justify-self: flex-end;
+  margin-top: 2em;
+  background-color: #394032;
+  color: white;
+  border: none;
+  padding: 0.2em 2em;
+  border-radius: 8px;
+  font-size: 1.05em;
+}
+#body #journeys-body #journeys-left-part #filter-form a {
+  align-self: center;
+  justify-self: flex-end;
+  margin-top: 0.8em;
+  color: #8DAB7F;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 #body #journeys-body #journeys-left-part #vehicules {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 #body #journeys-body #journeys-left-part #vehicules h4 {
   text-align: left;
   padding: 0;
 }
 #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs {
+  margin-top: 0.2em;
   display: flex;
   flex-direction: row;
   column-gap: 1em;
+  row-gap: 1em;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label {
   border-radius: 50%;
   height: 37px;
+  cursor: pointer;
 }
 #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label:hover {
   background-color: #C9D5B5;
 }
 #body #journeys-body #journeys-left-part #vehicules #vehicule-inputs label:hover img {
   opacity: 0.8;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #train {
+  background-image: url("../images/train.png");
+  width: 38px;
+  height: 37px;
+}
+#body #journeys-body #journeys-left-part #vehicules #vehicule-inputs #train input:checked + #train {
+  background-image: url("../images/train-checked.png");
 }
 #body #journeys-body #journeys-right-part {
   display: flex;

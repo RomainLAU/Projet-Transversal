@@ -62,7 +62,7 @@
                 <h3>Filtre</h3>
             </div>
             <div id="filters">
-                <form action="/journey/search/place" method="post">
+                <form action="/journey/search/place" method="post" id="filter-form">
                     <div id="place">
                         <h4>Lieu précis</h4>
                         <label for="around">Autour de</label>
@@ -72,40 +72,42 @@
                         <label for="start">Départ à</label>
                         <input type="text" name="start">
                     </div>
+                    <hr>
                     <div id="activity-type">
                         <h4>Type d'activité</h4>
-                        <label><input type="checkbox" name="activity[]" value="balade">Balade</label>
-                        <label><input type="checkbox" name="activity[]" value="balade">Visite culturelle</label>
-                        <label><input type="checkbox" name="activity[]" value="balade">Jogging</label>
-                        <label><input type="checkbox" name="activity[]" value="balade">Randonnée</label>
-                        <label><input type="checkbox" name="activity[]" value="balade">Course à pied</label>
+                        <label><input type="checkbox" name="activity[]" value="balade"><p>Balade</p></label>
+                        <label><input type="checkbox" name="activity[]" value="balade"><p>Visite culturelle</p></label>
+                        <label><input type="checkbox" name="activity[]" value="balade"><p>Jogging</p></label>
+                        <label><input type="checkbox" name="activity[]" value="balade"><p>Randonnée</p></label>
+                        <label><input type="checkbox" name="activity[]" value="balade"><p>Course à pied</p></label>
                         <p>+ de choix</p>
                     </div>
+                    <hr>
                     <div id="vehicules">
                         <h4>En empruntant</h4>
                         <div id="vehicule-inputs">
-                            <label><input type="checkbox" name="vehicule[]" value="train" hidden>
-                                <img src="/assets/images/train.png" alt="Train">
+                            <label id="train"><input type="checkbox" name="vehicule[]" value="train">
                             </label>
-                            <label><input type="checkbox" name="vehicule[]" value="rer" hidden>
+                            <label id="rer"><input type="checkbox" name="vehicule[]" value="rer" hidden>
                                 <img src="/assets/images/rer.png" alt="RER">
                             </label>
-                            <label><input type="checkbox" name="vehicule[]" value="metro" hidden>
+                            <label id="metro"><input type="checkbox" name="vehicule[]" value="metro" hidden>
                                 <img src="/assets/images/metro.png" alt="Metro">
                             </label>
-                            <label><input type="checkbox" name="vehicule[]" value="tram" hidden>
+                            <label id="tram"><input type="checkbox" name="vehicule[]" value="tram" hidden>
                                 <img src="/assets/images/tram.png" alt="Tram">
                             </label>
-                            <label><input type="checkbox" name="vehicule[]" value="bus" hidden>
+                            <label id="bus"><input type="checkbox" name="vehicule[]" value="bus" hidden>
                                 <img src="/assets/images/bus.png" alt="Bus">
                             </label>
-                            <label><input type="checkbox" name="vehicule[]" value="velo" hidden>
+                            <label id="velo"><input type="checkbox" name="vehicule[]" value="velo" hidden>
                                 <img src="/assets/images/velo.png" alt="Vélo">
                             </label>
                         </div>
                     </div>
 
                     <input type="submit" value="Valider" id="filter-button">
+                    <a href="/journey">Effacer les filtres</a>
                 </form>
             </div>
         </div>
