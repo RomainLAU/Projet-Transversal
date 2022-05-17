@@ -128,7 +128,7 @@
                                             <div class="journey-details">
                                                 <p>Point de départ:</p>
                                                 <p class="data">
-                                                    {{ journey.place }}
+                                                    {{ journey.place|slice(0, 25) }}
                                                 </p>
                                                 <p>Date et heure de départ:</p>
                                                 <p class="data">

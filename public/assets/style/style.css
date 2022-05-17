@@ -561,7 +561,7 @@
 }
 #body #account-body #right-column #top-right-column {
   display: flex;
-  column-gap: 1em;
+  column-gap: 2em;
 }
 #body #account-body #right-column #top-right-column #week-activity {
   background-color: white;
@@ -584,7 +584,7 @@
   height: 18.4em;
 }
 #body #account-body #right-column #top-right-column #map img {
-  width: 25em;
+  width: 32em;
   object-fit: cover;
 }
 #body #account-body #right-column #top-right-column #map #see-map {
@@ -598,6 +598,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 5px grey;
+  cursor: pointer;
 }
 #body #account-body #right-column #bottom-right-column {
   display: flex;
@@ -635,7 +636,7 @@
   font-weight: bold;
   display: block;
   cursor: pointer;
-  padding: 0.5em 0.5em;
+  padding: 0.5em 1em;
   border-bottom: solid 2px grey;
 }
 #body #account-body #right-column #bottom-right-column #favorites ul li label:hover {

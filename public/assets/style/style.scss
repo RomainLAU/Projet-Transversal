@@ -691,7 +691,7 @@ $secondary-dark-green: #394032;
 
             #top-right-column{
                 display: flex;
-                column-gap: 1em;
+                column-gap: 2em;
 
                 #week-activity{
                     background-color: white;
@@ -717,7 +717,7 @@ $secondary-dark-green: #394032;
 
 
                     img{
-                        width: 25em;
+                        width: 32em;
                         object-fit: cover;
                     }
 
@@ -732,6 +732,7 @@ $secondary-dark-green: #394032;
                         background-color: white;
                         border-radius: 10px;
                         box-shadow: 2px 2px 5px grey;
+                        cursor: pointer;
                     }
                 }
             }
@@ -776,7 +777,7 @@ $secondary-dark-green: #394032;
                                 font-weight: bold;
                                 display: block;
                                 cursor: pointer;
-                                padding: 0.5em 0.5em;
+                                padding: 0.5em 1em;
                                 border-bottom: solid 2px grey;
             
                                 &:hover{
