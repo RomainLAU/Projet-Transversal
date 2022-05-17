@@ -537,6 +537,8 @@
   column-gap: 1em;
   justify-content: space-between;
   padding: 1em 0;
+  border-radius: 15px;
+  cursor: pointer;
 }
 #body #account-body #middle-column #messages ul li .conv-infos {
   display: flex;
@@ -553,6 +555,9 @@
 #body #account-body #middle-column #messages ul li .conversation-notif {
   font-size: 0.5em;
   margin-left: 5em;
+}
+#body #account-body #middle-column #messages ul li:hover {
+  background-color: rgba(0, 0, 0, 0.11);
 }
 #body #account-body #right-column {
   display: flex;

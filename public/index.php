@@ -19,7 +19,7 @@ $router->before('GET', '/login', function() {
     }
 });
 
-$router->before('GET', '/profile', function() {
+$router->before('GET', '/account', function() {
     if (!isset($_SESSION['user'])) {
         header('location: /login');
         exit();

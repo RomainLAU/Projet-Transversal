@@ -47,11 +47,11 @@ class JourneyController extends Controller
     public function addJourneyToFavorites($journeyId) {
 
         $favoriteJourney = $this->journeyModel->findFavoriteJourney($journeyId);
-
+        
         if (is_bool($favoriteJourney) && $favoriteJourney === false) {
             $this->journeyModel->addFavoriteJourney($journeyId);
         } else if (is_array($favoriteJourney) && count($favoriteJourney) > 0) {
-            $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
+            $delete = $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
         }
 
         header('location: /journey');
@@ -102,9 +102,11 @@ class JourneyController extends Controller
         }
     }
 
-    public function deleteFromFavorites($favoriteJourney) {
+    public function deleteFromFavorites($journeyId) {
 
-        $this->journeyModel->deleteFavoriteJourney($favoriteJourney);
+        $favoriteJourney = $this->journeyModel->findFavoriteJourney($journeyId);
+
+        $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
 
         header('location: /account');
         exit();

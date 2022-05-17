@@ -659,6 +659,8 @@ $secondary-dark-green: #394032;
                         column-gap: 1em;
                         justify-content: space-between;
                         padding: 1em 0;
+                        border-radius: 15px;
+                        cursor: pointer;
 
                         .conv-infos{
                             display: flex;
@@ -678,6 +680,10 @@ $secondary-dark-green: #394032;
                         .conversation-notif{
                             font-size: 0.5em;
                             margin-left: 5em;
+                        }
+
+                        &:hover{
+                            background-color: rgba(0, 0, 0, 0.11);
                         }
                     }
                 }

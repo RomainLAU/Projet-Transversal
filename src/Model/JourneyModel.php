@@ -69,12 +69,11 @@ class JourneyModel extends Model
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function deleteFavoriteJourney($favoriteId) {
+    public function deleteFavoriteJourney($id) {
 
-        $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `journey_id` = :favoriteId AND `user_id` = :userId');
+        $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `id` = :id');
         $statement->execute([
-            'favoriteId' => $favoriteId,
-            'userId' => $_SESSION['user']['id'],
+            'id' => $id,
         ]);
     }
 
@@ -94,7 +93,7 @@ class JourneyModel extends Model
 
         foreach($valideFilters as $filters => $filter) {
             if ($filters == 'globalSearch') {
-                $queriesToAdd[] = '`journey_type`.type LIKE :filter%" OR `place` LIKE :filter%" OR `date` LIKE :filter%" OR `tags` LIKE :filter%" OR `description` LIKE :filter%";';
+                $queriesToAdd[] = '`journey_type`.type LIKE :filter OR `place` LIKE :filter OR `date` LIKE :filter OR `tags` LIKE :filter OR `description` LIKE :filter;';
 
                 $queriesToAddLen = count($queriesToAdd) - 1;
                 $counter = 0;
