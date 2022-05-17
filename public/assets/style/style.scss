@@ -20,6 +20,8 @@ $light-background: rgb(255, 255, 250);
         height: 10vh;
         width: 100vw;
         position: fixed;
+        top: 0;
+        margin-bottom: 10vh;
 
         img {
             height: 90%;
@@ -87,6 +89,171 @@ $light-background: rgb(255, 255, 250);
                 }
         }
     }
+
+
+    // Début page register
+
+
+    .bloc-register {
+        margin-top: 15vh;
+        display: flex;
+        justify-content:space-around;
+        
+    }
+    .register-photos{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .register-logo{
+        width: 360px;
+        height: 180px;
+    }
+    .register-tel{
+        width: 160px;
+        height: 320px;
+        padding-left: 180px;
+        padding-bottom: 50px;
+    }
+   .store{
+       display: flex;
+       gap: 20px;
+       padding-left: 100px;
+   }
+   .storey{
+       width: 150px;
+   }
+
+   
+.container{
+    margin-top: 30px;
+    padding-top: 60px;
+    width: 500px;
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     background-color: rgb(255, 255, 255);
+     border-radius: 3%;
+     border: 1px solid black;
+     box-shadow: 2px 2px 15px;
+ }
+
+ .container .row100{
+     width: 100%;
+     position: relative;
+     
+    
+ }
+ .container .text{
+     color: grey;
+ }
+ .container .row100 .col{
+     position: relative;
+     width: 100%;
+     padding: 0 10px;
+     margin: 30px 0 10px;
+     transition: .5s;
+ }
+ .container .row100 .inputBox{
+     position: relative;
+     width: 100%;
+     height: 40px;
+ }
+ .container .row100 .inputBox input , .container .row100 .inputBox .textarea textarea{
+     position: absolute;
+     width: 93%;
+     height: 100%;
+     box-shadow: none;
+     background: transparent;
+     outline:none ;
+     border-radius: 9px;
+     padding: 0 7px;
+     border: 1px solid grey;
+ }
+ .container .row100 .inputBox .text{
+     position: absolute;
+     top: 0;
+     left: 0;
+     line-height: 40px;
+     padding-left: 10px;
+     font-size: 18px;
+     display: block;
+     transition: .5s;
+     pointer-events: none;
+ }
+ .container .row100 .inputBox input:focus +.text ,
+ .container .row100 .inputBox input:valid + .text {
+     top: -35px;
+     left: -10px;
+     color: #CFEE9E;
+ }
+ .container .row100 .inputBox .line{
+     position: absolute;
+     bottom: 0;
+     display: block;
+     width: 100%;
+     height: 2px;
+     transition: .5s;
+     border-radius: 2px;
+     pointer-events: none;
+ }
+ .container .row100 .inputBox input:focus ~.line ,
+ .container .row100 .inputBox input:valid ~ .line{
+    height: 100%;
+ }
+ .container .row100 .inputBox .textarea{
+     position: relative;
+     width: 100%;
+     height: 100px;
+     padding: 10px 10px;
+ }
+ .container .row100 .inputBox .textarea textarea{
+     resize: none;
+     height: 100%;
+    
+ }
+ .container .row100 .inputBox textarea:focus +.text ,
+ .container .row100 .inputBox textarea:valid + .text {
+     top: -38px;
+     left: -10px;
+ }
+ .container .row100 .inputBox textarea:focus ~.line ,
+ .container .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+ }
+ input[tupe="submit"]{
+     border: none;
+     padding: 8px 35px;
+ }
+ .sub{
+    
+     width: 99%;
+     cursor: pointer;
+     height: 4rem;
+     color: rgb(0, 0, 0);
+     background-color: rgb(209, 232, 195);
+     border: none;
+     border-radius: 9px;
+     font-size: 22px;
+     font-weight: 500;
+ }
+
+
+
+#btn{
+    position: absolute;
+    right: 16px;
+    top: 1px;
+    width: 80px;
+    height: 100%;
+    background-color: rgb(230, 227, 227);
+    border: transparent;
+    border-left: 1px solid grey;
+    border-bottom-right-radius: 9px;
+    border-top-right-radius: 9px;
+}
+   
+    // fin page register
 
 
     footer{
@@ -216,7 +383,7 @@ $light-background: rgb(255, 255, 250);
         row-gap: 1em;
 
         input{
-            height: 2em;
+            height: 3em;
         }
     }
 

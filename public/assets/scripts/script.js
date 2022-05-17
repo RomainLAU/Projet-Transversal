@@ -11,4 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     closingCross.addEventListener('click', () => {
         filter.style.display = 'none'
     })
+
+   
+
 })
+

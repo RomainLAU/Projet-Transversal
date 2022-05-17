@@ -1,16 +1,60 @@
 {% extends "/base.html.twig" %}
 
 {% block title %}User Login{% endblock %}
-
+{% block script %}<script src='/assets/scripts/register.js' ></script>{% endblock %}
 
 {% block content %}
 
     <h1>Login user account</h1>
 
-    <form action="" method="POST" class="big-form">
-        <input type="text" placeholder="mail" name="mail" id="mail">
-        <input type="password" placeholder="password" name="password" id="password">
-        <input type="submit" value="Login" id="login" name="login">
-    </form>
+     <div class="bloc-register">
+                        <div class="register-photos">
+                            <img class="register-logo" src="assets/images/logo-noir.png" alt="BeeBrave">
+                            <img class="register-tel" src="assets/images/telephone.png" alt="telephone">
+                                <div class="store">
+                                    <img class="storey" src="assets/images/playstore.png" alt="BeeBrave">
+                                    <img class="storey" src="assets/images/applestore.png" alt="telephone">
+                                </div>
+
+                        </div>
+                        
+                        {# <form action="" method="POST" class="big-form">
+                            <input type="text" placeholder="mail" name="mail" id="mail">
+                            <input type="password" placeholder="password" name="password" id="password">
+                            <input type="submit" value="Login" id="login" name="login">
+                       </form> #}
+                   
+
+                <div class="container">
+                    <form action="" method="POST" class="big-form">
+                       
+                        <div class="row100">
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="text" name="mail" required>
+                                    <span class="text">Adresse e-mail</span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="password" name="password" id='my-input' required>
+                                    <span  class="text">Mot de passe </span>  <button id="btn" class="btn1 btn">Show Password</button>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="row100">
+                            <div class="col"> 
+                                <input class="sub" type="submit" name="login" value="Se Connecter">
+                            </div>
+                        </div>   
+                  </form>       
+             </div>
+           
+    </div>
+
 
 {% endblock %}
