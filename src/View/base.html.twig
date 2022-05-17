@@ -9,15 +9,15 @@
     <link href="/assets/style/reset.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/assets/scripts/script.js"></script>
     {% block stylesheets %}{% endblock %}
+    {% block scripts %}{% endblock %}
 </head>
 <body id="body">
 
     <header>
         {% block header %}
 
-                <img src="assets/images/logo-blanc.png" alt="logo-bee-brave">
+                <a href="/" id="logo-home"><img src="/assets/images/logo-blanc.png" alt="logo-bee-brave"></a>
 
                 <!--  nav page deco
                 
@@ -47,7 +47,7 @@
 
                 <div class="cote">
 
-                    <a href="#">S'identifier</a>
+                    <a href="/login">S'identifier</a>
 
                     <div class="dl">
                         <a href="#">Télécharger l'application</a>
@@ -63,15 +63,11 @@
 {% endblock %}
 
 {% block footer %}
-<<<<<<< HEAD
-
-=======
->>>>>>> alex
     <footer>
         
-        <img src="assets/images/logo-blanc.png">
+        <img src="/assets/images/logo-blanc.png">
 
-        <p>AVEC L'APPLICATION MOBILE BEEBRAVE, AMELIOREZ VOTRE EXPERIENCE DE VISITE</p>
+        <p id="big-sentence">AVEC L'APPLICATION MOBILE BEEBRAVE, AMELIOREZ VOTRE EXPERIENCE DE VISITE</p>
 
 
         <div class="stores-rs">
@@ -80,14 +76,14 @@
 
                 <div class="playstore">
 
-                    <img src="assets/images/playstore.png" alt="logo-playstore">
+                    <img src="/assets/images/playstore.png" alt="logo-playstore">
     
                 </div>
     
     
                 <div class="applestore">
     
-                    <img src="assets/images/applestore.png" alt="logo-applestore">
+                    <img src="/assets/images/applestore.png" alt="logo-applestore">
     
                 </div>
 
@@ -99,14 +95,14 @@
 
                 <div class="facebook-blanc">
 
-                    <img src="assets/images/facebook.png" alt="logo-facebook-blanc">
+                    <img src="/assets/images/facebook.png" alt="logo-facebook-blanc">
 
                 </div>
 
 
                 <div class="insta-blanc">
 
-                    <img src="assets/images/instagram.png" alt="logo-instagram-blanc">
+                    <img src="/assets/images/instagram.png" alt="logo-instagram-blanc">
 
                 </div>
 
@@ -159,7 +155,7 @@
 
                 <div class="icone-tel">
 
-                    <img src="assets/images/icone-tel.png" alt="icone-blanche-telephone">                    
+                    <img src="/assets/images/icone-tel.png" alt="icone-blanche-telephone">                    
 
                 </div>
 
@@ -173,7 +169,7 @@
 
                 <div class="icone-mail">
 
-                    <img src="assets/images/icone-mail.png" alt="icone-blanche-mail"> 
+                    <img src="/assets/images/icone-mail.png" alt="icone-blanche-mail"> 
 
                 </div>
 
@@ -199,10 +195,6 @@
         <p class="copyright">©️ 2022 All rights reserved</p>
 
     </footer>
-<<<<<<< HEAD
-=======
-
->>>>>>> alex
 {% endblock %}
 </body>
 </html>
