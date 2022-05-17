@@ -29,7 +29,11 @@ $router->before('GET', '/profile', function() {
 $router->get('/', 'Mvc\Controller\AccueilController@displayAccueil');
 
 $router->get('/journey', 'Mvc\Controller\JourneyController@listJourneys');
-$router->post('/journey', 'Mvc\Controller\JourneyController@createJourney');
+$router->post('/journey', 'Mvc\Controller\JourneyController@listJourneys');
+
+$router->get('/journey/favorite/(\d+)', 'Mvc\Controller\JourneyController@addJourneyToFavorites');
+
+$router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
 $router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
 
