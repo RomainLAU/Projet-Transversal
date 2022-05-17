@@ -54,7 +54,7 @@
   font-weight: bold;
 }
 #body #tournament-list .livetournament {
-  background-color: #b0c2b0;
+  background-color: rgb(176, 194, 176);
   list-style-type: none;
   padding: 1em;
   border-radius: 10px;
@@ -74,7 +74,7 @@
 }
 #body #profile {
   padding: 2rem;
-  background-color: #d2d2d2;
+  background-color: rgb(210, 210, 210);
 }
 #body #profile #becomeHost {
   padding: 2em 0;
@@ -127,7 +127,7 @@
   margin-top: 1em;
 }
 #body #tournamentDetails ol .livematch {
-  background-color: #b0c2b0;
+  background-color: rgb(176, 194, 176);
   list-style-type: none;
   padding: 1em;
   border-radius: 10px;
