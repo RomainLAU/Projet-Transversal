@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Trajets{% endblock %}
-
+{% block scripts %}
+    <script src="/assets/scripts/script.js"></script>
+{% endblock scripts %}
 {% block content %}
 
     <div id="dark-background">
@@ -28,17 +30,17 @@
                 
                 <div>
                     <label for="date">Date et heure: </label>
-                    <input type="text" id="date" name="date" placeholder="YYYY-MM-DD HH:MM">
+                    <input type="text" id="date" name="date" placeholder="YYYY-MM-DD HH:MM" required>
                 </div>
                 
                 <div>
                     <label for="place">Lieu: </label>
-                    <input type="text" id="place" name="place" placeholder="Ex: 6 Cité Paradis, 75010 Paris">
+                    <input type="text" id="place" name="place" placeholder="Ex: 6 Cité Paradis, 75010 Paris" required>
                 </div>
                 
                 <div>
                     <label for="duration">Durée de l'activité: </label>
-                    <input type="text" id="duration" name="duration" placeholder="Ex: 1h30">
+                    <input type="text" id="duration" name="duration" placeholder="Ex: 1h30" required>
                 </div>
                 
                 <div>
@@ -110,7 +112,7 @@
 
             <form action="/journey/search" method="post" id="globalSearch">
                 <label for="globalSearchInput">
-                    <img src="assets/images/search.png" alt="Search icon">
+                    <img src="/assets/images/search.png" alt="Search icon">
                 </label>
                 <input type="text" name="globalSearch" id="globalSearchInput">
             </form>
@@ -137,7 +139,7 @@
                                         </p>
                                         <p>Description:</p>
                                         <p class="data">
-                                            {{ journey.description }}
+                                            {{ journey.description|slice(0, 150) }}
                                         </p>
                                     </div>
                                     <div class="side-buttons">
@@ -171,6 +173,18 @@
         </div>
     </div>
 
-
+    {% if newJourneyCreated == true %}
+        <script>
+            Swal.fire({
+                position: 'top',
+                title: 'Votre trajet a bien été enregistré',
+                html: '<a href="">Voir mes trajets</a>',
+                timer: 1000,
+                showConfirmButton: false,
+                background: '#FDFFF8',
+                backdrop: 'none',
+            })
+        </script>
+    {% endif %}
 
 {% endblock %}

@@ -17,6 +17,15 @@ class JourneyController extends Controller
 
     public function listJourneys() {
 
+        $newJourneyCreated = false;
+
+        if (isset($_POST['postButton']) && isset($_POST['trajetType']) && isset($_POST['date']) && strlen($_POST['date']) == 16 && isset($_POST['place']) && strlen($_POST['place']) > 0 && isset($_POST['duration'])  && strlen($_POST['place']) > 2 && isset($_POST['description']) && isset($_POST['tags'])) {
+
+            $this->journeyModel->createJourney($_POST['trajetType'], $_POST['date'], $_POST['place'], $_POST['duration'], $_POST['description'], $_POST['tags']);
+
+            $newJourneyCreated = true;
+        }
+
         $journeys = $this->journeyModel->getJourneys();
         $favoriteJourneys = $this->journeyModel->getFavoriteJourneys();
 
@@ -32,18 +41,8 @@ class JourneyController extends Controller
         echo $this->twig->render('/journey/listJourneys.html.twig', [
             'journeys' => $journeys,
             'favoriteJourneys' => $favoriteJourneys,
+            'newJourneyCreated' => $newJourneyCreated,
         ]);
-    }
-
-    public function createJourney() {
-
-        if (isset($_POST['postButton']) && isset($_POST['trajetType']) && isset($_POST['date']) && isset($_POST['place']) && isset($_POST['duration']) && isset($_POST['description']) && isset($_POST['tags'])) {
-
-            $this->journeyModel->createJourney($_POST['trajetType'], $_POST['date'], $_POST['place'], $_POST['duration'], $_POST['description'], $_POST['tags']);
-        }
-
-        header('location: /journey');
-        exit();
     }
 
     public function addJourneyToFavorites($journeyId) {
@@ -94,10 +93,12 @@ class JourneyController extends Controller
                 ];
             }
     
+            $newJourneyCreated = false;
     
             echo $this->twig->render('/journey/listJourneys.html.twig', [
                 'journeys' => $journeys,
                 'favoriteJourneys' => $favoriteJourneys,
+                'newJourneyCreated' => $newJourneyCreated,
             ]);
         }
     }

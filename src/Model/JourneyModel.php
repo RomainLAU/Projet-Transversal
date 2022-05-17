@@ -22,7 +22,7 @@ class JourneyModel extends Model
     }
 
     public function getJourneys() {
-        $statement = $this->pdo->prepare('SELECT * FROM `journey` LIMIT 6');
+        $statement = $this->pdo->prepare('SELECT * FROM `journey` ORDER BY `id` DESC LIMIT 6');
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -72,12 +72,14 @@ class JourneyModel extends Model
         $queriesToAdd = [];
 
         foreach($valideFilters as $filters => $filter) {
-            if ($filters == 'around') {
-                $queriesToAdd[] = ' `place` LIKE "%' . $filter . '%"';
+            if ($filters == 'globalSearch') {
+                $queriesToAdd[] = '`journey_type`.type LIKE :filter OR `place` LIKE :filter OR `date` LIKE :filter OR `tags` LIKE :filter OR `description` LIKE :filter;';
+            } else if ($filters == 'around') {
+                $queriesToAdd[] = ' `place` LIKE :filter';
             } else if ($filters == 'date') {
-                $queriesToAdd[] = ' `date` LIKE "%' . $filter . '%"';
+                $queriesToAdd[] = ' `date` LIKE :filter';
             } else if ($filters == 'start') {
-                $queriesToAdd[] = ' `date` LIKE "%' . $filter . '%"';
+                $queriesToAdd[] = ' `date` LIKE :filter';
             } else if ($filters == 'activity') {
 
                 $queriesToAdd[] = ' `journey_type`.type LIKE "%';
@@ -123,7 +125,10 @@ class JourneyModel extends Model
         }
 
         $statement = $this->pdo->prepare($query);
-        $statement->execute();
+
+        $statement->execute([
+            'filter' => "%$filter%",
+        ]);
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
