@@ -541,13 +541,27 @@ $secondary-dark-green: #394032;
                 margin-left: 2em;
             }
 
-            form{
-                #globalSearch{
-                    width: 70%;
-                    height: 2.75em;
-                    border: solid 1px lightgrey;
-                    border-radius: 20px;
-                    margin-left: 6em;
+            #globalSearch{
+                width: 70%;
+                height: 2.75em;
+                border: solid 1px lightgrey;
+                border-radius: 50px;
+                margin-left: 6em;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+
+                #globalSearchInput{
+                    width: 90%;
+                    height: 102%;
+                    border: none;
+                }
+
+                label[for=globalSearchInput] {
+                    // background-image: url('../images/search.png');
+                    width: fit-content;
+                    margin-left: 1em;
+                    background-color: white;
                 }
             }
             

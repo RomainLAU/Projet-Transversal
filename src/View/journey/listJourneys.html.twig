@@ -108,8 +108,11 @@
                 <button id="popupButton">Créer</button>
             </div>
 
-            <form action="/journey/search" method="post">
-                <input type="text" name="globalSearch" id="globalSearch">
+            <form action="/journey/search" method="post" id="globalSearch">
+                <label for="globalSearchInput">
+                    <img src="assets/images/search.png" alt="Search icon">
+                </label>
+                <input type="text" name="globalSearch" id="globalSearchInput">
             </form>
 
             <h2>Récents</h2>

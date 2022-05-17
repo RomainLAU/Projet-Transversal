@@ -444,12 +444,25 @@
 #body #journeys-body #journeys-right-part h2 {
   margin-left: 2em;
 }
-#body #journeys-body #journeys-right-part form #globalSearch {
+#body #journeys-body #journeys-right-part #globalSearch {
   width: 70%;
   height: 2.75em;
   border: solid 1px lightgrey;
-  border-radius: 20px;
+  border-radius: 50px;
   margin-left: 6em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#body #journeys-body #journeys-right-part #globalSearch #globalSearchInput {
+  width: 90%;
+  height: 102%;
+  border: none;
+}
+#body #journeys-body #journeys-right-part #globalSearch label[for=globalSearchInput] {
+  width: fit-content;
+  margin-left: 1em;
+  background-color: white;
 }
 #body #journeys-body #journeys-right-part #top-part {
   display: flex;
