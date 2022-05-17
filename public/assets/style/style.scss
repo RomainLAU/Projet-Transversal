@@ -559,13 +559,303 @@ $secondary-dark-green: #394032;
 
     #account-body{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-top: 10vh;
+        padding: 1em 10em;
+        column-gap: 5em;
 
         #left-column{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background-color: #e1eecd;
+            border-radius: 15px;
+            padding: 2em;
+
+            #picture-account{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-bottom: solid 1px white;
+                row-gap: 2em;
+                padding-bottom: 2em;
+
+                #user-name{
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
+            }
+
+            #account-pages{
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                padding: 1em 0;
+                row-gap: 1em;
+
+                li{
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        display: flex;
+                        align-items: center;
+
+                        img{
+                            width: 60px;
+                            object-fit: contain;
+                        }
+    
+                        h2{
+                            font-weight: 500;
+                            padding: 1em;
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+
+        #middle-column{
+            display:flex;
+            flex-direction: column;
+            row-gap: 2em;
+
+            div:first-child{
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    font-size: 1.2em;
+                }
+            }
+
+            #messages{
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2.5em;
+
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    font-size: 1.2em;
+                }
+
+                ul{
+                    li{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1em;
+                        justify-content: space-between;
+                        padding: 1em 0;
+
+                        .conv-infos{
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 1em;
+                        }
+
+                        .conversation-title{
+                            font-size: 0.8em;
+                            font-weight: bold;
+                        }
+
+                        .conversation-details{
+                            font-size: 0.7em;
+                        }
+
+                        .conversation-notif{
+                            font-size: 0.5em;
+                            margin-left: 5em;
+                        }
+                    }
+                }
+            }
+        }
+
+        #right-column{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2em;
+
+            #top-right-column{
+                display: flex;
+                column-gap: 1em;
+
+                #week-activity{
+                    background-color: white;
+                    border: solid 1px lightgray;
+                    border-radius: 15px;
+                    padding: 1em;
+                    display: flex;
+                    flex-direction: column;
+    
+                    h2{
+                        text-align: left;
+                        padding: 0;
+                        padding-bottom: 1em;
+                        font-size: 1.2em;
+                    }
+                }
+
+                #map{
+                    border-radius: 15px;
+                    overflow: hidden;
+                    position: relative;
+                    height: 18.4em;
+
+
+                    img{
+                        width: 25em;
+                        object-fit: cover;
+                    }
+
+                    #see-map{
+                        position: absolute;
+                        white-space: nowrap;
+                        bottom: 0;
+                        left: 50%;
+                        padding: 0.8em 4em;
+                        z-index: 2;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        border-radius: 10px;
+                        box-shadow: 2px 2px 5px grey;
+                    }
+                }
+            }
+
+            #bottom-right-column{
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    padding-bottom: 1em;
+                    font-size: 1.2em;
+                }
+
+                #favorites{
+                    input {
+                        display: none;
+                    }
+
+                    #trajets:checked ~ ul > li > label[for="trajets"],
+                    #association:checked ~ ul > li > label[for="association"],
+                    #historique:checked ~ ul > li > label[for="historique"] {
+                        color: $main-green;
+                        border-bottom: solid 2px $main-green;
+                    }
+
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-bottom: 2em;
+            
+                        li{
+                            text-align: center;
+            
+                            label{
+                                text-transform: capitalize;
+                                font-weight: bold;
+                                display: block;
+                                cursor: pointer;
+                                padding: 0.5em 0.5em;
+                                border-bottom: solid 2px grey;
+            
+                                &:hover{
+                                    color: $main-green;
+                                    border-bottom: solid 2px $main-green;
+                                }
+                            }
+                        }
+                    }
+
+                    div{
+                        display: none;
+                    }
+
+                    #trajets:checked ~ #trajets-content,
+                    #association:checked ~ #association-content,
+                    #historique:checked ~ #historique-content {
+                        display: flex;
+                    }
+
+                    #trajets-content{
+                        padding: 0 1.5em;
+                        column-gap: 1em;
+                        flex-wrap: wrap;
+                        row-gap: 1em;
+
+                        .journey{
+                            display: flex;
+                            background-color: white;
+                            border: solid 1px lightgrey;
+                            border-radius: 10px;
+                            width: 44%;
+                            overflow: hidden;
+                            flex-grow: 1;
+
+                            .map{
+                                width: 30%;
+                                object-fit: cover;
+                            }
+
+                            .right-part{
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 1em;
+                                flex-grow: 1;
+                                padding: 1em 0.5em;
+
+                                .top-right-part{
+                                    display: flex;
+
+                                    .journey-details{
+                                        display: flex;
+                                        flex-direction: column;
+                                        row-gap: 1em;
+                                        flex-grow: 1;
+                                        flex-wrap: wrap;
+                                        word-break: break-word;
+
+                                        :not(.data){
+                                            font-weight: bold;
+                                        }
+                                    }
+                        
+                                    .side-buttons{
+                                        display: flex;
+                                        flex-direction: column;
+                                        row-gap: 1em;
+                                        padding-left: 1em;
+                        
+                                        img{
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 

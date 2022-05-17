@@ -33,6 +33,8 @@ $router->post('/journey', 'Mvc\Controller\JourneyController@listJourneys');
 
 $router->get('/journey/favorite/(\d+)', 'Mvc\Controller\JourneyController@addJourneyToFavorites');
 
+$router->get('/journey/unfav/(\d+)', 'Mvc\Controller\JourneyController@deleteFromFavorites');
+
 $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
 $router->get('/account', 'Mvc\Controller\AccountController@displayAccount');

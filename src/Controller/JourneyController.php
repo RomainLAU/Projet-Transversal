@@ -37,7 +37,6 @@ class JourneyController extends Controller
             ];
         }
 
-
         echo $this->twig->render('/journey/listJourneys.html.twig', [
             'journeys' => $journeys,
             'favoriteJourneys' => $favoriteJourneys,
@@ -101,5 +100,13 @@ class JourneyController extends Controller
                 'newJourneyCreated' => $newJourneyCreated,
             ]);
         }
+    }
+
+    public function deleteFromFavorites($favoriteJourney) {
+
+        $this->journeyModel->deleteFavoriteJourney($favoriteJourney);
+
+        header('location: /account');
+        exit();
     }
 }
