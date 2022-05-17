@@ -1,21 +1,87 @@
 {% extends "base.html.twig" %}
 
 {% block title %}User Register{% endblock %}
+{% block script %}<script src='/assets/scripts/register.js' ></script>{% endblock %}
 
 
 {% block content %}
 
-    <h1>Register new user</h1>
+    <div class="bloc-register">
+                        <div class="register-photos">
+                            <img class="register-logo" src="assets/images/logo-noir.png" alt="BeeBrave">
+                            <img class="register-tel" src="assets/images/telephone.png" alt="telephone">
+                                <div class="store">
+                                    <img class="storey" src="assets/images/playstore.png" alt="BeeBrave">
+                                    <img class="storey" src="assets/images/applestore.png" alt="telephone">
+                                </div>
 
-    <form action="" method="POST" class="big-form">
-        <input type="text" placeholder="lastname" name="lastname" id="lastname">
-        <input type="text" placeholder="firstname" name="firstname" id="firstname">
-        <input type="text" placeholder="mail" name="mail" id="mail">
-        <input type="password" placeholder="password" name="password" id="password">
-        <input type="password" placeholder="Confirm Password" name="passwordConfirm" id="passwordConfirm">
-        <input type="submit" value="Register" id="register" name="register">
-    </form>
+                        </div>
+                        
+                        
+                    {# <div>
+                            <form action="" method="POST" class="big-form">
+                                <input type="text" placeholder="lastname" name="lastname" id="lastname">
+                                <input type="text" placeholder="firstname" name="firstname" id="firstname">
+                                <input type="text" placeholder="mail" name="mail" id="mail">
+                                <input type="password" placeholder="password" name="password" id="password">
+                                <input type="password" placeholder="Confirm Password" name="passwordConfirm" id="passwordConfirm">
+                                <input type="submit" value="Register" id="register" name="register">
+                            </form>
+                        </div> #}
 
 
+                <div class="container">
+                    <form action="" method="POST" class="big-form">
+                        <div class="row100">
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="text" name="firstname" required>
+                                    <span class="text"> Nom</span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="text" name="lastname" required="required">
+                                    <span class="text"> Prénom</span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="row100">
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="text" name="mail" required>
+                                    <span class="text"> Adresse e-mail</span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input type="password" name="password" id='my-input' required>
+                                    <span  class="text"> Mot de passe </span>  <button id="btn" class="btn1 btn">Afficher</button>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="inputBox">
+                                    <input  type="password" name="passwordConfirm" required>
+                                    <span  class="text">Confirmation du mot de passe</span>  
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row100">
+                            <div class="col"> 
+                                <input class="sub" type="submit" name="register" value="S'inscrire">
+                            </div>
+                        </div>   
+                  </form>       
+             </div>
+           
+    </div>
 
+    
+    
 {% endblock %}

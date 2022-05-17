@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 11vh;
+    border: 2px solid red;
+    display: flex;
+    
+}

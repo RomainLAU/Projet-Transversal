@@ -6,60 +6,199 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
-    <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {% block stylesheets %}{% endblock %}
+<<<<<<< HEAD
+    {% block script %}{% endblock %}
+
+=======
+    {% block scripts %}{% endblock %}
+>>>>>>> e7b3eeefc18058d8e12274e786851dca1fe3488c
 </head>
 <body id="body">
 
-<header>
-    {% block header %}
+    <header>
+        {% block header %}
 
-        {% if session %}
+                <a href="/" id="logo-home"><img src="/assets/images/logo-blanc.png" alt="logo-bee-brave"></a>
 
-            <a href="/">Accueil</a>
-            <a href="/profile">Profile</a>
-            <a href="/deconnection">Disconnect</a>
+                <!--  nav page deco
+                
+                
+                
+                <nav class="nav-co">
+        
+                    <li><a href="#">Trajets</a></li>
+                    <li><a href="#">Associations</a></li>
+                    <li><a href="#">Nos valeurs</a></li>
+                    <li><a href="#">Contact</a></li>
+        
+                </nav>
+                
+                
+                
+                -->
 
-            {# {% if session.user.role == 'admin' %}
 
-                <a href="/">Accueil</a>
-                <a href="/profile">Profile</a>
-                <a href="/deconnection">Disconnect</a>
-
-            {% elseif session.user.role == 'host' %}
-
-                <a href="/">Accueil</a>
-                <a href="/profile">Profile</a>
-                <a href="/deconnection">Disconnect</a>
-
-            {% elseif session.user.role == 'user' %}
-
-                    <a href="/">Accueil</a>
-                    <a href="/profile">Profile</a>
-                    <a href="/deconnection">Disconnect</a>
-
-            {% endif %} #}
-
-        {% else %}
-
-            <a href="/">Accueil</a>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+                <nav class="nav-deco">
+        
+                    <li class="valeurs"><a href="#">Nos valeurs</a></li>
+                    <li class="contact"><a href="#">Contact</a></li>
+        
+                </nav>
     
-        {% endif %}
 
-    {% endblock %}
-</header>
+                <div class="cote">
+
+                    <a href="/login">S'identifier</a>
+
+                    <div class="dl">
+                        <a href="#">Télécharger l'application</a>
+                    </div>
+
+                </div>
+    
+        {% endblock %}
+    </header>
     
 
 {% block content %}
 {% endblock %}
 
 {% block footer %}
-
     <footer>
-        BeeBrave &copy; Copyright
+        
+        <img src="/assets/images/logo-blanc.png">
+
+        <p id="big-sentence">AVEC L'APPLICATION MOBILE BEEBRAVE, AMELIOREZ VOTRE EXPERIENCE DE VISITE</p>
+
+
+        <div class="stores-rs">
+
+            <div class="stores">
+
+                <div class="playstore">
+
+                    <img src="/assets/images/playstore.png" alt="logo-playstore">
+    
+                </div>
+    
+    
+                <div class="applestore">
+    
+                    <img src="/assets/images/applestore.png" alt="logo-applestore">
+    
+                </div>
+
+
+            </div>
+
+
+            <div class="rs">
+
+                <div class="facebook-blanc">
+
+                    <img src="/assets/images/facebook.png" alt="logo-facebook-blanc">
+
+                </div>
+
+
+                <div class="insta-blanc">
+
+                    <img src="/assets/images/instagram.png" alt="logo-instagram-blanc">
+
+                </div>
+
+
+            </div>
+
+            
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+                <div class="links-b1">
+
+                    <p>CGUS</p>
+
+                    <p>Vos lieux favoris</p>
+
+                </div>
+
+
+                <div class="links-b2">
+
+                    <p>Contact</p>
+
+                    <p>Notifications</p>
+                    
+                </div>
+
+
+                <div class="links-b3">
+
+                    <p>Confidentialité</p>
+
+                    <p>Règlement intérieur</p>
+                    
+                </div>
+            
+
+        </div>
+
+
+
+        <div class="footer-contact">
+
+
+            <div class="contact-tel">
+
+                <div class="icone-tel">
+
+                    <img src="/assets/images/icone-tel.png" alt="icone-blanche-telephone">                    
+
+                </div>
+
+                <p>06 94 18 19 51</p>
+
+
+            </div>
+
+
+            <div class="contact-mail">
+
+                <div class="icone-mail">
+
+                    <img src="/assets/images/icone-mail.png" alt="icone-blanche-mail"> 
+
+                </div>
+
+
+                <p>contact@breebrave.com</p>
+
+                
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="trait-blanc">
+
+        </div>
+
+        <p class="copyright">©️ 2022 All rights reserved</p>
+
     </footer>
 {% endblock %}
 </body>
