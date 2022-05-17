@@ -1,3 +1,8 @@
+.swal-border {
+  border: solid 1px lightgrey;
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
 #body {
   font-family: sans-serif;
   height: 100vh;
@@ -297,12 +302,15 @@
   padding: 2rem;
   font-size: 1.5em;
 }
-#body #profile {
-  padding: 2rem;
-  background-color: rgb(210, 210, 210);
+#body #account-body {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10vh;
 }
-#body #profile #becomeHost {
-  padding: 2em 0;
+#body #account-body #left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #body .big-form {
   padding: 2rem;
@@ -598,7 +606,7 @@
   border: none;
   margin-left: 0.2em;
   font-size: 1.3em;
-  color: rgb(70, 70, 70);
+  color: #394032;
 }
 #body #journeys-body #journeys-right-part #globalSearch #globalSearchInput:focus {
   outline: none;

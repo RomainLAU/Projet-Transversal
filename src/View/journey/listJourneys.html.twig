@@ -65,7 +65,7 @@
                 <h3>Filtre</h3>
             </div>
             <div id="filters">
-                <form action="/journey/search/" method="post" id="filter-form">
+                <form action="/journey/search" method="post" id="filter-form">
                     <div id="place">
                         <h4>Lieu précis</h4>
                         <label for="around">Autour de</label>
@@ -181,8 +181,9 @@
                 html: '<a href="">Voir mes trajets</a>',
                 timer: 1000,
                 showConfirmButton: false,
-                background: '#FDFFF8',
+                background: '#F8FFE6',
                 backdrop: 'none',
+                customClass: 'swal-border',
             })
         </script>
     {% endif %}

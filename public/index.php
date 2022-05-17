@@ -35,7 +35,7 @@ $router->get('/journey/favorite/(\d+)', 'Mvc\Controller\JourneyController@addJou
 
 $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
-$router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
+$router->get('/account', 'Mvc\Controller\AccountController@displayAccount');
 
 $router->get('/register', 'Mvc\Controller\UserController@register');
 $router->post('/register', 'Mvc\Controller\UserController@register');

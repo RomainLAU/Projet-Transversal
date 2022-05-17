@@ -1,8 +1,14 @@
 $main-green : #8DAB7F;
 $light-green : #CFEE9E;
 $light-background: #FDFFF8;
+$lighter-background: #F8FFE6;
 $secondary-light-green: #C9D5B5;
 $secondary-dark-green: #394032;
+
+.swal-border{
+    border: solid 1px lightgrey;
+    box-shadow: 3px 3px 5px lightgrey;
+}
 
 #body{
     font-family: sans-serif;
@@ -384,12 +390,17 @@ $secondary-dark-green: #394032;
         font-size: 1.5em;
     }
 
-    #profile{
-        padding: 2rem;
-        background-color: rgb(210, 210, 210);
+    // Page Mon Compte
 
-        #becomeHost{
-            padding: 2em 0;
+    #account-body{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10vh;
+
+        #left-column{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
@@ -407,6 +418,8 @@ $secondary-dark-green: #394032;
             height: 2em;
         }
     }
+
+    // Page Trajets
 
     #dark-background{
         display: none;
@@ -742,7 +755,7 @@ $secondary-dark-green: #394032;
                     border: none;
                     margin-left: 0.2em;
                     font-size: 1.3em;
-                    color:rgb(70, 70, 70);
+                    color:#394032;
 
                     &:focus{
                         outline: none;

@@ -1,0 +1,156 @@
+{% extends "/base.html.twig" %}
+
+{% block title %}Mon Compte{% endblock %}
+
+
+{% block content %}
+
+    <div id="account-body">
+        <div id="left-column">
+            <div id="picture-account">
+                <img src="/assets/images/user-picture.png" alt="Picture of the user">
+                <p id="user-name">{{ user.firstname }}</p>
+            </div>
+            <ul id="account-pages">
+                <li>
+                    <img src="/assets/images/mespas.png" alt="Icon of the page Mes Pas">
+                    <h2>Mes pas</h2>
+                </li>
+                <li>
+                    <img src="/assets/images/mestrajets.png" alt="Icon of the page Mes Trajets">
+                    <h2>Mes trajets</h2>
+                </li>
+                <li>
+                    <img src="/assets/images/mesabonnes.png" alt="Icon of the page Mes Abonnés">
+                    <h2></h2>
+                </li>
+                <li>
+                    <img src="/assets/images/" alt="Icon of the page Confidentialité">
+                    <h2></h2>
+                </li>
+                <li>
+                    <img src="/assets/images/parametres.png" alt="Icon of the page Paramètres">
+                    <h2></h2>
+                </li>
+            </ul>
+        </div>
+        <div id="middle-column">
+            <div>
+                <h2>Activité</h2>
+                <img src="/assets/images/activity.png" alt="Activities">
+            </div>
+            <div id="messages">
+                <h2>Messages</h2>
+                <ul>
+                    <li>
+                        <img src="/assets/images/" alt="Conversation profile picture">
+                        <div>
+                            <p id="conversation-title">Course dans Paris</p>
+                            <conversation-details>
+                                2 nouveaux messages &#9679; 2min
+                            </conversation-details>
+                        </div>
+                        <div id="conversation-notif">🟢</div>
+                    </li>
+                    <li>
+                        <img src="/assets/images/" alt="Conversation profile picture">
+                        <div>
+                            <p id="conversation-title">Mathilde</p>
+                            <conversation-details>
+                                Hey j'arrive dans 5... &#9679; 3min
+                            </conversation-details>
+                        </div>
+                        <div id="conversation-notif">🟢</div>
+                    </li>
+                    <li>
+                        <img src="/assets/images/" alt="Conversation profile picture">
+                        <div>
+                            <p id="conversation-title">Marc</p>
+                            <conversation-details>
+                                Oublie pas ton velo... &#9679; 10min
+                            </conversation-details>
+                        </div>
+                        <div id="conversation-notif">🟢</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right-column">
+            <div id="top-right-column">
+                <div id="week-activity">
+                    <h2>Activité de la semaine</h2>
+                    <img src="/assets/images/week-activity.png" alt="Activity of the week">
+                </div>
+                <div id="map">
+                    <script>
+                        let map = L.map('map').setView([mapCoordinates[1], mapCoordinates[0]], 12)
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map)
+
+                        var Icon = new L.Icon({
+                            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+                            iconSize: [25, 41],
+                            iconAnchor: [12, 41],
+                            popupAnchor: [1, -34],
+                        });
+                        
+                        L.marker([mapCoordinates[1], mapCoordinates[0]], {icon: Icon}).addTo(map);
+                    </script>
+                    <div id="see-map">Voir la carte</div>
+                </div>
+            </div>
+            <div id="bottom-right-column">
+                <h2>Mes favoris</h2>
+                <div id="favorites">
+                    <input type="radio" name="favorites" id="trajets">
+                    <input type="radio" name="favorites" id="association">
+                    <input type="radio" name="favorites" id="historique">
+                    <ul>
+                        <li><label for="trajets">Trajets</label></li>
+                        <li><label for="association">Association</label></li>
+                        <li><label for="historique">Historique</label></li>
+                    </ul>
+                    <div id="trajets-content">
+                        {% for journey in journeys|slice(0, 4) %}
+                            <div class="journey">
+                                <img src="/assets/images/map-picture.png" alt="map" class="map">
+                                <div class="right-part">
+                                    <div class="top-right-part">
+                                        <div class="journey-details">
+                                            <p>Point de départ:</p>
+                                            <p class="data">
+                                                {{ journey.place }}
+                                            </p>
+                                            <p>Date et heure de départ:</p>
+                                            <p class="data">
+                                                {{ journey.date }}
+                                            </p>
+                                            <p>Description:</p>
+                                            <p class="data">
+                                                {{ journey.description|slice(0, 150) }}
+                                            </p>
+                                        </div>
+                                        <div class="side-buttons">
+                                            <a href="/journey/favorite/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+
+                                            <img src="/assets/images/information.png" alt="information icon">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="association-content">
+                        <p>Associations</p>
+                    </div>
+                    <div id="historique-content">
+                        <p>Historique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
