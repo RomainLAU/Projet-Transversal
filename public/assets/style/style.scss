@@ -1,8 +1,14 @@
 $main-green : #8DAB7F;
 $light-green : #CFEE9E;
 $light-background: #FDFFF8;
+$lighter-background: #F8FFE6;
 $secondary-light-green: #C9D5B5;
 $secondary-dark-green: #394032;
+
+.swal-border{
+    border: solid 1px lightgrey;
+    box-shadow: 3px 3px 5px lightgrey;
+}
 
 #body{
     font-family: sans-serif;
@@ -138,6 +144,179 @@ $secondary-dark-green: #394032;
                 }
         }
     }
+    // Début page login
+
+    .bloc-login {
+        margin-top: 20vh;
+        display: flex;
+        justify-content:center;
+        gap: 300px;
+        
+    }
+    .register-photos-login{
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+    }
+    .register-logo{
+        width: 360px;
+        height: 180px;
+    }
+    .register-tel{
+        width: 160px;
+        height: 320px;
+        padding-left: 180px;
+        padding-bottom: 50px;
+    }
+   .store{
+       display: flex;
+       gap: 20px;
+       padding-left: 100px;
+   }
+   .storey{
+       width: 150px;
+   }
+
+   
+.containerA{
+    margin-top:3vh;
+    width: 500px;
+    height: 400px;
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     background-color: rgb(255, 255, 255);
+     border-radius: 3%;
+     border: 1px solid black;
+     box-shadow: 2px 2px 10px;
+ }
+
+ .containerA .row100{
+    width: 100%;
+    position: relative;
+    
+   
+}
+.containerA .text{
+    color: grey;
+}
+.containerA .row100 .col{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: .5s;
+}
+.containerA .row100 .inputBox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+.containerA .row100 .inputBox input , .containerA .row100 .inputBox .textarea textarea{
+    position: absolute;
+    width: 93%;
+    height: 100%;
+    box-shadow: none;
+    background: transparent;
+    outline:none ;
+    border-radius: 9px;
+    padding: 0 7px;
+    border: 1px solid #E3E4E5;}
+
+.containerA .row100 .inputBox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 18px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+}
+.containerA .row100 .inputBox input:focus +.text ,
+.containerA .row100 .inputBox input:valid + .text {
+    top: -31px;
+    left: -10px;
+    color: #CFEE9E;
+}
+.containerA .row100 .inputBox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    transition: .5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.containerA .row100 .inputBox input:focus ~.line ,
+.containerA .row100 .inputBox input:valid ~ .line{
+   height: 100%;
+}
+.containerA .row100 .inputBox .textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 10px;
+}
+.containerA .row100 .inputBox .textarea textarea{
+    resize: none;
+    height: 100%;
+   
+}
+.containerA .row100 .inputBox textarea:focus +.text ,
+.containerA .row100 .inputBox textarea:valid + .text {
+    top: -38px;
+    left: -10px;
+}
+.containerA .row100 .inputBox textarea:focus ~.line ,
+.containerA .row100 .inputBox textarea:valid ~ .line{
+   height: 100%;
+}
+.subConn{ 
+    
+    width: 99%;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color:$main-green;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    word-spacing: 4px;
+   
+}
+.subConn:hover{
+    background-color: $light-green;
+    color: black;
+}
+.mdpoub {
+margin-top: 30px;
+color: blue;
+text-decoration: none;
+}
+ a.inscrivez  {
+    width: 50%;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color:$secondary-dark-green;
+    border: none;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 60px 0 0 120px ;
+    padding: 15px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+a.inscrivez:hover{
+    background-color:$main-green;
+}
+    // Fin page login
 
     // Fin header
 
@@ -440,7 +619,7 @@ $secondary-dark-green: #394032;
      background-color: rgb(255, 255, 255);
      border-radius: 3%;
      border: 1px solid black;
-     box-shadow: 2px 2px 15px;
+     box-shadow: 2px 2px 10px;
  }
 
  .container .row100{
@@ -473,7 +652,7 @@ $secondary-dark-green: #394032;
      outline:none ;
      border-radius: 9px;
      padding: 0 7px;
-     border: 1px solid grey;
+     border: 1px solid #E3E4E5;
  }
  .container .row100 .inputBox .text{
      position: absolute;
@@ -488,7 +667,7 @@ $secondary-dark-green: #394032;
  }
  .container .row100 .inputBox input:focus +.text ,
  .container .row100 .inputBox input:valid + .text {
-     top: -35px;
+     top: -31px;
      left: -10px;
      color: #CFEE9E;
  }
@@ -536,11 +715,11 @@ $secondary-dark-green: #394032;
      cursor: pointer;
      height: 4rem;
      color: rgb(0, 0, 0);
-     background-color: rgb(209, 232, 195);
+     background-color:$light-green;
      border: none;
-     border-radius: 9px;
+     border-radius: 12px;
      font-size: 22px;
-     font-weight: 500;
+     font-weight:bold;
  }
 
 
@@ -551,9 +730,9 @@ $secondary-dark-green: #394032;
     top: 1px;
     width: 80px;
     height: 100%;
-    background-color: rgb(230, 227, 227);
+    background-color:#F3F3F3;
     border: transparent;
-    border-left: 1px solid grey;
+    border-left: 1px solid #E3E4E5;
     border-bottom-right-radius: 9px;
     border-top-right-radius: 9px;
 }
@@ -811,12 +990,314 @@ $secondary-dark-green: #394032;
         font-size: 1.5em;
     }
 
-    #profile{
-        padding: 2rem;
-        background-color: rgb(210, 210, 210);
+    // Page Mon Compte
 
-        #becomeHost{
-            padding: 2em 0;
+    #account-body{
+        display: flex;
+        justify-content: center;
+        margin-top: 10vh;
+        padding: 1em 10em;
+        column-gap: 5em;
+
+        #left-column{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #e1eecd;
+            border-radius: 15px;
+            padding: 2em;
+
+            #picture-account{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-bottom: solid 1px white;
+                row-gap: 2em;
+                padding-bottom: 2em;
+
+                #user-name{
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
+            }
+
+            #account-pages{
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                padding: 1em 0;
+                row-gap: 1em;
+
+                li{
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        display: flex;
+                        align-items: center;
+
+                        img{
+                            width: 60px;
+                            object-fit: contain;
+                        }
+    
+                        h2{
+                            font-weight: 500;
+                            padding: 1em;
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+
+        #middle-column{
+            display:flex;
+            flex-direction: column;
+            row-gap: 2em;
+
+            div:first-child{
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    font-size: 1.2em;
+                }
+            }
+
+            #messages{
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2.5em;
+
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    font-size: 1.2em;
+                }
+
+                ul{
+                    li{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1em;
+                        justify-content: space-between;
+                        padding: 1em 0;
+                        border-radius: 15px;
+                        cursor: pointer;
+
+                        .conv-infos{
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 1em;
+                        }
+
+                        .conversation-title{
+                            font-size: 0.8em;
+                            font-weight: bold;
+                        }
+
+                        .conversation-details{
+                            font-size: 0.7em;
+                        }
+
+                        .conversation-notif{
+                            font-size: 0.5em;
+                            margin-left: 5em;
+                        }
+
+                        &:hover{
+                            background-color: rgba(0, 0, 0, 0.11);
+                        }
+                    }
+                }
+            }
+        }
+
+        #right-column{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2em;
+
+            #top-right-column{
+                display: flex;
+                column-gap: 2em;
+
+                #week-activity{
+                    background-color: white;
+                    border: solid 1px lightgray;
+                    border-radius: 15px;
+                    padding: 1em;
+                    display: flex;
+                    flex-direction: column;
+    
+                    h2{
+                        text-align: left;
+                        padding: 0;
+                        padding-bottom: 1em;
+                        font-size: 1.2em;
+                    }
+                }
+
+                #map{
+                    border-radius: 15px;
+                    overflow: hidden;
+                    position: relative;
+                    height: 18.4em;
+
+
+                    img{
+                        width: 32em;
+                        object-fit: cover;
+                    }
+
+                    #see-map{
+                        position: absolute;
+                        white-space: nowrap;
+                        bottom: 0;
+                        left: 50%;
+                        padding: 0.8em 4em;
+                        z-index: 2;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        border-radius: 10px;
+                        box-shadow: 2px 2px 5px grey;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #bottom-right-column{
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                border: solid 1px lightgray;
+                border-radius: 15px;
+                padding: 1em;
+                
+                h2{
+                    text-align: left;
+                    padding: 0;
+                    padding-bottom: 1em;
+                    font-size: 1.2em;
+                }
+
+                #favorites{
+                    input {
+                        display: none;
+                    }
+
+                    #trajets:checked ~ ul > li > label[for="trajets"],
+                    #association:checked ~ ul > li > label[for="association"],
+                    #historique:checked ~ ul > li > label[for="historique"] {
+                        color: $main-green;
+                        border-bottom: solid 2px $main-green;
+                    }
+
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-bottom: 2em;
+            
+                        li{
+                            text-align: center;
+            
+                            label{
+                                text-transform: capitalize;
+                                font-weight: bold;
+                                display: block;
+                                cursor: pointer;
+                                padding: 0.5em 1em;
+                                border-bottom: solid 2px grey;
+            
+                                &:hover{
+                                    color: $main-green;
+                                    border-bottom: solid 2px $main-green;
+                                }
+                            }
+                        }
+                    }
+
+                    div{
+                        display: none;
+                    }
+
+                    #trajets:checked ~ #trajets-content,
+                    #association:checked ~ #association-content,
+                    #historique:checked ~ #historique-content {
+                        display: flex;
+                    }
+
+                    #trajets-content{
+                        padding: 0 1.5em;
+                        column-gap: 1em;
+                        flex-wrap: wrap;
+                        row-gap: 1em;
+
+                        .journey{
+                            display: flex;
+                            background-color: white;
+                            border: solid 1px lightgrey;
+                            border-radius: 10px;
+                            width: 44%;
+                            overflow: hidden;
+                            flex-grow: 1;
+
+                            .map{
+                                width: 30%;
+                                object-fit: cover;
+                            }
+
+                            .right-part{
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: 1em;
+                                flex-grow: 1;
+                                padding: 1em 0.5em;
+
+                                .top-right-part{
+                                    display: flex;
+
+                                    .journey-details{
+                                        display: flex;
+                                        flex-direction: column;
+                                        row-gap: 1em;
+                                        flex-grow: 1;
+                                        flex-wrap: wrap;
+                                        word-break: break-word;
+
+                                        :not(.data){
+                                            font-weight: bold;
+                                        }
+                                    }
+                        
+                                    .side-buttons{
+                                        display: flex;
+                                        flex-direction: column;
+                                        row-gap: 1em;
+                                        padding-left: 1em;
+                        
+                                        img{
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -834,6 +1315,8 @@ $secondary-dark-green: #394032;
             height: 3em;
         }
     }
+
+    // Page Trajets
 
     #dark-background{
         display: none;
@@ -1169,7 +1652,7 @@ $secondary-dark-green: #394032;
                     border: none;
                     margin-left: 0.2em;
                     font-size: 1.3em;
-                    color:rgb(70, 70, 70);
+                    color:#394032;
 
                     &:focus{
                         outline: none;

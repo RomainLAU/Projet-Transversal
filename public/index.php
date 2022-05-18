@@ -19,7 +19,7 @@ $router->before('GET', '/login', function() {
     }
 });
 
-$router->before('GET', '/profile', function() {
+$router->before('GET', '/account', function() {
     if (!isset($_SESSION['user'])) {
         header('location: /login');
         exit();
@@ -33,9 +33,11 @@ $router->post('/journey', 'Mvc\Controller\JourneyController@listJourneys');
 
 $router->get('/journey/favorite/(\d+)', 'Mvc\Controller\JourneyController@addJourneyToFavorites');
 
+$router->get('/journey/unfav/(\d+)', 'Mvc\Controller\JourneyController@deleteFromFavorites');
+
 $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
-$router->get('/profile', 'Mvc\Controller\ProfileController@displayProfile');
+$router->get('/account', 'Mvc\Controller\AccountController@displayAccount');
 
 $router->get('/register', 'Mvc\Controller\UserController@register');
 $router->post('/register', 'Mvc\Controller\UserController@register');

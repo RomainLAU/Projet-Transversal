@@ -37,6 +37,28 @@ class JourneyModel extends Model
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getFavoriteJourneysOfUser() {
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` INNER JOIN user ON user_id = user.id WHERE user_id = user.id = :session_id');
+        $statement->execute([
+            'session_id' => $_SESSION['user']['id'],
+        ]);
+
+        $favoriteJourneyIds = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $favoriteJourneys = [];
+
+        foreach($favoriteJourneyIds as $id) {
+            $statement2 = $this->pdo->prepare('SELECT * FROM `journey` WHERE id = :id');
+            $statement2->execute([
+                'id' => $id['journey_id'],
+            ]);
+    
+            $favoriteJourneys[] = $statement2->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $favoriteJourneys;
+    }
+
     public function findFavoriteJourney($journeyId) {
         $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` WHERE `user_id` = :user_id AND `journey_id` = :journey_id');
         $statement->execute([
@@ -47,14 +69,12 @@ class JourneyModel extends Model
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function deleteFavoriteJourney($favoriteId) {
+    public function deleteFavoriteJourney($id) {
 
-        $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `id` = :favoriteId');
+        $statement = $this->pdo->prepare('DELETE FROM `user_has_favorite_journeys` WHERE `id` = :id');
         $statement->execute([
-            'favoriteId' => $favoriteId,
-        ]);        
-
-        return $statement->fetch(PDO::FETCH_ASSOC);
+            'id' => $id,
+        ]);
     }
 
     public function addFavoriteJourney($journeyId) {
@@ -74,12 +94,35 @@ class JourneyModel extends Model
         foreach($valideFilters as $filters => $filter) {
             if ($filters == 'globalSearch') {
                 $queriesToAdd[] = '`journey_type`.type LIKE :filter OR `place` LIKE :filter OR `date` LIKE :filter OR `tags` LIKE :filter OR `description` LIKE :filter;';
+
+                $queriesToAddLen = count($queriesToAdd) - 1;
+                $counter = 0;
+                foreach($queriesToAdd as $queryToAdd) {
+                    if ($queriesToAddLen == $counter) {
+                        $query .= $queryToAdd;
+                    } else if (substr($queryToAdd, -1) == '"') {
+                        $query .= $queryToAdd . ' AND';
+                        $counter++;
+                    } else if (substr($queryToAdd, -1) == '%') {
+                        $query .= $queryToAdd;
+                        $counter++;
+                    }
+                }
+        
+                $statement = $this->pdo->prepare($query);
+        
+                $statement->execute([
+                    'filter' => "%$filter%",
+                ]);
+
+                return $statement->fetchAll(PDO::FETCH_ASSOC);
+
             } else if ($filters == 'around') {
-                $queriesToAdd[] = ' `place` LIKE :filter';
+                $queriesToAdd[] = ' `place` LIKE "%'. $filter .'%"';
             } else if ($filters == 'date') {
-                $queriesToAdd[] = ' `date` LIKE :filter';
+                $queriesToAdd[] = ' `date` LIKE "%'. $filter .'%"';
             } else if ($filters == 'start') {
-                $queriesToAdd[] = ' `date` LIKE :filter';
+                $queriesToAdd[] = ' `date` LIKE "%' . $filter .'%"';
             } else if ($filters == 'activity') {
 
                 $queriesToAdd[] = ' `journey_type`.type LIKE "%';
@@ -126,9 +169,7 @@ class JourneyModel extends Model
 
         $statement = $this->pdo->prepare($query);
 
-        $statement->execute([
-            'filter' => "%$filter%",
-        ]);
+        $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }

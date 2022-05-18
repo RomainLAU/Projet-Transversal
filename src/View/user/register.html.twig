@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block title %}User Register{% endblock %}
-{% block script %}<script src='/assets/scripts/register.js' ></script>{% endblock %}
+{% block scripts %}<script src='/assets/scripts/register.js' ></script>{% endblock %}
 
 
 {% block content %}
@@ -11,31 +11,20 @@
                             <img class="register-logo" src="assets/images/logo-noir.png" alt="BeeBrave">
                             <img class="register-tel" src="assets/images/telephone.png" alt="telephone">
                                 <div class="store">
-                                    <img class="storey" src="assets/images/playstore.png" alt="BeeBrave">
-                                    <img class="storey" src="assets/images/applestore.png" alt="telephone">
+                                   <a href="https://play.google.com/store/apps" target="_blank"><img class="storey" src="assets/images/playstore.png" alt="playstore"></a> 
+                                   <a href="https://www.apple.com/fr/store" target="_blank"> <img  class="storey" src="assets/images/applestore.png" alt="applestore"></a>  
                                 </div>
 
                         </div>
                         
-                        
-                    {# <div>
-                            <form action="" method="POST" class="big-form">
-                                <input type="text" placeholder="lastname" name="lastname" id="lastname">
-                                <input type="text" placeholder="firstname" name="firstname" id="firstname">
-                                <input type="text" placeholder="mail" name="mail" id="mail">
-                                <input type="password" placeholder="password" name="password" id="password">
-                                <input type="password" placeholder="Confirm Password" name="passwordConfirm" id="passwordConfirm">
-                                <input type="submit" value="Register" id="register" name="register">
-                            </form>
-                        </div> #}
-
-
+                
                 <div class="container">
                     <form action="" method="POST" class="big-form">
+                        
                         <div class="row100">
                             <div class="col">
                                 <div class="inputBox">
-                                    <input type="text" name="firstname" required>
+                                   <input type="text" name="firstname" required>
                                     <span class="text"> Nom</span>
                                     <span class="line"></span>
                                 </div>
@@ -47,8 +36,6 @@
                                     <span class="line"></span>
                                 </div>
                             </div>
-                        </div>  
-                        <div class="row100">
                             <div class="col">
                                 <div class="inputBox">
                                     <input type="text" name="mail" required>
