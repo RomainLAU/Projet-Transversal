@@ -107,6 +107,188 @@
   color: black;
   text-decoration: none;
 }
+#body .bloc-principal {
+  margin-top: 10vh;
+  border: 1px solid red;
+  height: 75vh;
+}
+#body .bloc-principal .telephone-droit {
+  height: 85%;
+  width: 22%;
+  border: 1px solid green;
+  margin-top: 7%;
+  margin-left: 3%;
+}
+#body .bloc-principal .telephone-droit img {
+  height: 90%;
+  width: 90%;
+}
+#body .bloc-prez {
+  height: 50vh;
+  background-color: #C9D5B5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#body .bloc-prez .prez-bloc {
+  height: 24%;
+  width: 75%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+#body .bloc-prez .prez-bloc .prez-bloc1 {
+  height: 100%;
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-image: url("/assets/images/people.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(205px);
+}
+#body .bloc-prez .prez-bloc .prez-bloc1:hover p {
+  content: "cc";
+  color: black;
+}
+#body .bloc-prez .prez-bloc .prez-bloc2 {
+  height: 100%;
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-image: url("/assets/images/street.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#body .bloc-prez .prez-bloc .prez-bloc3 {
+  height: 100%;
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-image: url("/assets/images/louvre.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#body .bloc-prez .prez-txt {
+  height: 27%;
+  width: 80%;
+  margin-top: 5%;
+}
+#body .bloc-prez .prez-txt .first {
+  text-align: center;
+  font-size: 28px;
+}
+#body .bloc-prez .prez-txt p {
+  color: white;
+  font-size: 28px;
+}
+#body .bloc-telephones {
+  height: 110vh;
+}
+#body .bloc-telephones .bloc1-telephone {
+  display: flex;
+}
+#body .bloc-telephones .bloc1-telephone .rond {
+  height: 45vh;
+  width: 25vw;
+  margin-left: 22%;
+  margin-top: 3%;
+  background-color: #CFEE9E;
+  border-radius: 700px;
+}
+#body .bloc-telephones .bloc1-telephone .rond .telephone1 {
+  height: 71vh;
+  width: 33vw;
+  margin-top: -47%;
+  margin-left: -20%;
+}
+#body .bloc-telephones .bloc1-telephone .rond .telephone1 img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#body .bloc-telephones .bloc1-telephone .bloc1-txt {
+  height: 12vh;
+  width: 25vw;
+  margin-left: 5%;
+  margin-top: 7%;
+}
+#body .bloc-telephones .bloc1-telephone .bloc1-txt .titre-rencontres {
+  width: max-content;
+  font-size: 25px;
+  font-weight: bold;
+}
+#body .bloc-telephones .bloc1-telephone .bloc1-txt p {
+  font-size: 17px;
+}
+#body .bloc-telephones .bloc2-telephone {
+  display: flex;
+}
+#body .bloc-telephones .bloc2-telephone .carre {
+  height: 45vh;
+  width: 25vw;
+  margin-left: 8%;
+  margin-top: 3%;
+  background-color: #CFEE9E;
+  border-radius: 700px;
+}
+#body .bloc-telephones .bloc2-telephone .carre .telephone2 {
+  height: 71vh;
+  width: 33vw;
+  margin-top: -47%;
+  margin-left: -8%;
+}
+#body .bloc-telephones .bloc2-telephone .carre .telephone2 img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#body .bloc-telephones .bloc2-telephone .bloc2-txt {
+  height: 12vh;
+  width: 25vw;
+  margin-left: 27%;
+  margin-top: 7%;
+}
+#body .bloc-telephones .bloc2-telephone .bloc2-txt .amusez-vous {
+  width: max-content;
+  font-size: 25px;
+  font-weight: bold;
+}
+#body .bloc-telephones .bloc2-telephone .bloc2-txt p {
+  font-size: 17px;
+}
+#body .bloc-partenaires {
+  height: 90vh;
+  border: 1px solid red;
+  background-color: #C9D5B5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*.bloc-central-txt {
+
+      height: 45vh;
+      border: 1px solid red;
+      margin-top: 150px;
+  }*/
+}
+#body .bloc-partenaires .rond-partenaires {
+  height: 27vh;
+  width: 14vw;
+  border: 1px solid green;
+  margin-top: -7%;
+  border-radius: 500px;
+  background-color: #8DAB7F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#body .bloc-partenaires .rond-partenaires p {
+  font-size: 20px;
+  color: white;
+}
 #body .bloc-register {
   margin-top: 15vh;
   display: flex;
