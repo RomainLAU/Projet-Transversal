@@ -176,144 +176,144 @@ $secondary-dark-green: #394032;
    }
 
    
-.containerA{
-    margin-top:3vh;
-    width: 500px;
-    height: 400px;
-     display: flex;
-     flex-direction: column;
-     gap: 25px;
-     background-color: rgb(255, 255, 255);
-     border-radius: 3%;
-     border: 1px solid black;
-     box-shadow: 2px 2px 10px;
- }
+    .containerA{
+        margin-top:3vh;
+        width: 500px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 3%;
+        border: 1px solid black;
+        box-shadow: 2px 2px 10px;
+    }
 
- .containerA .row100{
-    width: 100%;
-    position: relative;
+    .containerA .row100{
+        width: 100%;
+        position: relative;
+        
     
-   
-}
-.containerA .text{
-    color: grey;
-}
-.containerA .row100 .col{
-    position: relative;
-    width: 100%;
-    padding: 0 10px;
-    margin: 30px 0 10px;
-    transition: .5s;
-}
-.containerA .row100 .inputBox{
-    position: relative;
-    width: 100%;
-    height: 40px;
-}
-.containerA .row100 .inputBox input , .containerA .row100 .inputBox .textarea textarea{
-    position: absolute;
-    width: 93%;
-    height: 100%;
-    box-shadow: none;
-    background: transparent;
-    outline:none ;
-    border-radius: 9px;
-    padding: 0 7px;
-    border: 1px solid #E3E4E5;}
+    }
+    .containerA .text{
+        color: grey;
+    }
+    .containerA .row100 .col{
+        position: relative;
+        width: 100%;
+        padding: 0 10px;
+        margin: 30px 0 10px;
+        transition: .5s;
+    }
+    .containerA .row100 .inputBox{
+        position: relative;
+        width: 100%;
+        height: 40px;
+    }
+    .containerA .row100 .inputBox input , .containerA .row100 .inputBox .textarea textarea{
+        position: absolute;
+        width: 93%;
+        height: 100%;
+        box-shadow: none;
+        background: transparent;
+        outline:none ;
+        border-radius: 9px;
+        padding: 0 7px;
+        border: 1px solid #E3E4E5;}
 
-.containerA .row100 .inputBox .text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 40px;
-    padding-left: 10px;
-    font-size: 18px;
-    display: block;
-    transition: .5s;
-    pointer-events: none;
-}
-.containerA .row100 .inputBox input:focus +.text ,
-.containerA .row100 .inputBox input:valid + .text {
-    top: -31px;
-    left: -10px;
-    color: #CFEE9E;
-}
-.containerA .row100 .inputBox .line{
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    transition: .5s;
-    border-radius: 2px;
-    pointer-events: none;
-}
-.containerA .row100 .inputBox input:focus ~.line ,
-.containerA .row100 .inputBox input:valid ~ .line{
-   height: 100%;
-}
-.containerA .row100 .inputBox .textarea{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    padding: 10px 10px;
-}
-.containerA .row100 .inputBox .textarea textarea{
-    resize: none;
+    .containerA .row100 .inputBox .text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 40px;
+        padding-left: 10px;
+        font-size: 18px;
+        display: block;
+        transition: .5s;
+        pointer-events: none;
+    }
+    .containerA .row100 .inputBox input:focus +.text ,
+    .containerA .row100 .inputBox input:valid + .text {
+        top: -31px;
+        left: -10px;
+        color: #CFEE9E;
+    }
+    .containerA .row100 .inputBox .line{
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        transition: .5s;
+        border-radius: 2px;
+        pointer-events: none;
+    }
+    .containerA .row100 .inputBox input:focus ~.line ,
+    .containerA .row100 .inputBox input:valid ~ .line{
     height: 100%;
-   
-}
-.containerA .row100 .inputBox textarea:focus +.text ,
-.containerA .row100 .inputBox textarea:valid + .text {
-    top: -38px;
-    left: -10px;
-}
-.containerA .row100 .inputBox textarea:focus ~.line ,
-.containerA .row100 .inputBox textarea:valid ~ .line{
-   height: 100%;
-}
-.subConn{ 
+    }
+    .containerA .row100 .inputBox .textarea{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        padding: 10px 10px;
+    }
+    .containerA .row100 .inputBox .textarea textarea{
+        resize: none;
+        height: 100%;
     
-    width: 99%;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    background-color:$main-green;
-    border: none;
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    word-spacing: 4px;
-   
-}
-.subConn:hover{
-    background-color: $light-green;
-    color: black;
-}
-.mdpoub {
-margin-top: 30px;
-color: blue;
-text-decoration: none;
-}
- a.inscrivez  {
-    width: 50%;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    background-color:$secondary-dark-green;
-    border: none;
-    border-radius: 12px;
-    font-size: 25px;
-    font-weight: 500;
-    margin: 60px 0 0 120px ;
-    padding: 15px;
-    display: flex;
+    }
+    .containerA .row100 .inputBox textarea:focus +.text ,
+    .containerA .row100 .inputBox textarea:valid + .text {
+        top: -38px;
+        left: -10px;
+    }
+    .containerA .row100 .inputBox textarea:focus ~.line ,
+    .containerA .row100 .inputBox textarea:valid ~ .line{
+    height: 100%;
+    }
+    .subConn{ 
+        
+        width: 99%;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        background-color:$main-green;
+        border: none;
+        border-radius: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        word-spacing: 4px;
+    
+    }
+    .subConn:hover{
+        background-color: $light-green;
+        color: black;
+    }
+    .mdpoub {
+    margin-top: 30px;
+    color: blue;
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-a.inscrivez:hover{
-    background-color:$main-green;
-}
+    }
+    a.inscrivez  {
+        width: 50%;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        background-color:$secondary-dark-green;
+        border: none;
+        border-radius: 12px;
+        font-size: 25px;
+        font-weight: 500;
+        margin: 60px 0 0 120px ;
+        padding: 15px;
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    a.inscrivez:hover{
+        background-color:$main-green;
+    }
     // Fin page login
 
 
