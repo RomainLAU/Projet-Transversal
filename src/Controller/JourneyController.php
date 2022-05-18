@@ -37,6 +37,7 @@ class JourneyController extends Controller
             ];
         }
 
+
         echo $this->twig->render('/journey/listJourneys.html.twig', [
             'journeys' => $journeys,
             'favoriteJourneys' => $favoriteJourneys,
@@ -47,11 +48,11 @@ class JourneyController extends Controller
     public function addJourneyToFavorites($journeyId) {
 
         $favoriteJourney = $this->journeyModel->findFavoriteJourney($journeyId);
-        
+
         if (is_bool($favoriteJourney) && $favoriteJourney === false) {
             $this->journeyModel->addFavoriteJourney($journeyId);
         } else if (is_array($favoriteJourney) && count($favoriteJourney) > 0) {
-            $delete = $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
+            $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
         }
 
         header('location: /journey');
@@ -100,15 +101,5 @@ class JourneyController extends Controller
                 'newJourneyCreated' => $newJourneyCreated,
             ]);
         }
-    }
-
-    public function deleteFromFavorites($journeyId) {
-
-        $favoriteJourney = $this->journeyModel->findFavoriteJourney($journeyId);
-
-        $this->journeyModel->deleteFavoriteJourney($favoriteJourney['id']);
-
-        header('location: /account');
-        exit();
     }
 }
