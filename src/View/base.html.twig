@@ -10,12 +10,8 @@
     <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {% block stylesheets %}{% endblock %}
-<<<<<<< HEAD
-    {% block script %}{% endblock %}
-
-=======
     {% block scripts %}{% endblock %}
->>>>>>> e7b3eeefc18058d8e12274e786851dca1fe3488c
+
 </head>
 <body id="body">
 
@@ -23,36 +19,41 @@
         {% block header %}
 
                 <a href="/" id="logo-home"><img src="/assets/images/logo-blanc.png" alt="logo-bee-brave"></a>
+                
+                {% if session %}
+                
+                    <nav class="nav-co">
+            
+                        <li><a href="/journey">Trajets</a></li>
+                        <li><a href="/associations">Associations</a></li>
+                        <li><a href="/valeurs">Nos valeurs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/account">Mon compte</a></li>
+            
+                    </nav>
+                
+                {% else %}
 
-                <!--  nav page deco
-                
-                
-                
-                <nav class="nav-co">
-        
-                    <li><a href="#">Trajets</a></li>
-                    <li><a href="#">Associations</a></li>
-                    <li><a href="#">Nos valeurs</a></li>
-                    <li><a href="#">Contact</a></li>
-        
-                </nav>
-                
-                
-                
-                -->
+                    <nav class="nav-deco">
+            
+                        <li class="valeurs"><a href="#">Nos valeurs</a></li>
+                        <li class="contact"><a href="#">Contact</a></li>
+            
+                    </nav>
 
-
-                <nav class="nav-deco">
-        
-                    <li class="valeurs"><a href="#">Nos valeurs</a></li>
-                    <li class="contact"><a href="#">Contact</a></li>
-        
-                </nav>
+                {% endif %}
     
 
                 <div class="cote">
+                    {% if session %}
+
+                    <a href="/deconnection">Deconnexion</a>
+
+                    {% else %}
 
                     <a href="/login">S'identifier</a>
+
+                    {% endif %}
 
                     <div class="dl">
                         <a href="#">Télécharger l'application</a>
@@ -68,7 +69,7 @@
 {% endblock %}
 
 {% block footer %}
-    <footer>
+    <footer id="contact">
         
         <img src="/assets/images/logo-blanc.png">
 

@@ -1,3 +1,8 @@
+.swal-border {
+  border: solid 1px lightgrey;
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
 #body {
   font-family: sans-serif;
   height: 100vh;
@@ -604,12 +609,262 @@
   padding: 2rem;
   font-size: 1.5em;
 }
-#body #profile {
-  padding: 2rem;
-  background-color: rgb(210, 210, 210);
+#body #account-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  padding: 1em 10em;
+  column-gap: 5em;
 }
-#body #profile #becomeHost {
-  padding: 2em 0;
+#body #account-body #left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #e1eecd;
+  border-radius: 15px;
+  padding: 2em;
+}
+#body #account-body #left-column #picture-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px white;
+  row-gap: 2em;
+  padding-bottom: 2em;
+}
+#body #account-body #left-column #picture-account #user-name {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+#body #account-body #left-column #account-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1em 0;
+  row-gap: 1em;
+}
+#body #account-body #left-column #account-pages li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+#body #account-body #left-column #account-pages li a img {
+  width: 60px;
+  object-fit: contain;
+}
+#body #account-body #left-column #account-pages li a h2 {
+  font-weight: 500;
+  padding: 1em;
+  font-size: 1.4em;
+}
+#body #account-body #middle-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+#body #account-body #middle-column div:first-child {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+#body #account-body #middle-column div:first-child h2 {
+  text-align: left;
+  padding: 0;
+  font-size: 1.2em;
+}
+#body #account-body #middle-column #messages {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5em;
+}
+#body #account-body #middle-column #messages h2 {
+  text-align: left;
+  padding: 0;
+  font-size: 1.2em;
+}
+#body #account-body #middle-column #messages ul li {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  justify-content: space-between;
+  padding: 1em 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#body #account-body #middle-column #messages ul li .conv-infos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+#body #account-body #middle-column #messages ul li .conversation-title {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+#body #account-body #middle-column #messages ul li .conversation-details {
+  font-size: 0.7em;
+}
+#body #account-body #middle-column #messages ul li .conversation-notif {
+  font-size: 0.5em;
+  margin-left: 5em;
+}
+#body #account-body #middle-column #messages ul li:hover {
+  background-color: rgba(0, 0, 0, 0.11);
+}
+#body #account-body #right-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+#body #account-body #right-column #top-right-column {
+  display: flex;
+  column-gap: 2em;
+}
+#body #account-body #right-column #top-right-column #week-activity {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+#body #account-body #right-column #top-right-column #week-activity h2 {
+  text-align: left;
+  padding: 0;
+  padding-bottom: 1em;
+  font-size: 1.2em;
+}
+#body #account-body #right-column #top-right-column #map {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  height: 18.4em;
+}
+#body #account-body #right-column #top-right-column #map img {
+  width: 32em;
+  object-fit: cover;
+}
+#body #account-body #right-column #top-right-column #map #see-map {
+  position: absolute;
+  white-space: nowrap;
+  bottom: 0;
+  left: 50%;
+  padding: 0.8em 4em;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px grey;
+  cursor: pointer;
+}
+#body #account-body #right-column #bottom-right-column {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  padding: 1em;
+}
+#body #account-body #right-column #bottom-right-column h2 {
+  text-align: left;
+  padding: 0;
+  padding-bottom: 1em;
+  font-size: 1.2em;
+}
+#body #account-body #right-column #bottom-right-column #favorites input {
+  display: none;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets:checked ~ ul > li > label[for=trajets],
+#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ ul > li > label[for=association],
+#body #account-body #right-column #bottom-right-column #favorites #historique:checked ~ ul > li > label[for=historique] {
+  color: #8DAB7F;
+  border-bottom: solid 2px #8DAB7F;
+}
+#body #account-body #right-column #bottom-right-column #favorites ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+#body #account-body #right-column #bottom-right-column #favorites ul li {
+  text-align: center;
+}
+#body #account-body #right-column #bottom-right-column #favorites ul li label {
+  text-transform: capitalize;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-bottom: solid 2px grey;
+}
+#body #account-body #right-column #bottom-right-column #favorites ul li label:hover {
+  color: #8DAB7F;
+  border-bottom: solid 2px #8DAB7F;
+}
+#body #account-body #right-column #bottom-right-column #favorites div {
+  display: none;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets:checked ~ #trajets-content,
+#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ #association-content,
+#body #account-body #right-column #bottom-right-column #favorites #historique:checked ~ #historique-content {
+  display: flex;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content {
+  padding: 0 1.5em;
+  column-gap: 1em;
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey {
+  display: flex;
+  background-color: white;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  width: 44%;
+  overflow: hidden;
+  flex-grow: 1;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .map {
+  width: 30%;
+  object-fit: cover;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-grow: 1;
+  padding: 1em 0.5em;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part {
+  display: flex;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  word-break: break-word;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details :not(.data) {
+  font-weight: bold;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding-left: 1em;
+}
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons img {
+  cursor: pointer;
 }
 #body .big-form {
   padding: 2rem;
@@ -905,7 +1160,7 @@
   border: none;
   margin-left: 0.2em;
   font-size: 1.3em;
-  color: rgb(70, 70, 70);
+  color: #394032;
 }
 #body #journeys-body #journeys-right-part #globalSearch #globalSearchInput:focus {
   outline: none;
