@@ -107,6 +107,167 @@
   color: black;
   text-decoration: none;
 }
+#body .bloc-login {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+}
+#body .register-photos-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: -60px;
+}
+#body .register-logo {
+  width: 360px;
+  height: 180px;
+}
+#body .register-tel {
+  width: 160px;
+  height: 320px;
+  padding-left: 180px;
+  padding-bottom: 50px;
+}
+#body .store {
+  display: flex;
+  gap: 20px;
+  padding-left: 100px;
+}
+#body .storey {
+  width: 150px;
+}
+#body .containerA {
+  margin-top: 3vh;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+  border: 1px solid black;
+  box-shadow: 2px 2px 10px;
+}
+#body .containerA .row100 {
+  width: 100%;
+  position: relative;
+}
+#body .containerA .text {
+  color: grey;
+}
+#body .containerA .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+#body .containerA .row100 .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+#body .containerA .row100 .inputBox input, #body .containerA .row100 .inputBox .textarea textarea {
+  position: absolute;
+  width: 93%;
+  height: 100%;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+  border-radius: 9px;
+  padding: 0 7px;
+  border: 1px solid #E3E4E5;
+}
+#body .containerA .row100 .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  padding-left: 10px;
+  font-size: 18px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+#body .containerA .row100 .inputBox input:focus + .text,
+#body .containerA .row100 .inputBox input:valid + .text {
+  top: -31px;
+  left: -10px;
+  color: #CFEE9E;
+}
+#body .containerA .row100 .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+#body .containerA .row100 .inputBox input:focus ~ .line,
+#body .containerA .row100 .inputBox input:valid ~ .line {
+  height: 100%;
+}
+#body .containerA .row100 .inputBox .textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 10px;
+}
+#body .containerA .row100 .inputBox .textarea textarea {
+  resize: none;
+  height: 100%;
+}
+#body .containerA .row100 .inputBox textarea:focus + .text,
+#body .containerA .row100 .inputBox textarea:valid + .text {
+  top: -38px;
+  left: -10px;
+}
+#body .containerA .row100 .inputBox textarea:focus ~ .line,
+#body .containerA .row100 .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+#body .subConn {
+  width: 99%;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: #8DAB7F;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  word-spacing: 4px;
+}
+#body .subConn:hover {
+  background-color: #CFEE9E;
+  color: black;
+}
+#body .mdpoub {
+  margin-top: 30px;
+  color: blue;
+  text-decoration: none;
+}
+#body a.inscrivez {
+  width: 50%;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: #394032;
+  border: none;
+  border-radius: 12px;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 60px 0 0 120px;
+  padding: 15px;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#body a.inscrivez:hover {
+  background-color: #8DAB7F;
+}
 #body .bloc-register {
   margin-top: 15vh;
   display: flex;
@@ -144,7 +305,7 @@
   background-color: rgb(255, 255, 255);
   border-radius: 3%;
   border: 1px solid black;
-  box-shadow: 2px 2px 15px;
+  box-shadow: 2px 2px 10px;
 }
 #body .container .row100 {
   width: 100%;
@@ -174,7 +335,7 @@
   outline: none;
   border-radius: 9px;
   padding: 0 7px;
-  border: 1px solid grey;
+  border: 1px solid #E3E4E5;
 }
 #body .container .row100 .inputBox .text {
   position: absolute;
@@ -189,7 +350,7 @@
 }
 #body .container .row100 .inputBox input:focus + .text,
 #body .container .row100 .inputBox input:valid + .text {
-  top: -35px;
+  top: -31px;
   left: -10px;
   color: #CFEE9E;
 }
@@ -235,11 +396,11 @@
   cursor: pointer;
   height: 4rem;
   color: rgb(0, 0, 0);
-  background-color: rgb(209, 232, 195);
+  background-color: #CFEE9E;
   border: none;
-  border-radius: 9px;
+  border-radius: 12px;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
 }
 #body #btn {
   position: absolute;
@@ -247,9 +408,9 @@
   top: 1px;
   width: 80px;
   height: 100%;
-  background-color: rgb(230, 227, 227);
+  background-color: #F3F3F3;
   border: transparent;
-  border-left: 1px solid grey;
+  border-left: 1px solid #E3E4E5;
   border-bottom-right-radius: 9px;
   border-top-right-radius: 9px;
 }
