@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Associations{% endblock %}
+{% block content %}
+
+    <div id="associations-body">
+
+        <div id="associations-top-part">
+            <h1>Nos associations partenaires</h1>
+
+            <div id="search-part">
+                <div id="filter-part">
+                    <img src="/assets/images/filter.png" alt="filters">
+                    <h3><a href="/associations">Filtre</a></h3>
+                </div>
+
+                <form action="/associations/search" method="post" id="globalSearch">
+                    <label for="globalSearchInput">
+                        <img src="/assets/images/search.png" alt="Search icon">
+                    </label>
+                    <input type="text" name="globalSearch" id="globalSearchInput">
+                </form> 
+            </div>
+
+        </div>
+        <div id="associations">
+            {% if associations|length > 0 %}
+                {% for association in associations %}
+                    {% set break = false %}
+                    {% set isFavorite = false %}
+                    <div class="association" style="background-image: url('/assets/images/associations/logos/{{ association.logo }}.png');">
+
+                        <div class="side-buttons">
+                            {% for favoriteAssociation in favoriteAssociations if not break %}
+                                {% if association.id in favoriteAssociation and session.user.id in favoriteAssociation %}
+                                    {% set break = true %}
+                                    {% set isFavorite = true %}
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if isFavorite == true %}
+                                <a href="/association/favorite/{{ association.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+                            {% else %}
+                                <a href="/association/favorite/{{ association.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
+                            {% endif %}
+                            <a href="/association/{{ association.id }}/donate" class="donationButton">Faire un don</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h3>Il n'y a aucune association qui correspond à la recherche...</h3>
+            {% endif %}
+        </div>
+
+        </div id="see-more-div">
+            <button id="see-more">Voir plus</button>
+        </div>
+    </div>
+
+{% endblock %}

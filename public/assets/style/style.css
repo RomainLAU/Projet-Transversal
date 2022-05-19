@@ -941,7 +941,6 @@
   bottom: 0;
   left: 50%;
   padding: 0.8em 4em;
-  z-index: 2;
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 10px;
@@ -1060,6 +1059,120 @@
 }
 #body .big-form input {
   height: 3em;
+}
+#body #associations-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+#body #associations-body #associations-top-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#body #associations-body #associations-top-part #search-part {
+  display: flex;
+  align-items: center;
+}
+#body #associations-body #associations-top-part #search-part #filter-part {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: fit-content;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  padding: 0.6em 1em;
+  column-gap: 1em;
+  cursor: pointer;
+}
+#body #associations-body #associations-top-part #search-part #filter-part h3 {
+  padding: 0;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+#body #associations-body #associations-top-part #search-part #filter-part h3 a {
+  text-decoration: none;
+  color: black;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch {
+  width: 60%;
+  height: 2.75em;
+  border: solid 1px lightgrey;
+  border-radius: 50px;
+  margin-left: 4.5em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput {
+  flex-grow: 1;
+  height: 100%;
+  border: none;
+  margin-left: 0.2em;
+  font-size: 1.3em;
+  color: #394032;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput:focus {
+  outline: none;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch label[for=globalSearchInput] {
+  width: fit-content;
+  margin-left: 1em;
+  background-color: white;
+}
+#body #associations-body #associations {
+  display: flex;
+  column-gap: 2em;
+  row-gap: 2em;
+  padding: 2em 6em;
+  flex-wrap: wrap;
+}
+#body #associations-body #associations .association {
+  background-color: white;
+  width: 20em;
+  flex-grow: 1;
+  height: 10em;
+  border: solid 1px black;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em;
+}
+#body #associations-body #associations .association .side-buttons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 2;
+}
+#body #associations-body #associations .association .side-buttons .donationButton {
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.2em;
+}
+#body #associations-body #see-more-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#body #associations-body #see-more-div #see-more {
+  margin-top: 2em;
+  width: 6em;
+  font-size: 1.5em;
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+}
+#body #associations-body #see-more-div #see-more:hover {
+  background-color: #8DAB7F;
 }
 #body #dark-background {
   display: none;

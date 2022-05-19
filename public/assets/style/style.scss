@@ -1168,7 +1168,6 @@ $secondary-dark-green: #394032;
                         bottom: 0;
                         left: 50%;
                         padding: 0.8em 4em;
-                        z-index: 2;
                         transform: translate(-50%, -50%);
                         background-color: white;
                         border-radius: 10px;
@@ -1313,6 +1312,140 @@ $secondary-dark-green: #394032;
 
         input{
             height: 3em;
+        }
+    }
+
+    // Page Associations
+
+    #associations-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+
+
+        #associations-top-part{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            #search-part{
+                display: flex;
+                align-items: center;
+    
+                #filter-part{
+                    display: flex;
+                    align-items: center;
+                    background-color: white;
+                    width: fit-content;
+                    border: solid 1px lightgrey;
+                    border-radius: 10px;
+                    padding: 0.6em 1em;
+                    column-gap: 1em;
+                    cursor: pointer;
+    
+                    h3{
+                        padding: 0;
+                        font-weight: normal;
+                        font-size: 1.2em;
+
+                        a{
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+                }
+    
+                #globalSearch{
+                    width: 60%;
+                    height: 2.75em;
+                    border: solid 1px lightgrey;
+                    border-radius: 50px;
+                    margin-left: 4.5em;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+    
+                    #globalSearchInput{
+                        flex-grow: 1;
+                        height: 100%;
+                        border: none;
+                        margin-left: 0.2em;
+                        font-size: 1.3em;
+                        color:#394032;
+    
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+    
+                    label[for=globalSearchInput] {
+                        width: fit-content;
+                        margin-left: 1em;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+        #associations{
+            display: flex;
+            column-gap: 2em;
+            row-gap: 2em;
+            padding: 2em 6em;
+            flex-wrap: wrap;
+
+            .association{
+                background-color: white;
+                width: 20em;
+                flex-grow: 1;
+                height: 10em;
+                border: solid 1px black;
+                border-radius: 15px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 1em;
+
+                .side-buttons{
+                    display: flex;
+                    height: 100%;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    z-index: 2;       
+                    
+                    .donationButton{
+                        background-color: rgb(80, 80, 80);
+                        color: white;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        padding: 0.2em;
+                    }
+                }
+            }
+        }
+
+        #see-more-div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            #see-more{
+                margin-top: 2em;
+                width: 6em;
+                font-size: 1.5em;
+                align-self: center;
+                background-color: #394032;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0.2em 0.4em;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $main-green;
+                }
+            }
         }
     }
 

@@ -38,7 +38,7 @@ class JourneyModel extends Model
     }
 
     public function getFavoriteJourneysOfUser() {
-        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` INNER JOIN user ON user_id = user.id WHERE user_id = user.id = :session_id');
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` INNER JOIN user ON user_id = user.id WHERE user.id = :session_id');
         $statement->execute([
             'session_id' => $_SESSION['user']['id'],
         ]);
