@@ -7,11 +7,19 @@
 
         <div>
             <img src="/assets/images/Icon awesome-arrow-left.png" alt="Exit arrow">
-            <img src="/assets/images/{{ association.logo }}" alt="Association logo">
-            
+            <img src="/assets/images/{{ association.logo }}.png" alt="Association logo">
+            <a href="/association/{{ association.id }}/donate">Faire un don</a>
         </div>
-        <div></div>
-        <div></div>
+        <div>
+            <div>
+                <p id="first-text">{{ association.firsttext }}</p>
+                <img src="/assets/images/{{ association.firstimage }}.jpg" alt="First Image description">
+            </div>
+            <div>
+                <p id="second-text">{{ association.secondtext }}</p>
+                <img src="/assets/images/{{ association.secondimage }}.jpg" alt="Second Image description">
+            </div>
+        </div>
 
     </div>
 

@@ -28,8 +28,6 @@ class AssociationController extends Controller
             ];
         }
 
-        // dd($associations, $favoriteAssociations);
-
         echo $this->twig->render('/association/listAssociations.html.twig', [
             'associations' => $associations,
             'favoriteAssociations' => $favoriteAssociations,
@@ -67,6 +65,8 @@ class AssociationController extends Controller
     public function showAssociationById($id) {
 
         $association = $this->associationModel->getAssociationById($id);
+
+        // dd($association);
 
         echo $this->twig->render('/association/association.html.twig', [
             'association' => $association,
