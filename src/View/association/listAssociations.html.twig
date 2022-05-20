@@ -28,7 +28,7 @@
                 {% for association in associations %}
                     {% set break = false %}
                     {% set isFavorite = false %}
-                    <div class="association" style="background-image: url('/assets/images/associations/logos/{{ association.logo }}.png');">
+                    <div class="association" style="background-image: url('/assets/images/associations/logos/{{ association.logo }}.png');" onclick="location.href='association/{{ association.id }}'">
 
                         <div class="side-buttons">
                             {% for favoriteAssociation in favoriteAssociations if not break %}

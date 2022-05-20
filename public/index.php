@@ -39,6 +39,9 @@ $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourney
 
 $router->get('/associations', 'Mvc\Controller\AssociationController@listAssociations');
 
+
+$router->get('/association/(\d+)', 'Mvc\Controller\AssociationController@showAssociationById');
+
 $router->get('/association/favorite/(\d+)', 'Mvc\Controller\AssociationController@addAssociationToFavorites');
 
 $router->get('/association/unfav/(\d+)', 'Mvc\Controller\AssociationController@deleteFromFavorites');

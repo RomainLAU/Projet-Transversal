@@ -16,6 +16,15 @@ class AssociationModel extends Model
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getAssociationById($id) {
+        $statement = $this->pdo->prepare('SELECT * FROM `associations` WHERE `id` = :id');
+        $statement->execute([
+            'id' => $id,
+        ]);
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function getFavoriteAssociations() {
         $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_associations` WHERE `user_id` = :user_id');
         $statement->execute([

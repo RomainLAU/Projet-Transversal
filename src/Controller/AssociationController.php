@@ -63,6 +63,15 @@ class AssociationController extends Controller
             'favoriteAssociations' => $favoriteAssociations,
         ]);
     }
+    
+    public function showAssociationById($id) {
+
+        $association = $this->associationModel->getAssociationById($id);
+
+        echo $this->twig->render('/association/association.html.twig', [
+            'association' => $association,
+        ]);
+    }
 
     public function deleteFromFavorites($associationId) {
 
