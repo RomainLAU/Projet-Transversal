@@ -1186,7 +1186,7 @@
   color: black;
 }
 #body #associations-body #associations-top-part #search-part #globalSearch {
-  width: 60%;
+  width: 100%;
   height: 2.75em;
   border: solid 1px lightgrey;
   border-radius: 50px;
@@ -1202,9 +1202,13 @@
   margin-left: 0.2em;
   font-size: 1.3em;
   color: #394032;
+  font-size: 1em;
 }
 #body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput:focus {
   outline: none;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput::placeholder {
+  color: lightgray;
 }
 #body #associations-body #associations-top-part #search-part #globalSearch label[for=globalSearchInput] {
   width: fit-content;
@@ -1215,13 +1219,13 @@
   display: flex;
   column-gap: 2em;
   row-gap: 2em;
-  padding: 2em 6em;
+  padding: 2em 4em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 #body #associations-body #associations .association {
   background-color: white;
   width: 20em;
-  flex-grow: 1;
   height: 10em;
   border: solid 1px black;
   border-radius: 15px;
@@ -1238,11 +1242,15 @@
   z-index: 2;
 }
 #body #associations-body #associations .association .side-buttons .donationButton {
-  background-color: rgb(80, 80, 80);
+  background-color: #394032;
   color: white;
   border-radius: 5px;
   text-decoration: none;
   padding: 0.2em;
+  cursor: pointer;
+}
+#body #associations-body #associations .association .side-buttons .donationButton:hover {
+  background-color: #8DAB7F;
 }
 #body #associations-body #see-more-div {
   width: 100%;
@@ -1264,8 +1272,160 @@
 #body #associations-body #see-more-div #see-more:hover {
   background-color: #8DAB7F;
 }
+#body #dark-background {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+#body #dark-background #createForm-association {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px lightgray;
+  background-color: #FDFFF8;
+  border-radius: 10px;
+  width: 33em;
+}
+#body #dark-background #createForm-association #formHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px grey;
+  justify-content: space-between;
+}
+#body #dark-background #createForm-association #formHeader h2 {
+  padding: 1rem;
+}
+#body #dark-background #createForm-association #formHeader #cross {
+  margin-right: 1em;
+  position: relative;
+  cursor: pointer;
+}
+#body #dark-background #createForm-association #formHeader #cross div {
+  width: 2em;
+  height: 0.5em;
+  background-color: rgb(233, 233, 233);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#body #dark-background #createForm-association #formHeader #cross #firstBar {
+  transform: rotate(45deg);
+}
+#body #dark-background #createForm-association #formHeader #cross #secondBar {
+  transform: rotate(-45deg);
+}
+#body #dark-background #createForm-association #formHeader #cross:hover div {
+  background-color: #8DAB7F;
+}
+#body #dark-background #createForm-association form {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  align-items: center;
+}
+#body #dark-background #createForm-association form h3 {
+  padding: 0;
+}
+#body #dark-background #createForm-association form #mid-part {
+  display: flex;
+  column-gap: 1.5em;
+}
+#body #dark-background #createForm-association form #mid-part input {
+  border-radius: 10px;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
+  padding: 0.5em;
+}
+#body #dark-background #createForm-association form #mid-part #postButton {
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  font-size: 1em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  text-align: center;
+}
+#body #dark-background #createForm-association form #mid-part #postButton:hover {
+  background-color: #8DAB7F;
+}
+#body #dark-background #createForm-association form #bottom-part {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+#body #dark-background #createForm-association form #bottom-part a {
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  font-size: 0.7em;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+#body #dark-background #createForm-association form #bottom-part a:hover {
+  background-color: #8DAB7F;
+}
 #body #association-page {
   margin-top: 10vh;
+  padding: 5vh 12em;
+}
+#body #association-page #association-top-part {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#body #association-page #association-top-part #top-left-part {
+  display: flex;
+  column-gap: 1em;
+}
+#body #association-page #association-top-part #top-left-part #exit-arrow {
+  object-fit: contain;
+  align-self: flex-start;
+  cursor: pointer;
+}
+#body #association-page #association-top-part #top-left-part #association-logo {
+  width: 12em;
+  height: 5em;
+  object-fit: cover;
+}
+#body #association-page #association-top-part #popupButton {
+  justify-self: flex-end;
+  background-color: #394032;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.5em 0.8em;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+}
+#body #association-page #association-top-part #popupButton:hover {
+  background-color: #8DAB7F;
+}
+#body #association-page #association-content-part {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.6em;
+}
+#body #association-page #association-content-part div {
+  display: flex;
+  column-gap: 4em;
+  align-items: center;
+}
+#body #association-page #association-content-part div p {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+#body #association-page #association-content-part div img {
+  width: 35em;
+  height: 20em;
+  object-fit: cover;
 }
 #body #dark-background {
   display: none;
@@ -1277,7 +1437,7 @@
 }
 #body #dark-background #createForm {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px lightgray;

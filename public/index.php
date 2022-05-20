@@ -42,13 +42,13 @@ $router->get('/associations', 'Mvc\Controller\AssociationController@listAssociat
 
 $router->get('/association/(\d+)', 'Mvc\Controller\AssociationController@showAssociationById');
 
-$router->get('/association/(\d+)/donate', 'Mvc\Controller\AssociationController@donateToAssociation');
+$router->post('/association/(\d+)', 'Mvc\Controller\DonationController@donateToAssociation');
 
 $router->get('/association/favorite/(\d+)', 'Mvc\Controller\AssociationController@addAssociationToFavorites');
 
 $router->get('/association/unfav/(\d+)', 'Mvc\Controller\AssociationController@deleteFromFavorites');
 
-$router->post('/associations/search', 'Mvc\Controller\AssociationController@filterAssociations');
+$router->post('/associations', 'Mvc\Controller\AssociationController@filterAssociations');
 
 $router->get('/account', 'Mvc\Controller\AccountController@displayAccount');
 

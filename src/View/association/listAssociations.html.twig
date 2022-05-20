@@ -14,11 +14,11 @@
                     <h3><a href="/associations">Filtre</a></h3>
                 </div>
 
-                <form action="/associations/search" method="post" id="globalSearch">
+                <form action="/associations" method="post" id="globalSearch">
                     <label for="globalSearchInput">
                         <img src="/assets/images/search.png" alt="Search icon">
                     </label>
-                    <input type="text" name="globalSearch" id="globalSearchInput">
+                    <input type="text" name="globalSearch" id="globalSearchInput" placeholder="exemple: animalier">
                 </form> 
             </div>
 
@@ -28,7 +28,7 @@
                 {% for association in associations %}
                     {% set break = false %}
                     {% set isFavorite = false %}
-                    <div class="association" style="background-image: url('/assets/images/associations/logos/{{ association.logo }}.png');" onclick="location.href='association/{{ association.id }}'">
+                    <div class="association" style="background-image: url('/assets/images/associations/logos/{{ association.logo }}.png');" onclick="location.href='/association/{{ association.id }}'">
 
                         <div class="side-buttons">
                             {% for favoriteAssociation in favoriteAssociations if not break %}
@@ -52,7 +52,7 @@
             {% endif %}
         </div>
 
-        </div id="see-more-div">
+        <div id="see-more-div">
             <button id="see-more">Voir plus</button>
         </div>
     </div>

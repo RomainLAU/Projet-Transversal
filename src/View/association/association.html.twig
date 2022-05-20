@@ -1,23 +1,51 @@
 {% extends "base.html.twig" %}
 
 {% block title %}{{ association.name }}{% endblock %}
+{% block scripts %}<script src="/assets/scripts/script.js"></script>{% endblock %}
 {% block content %}
+
+    <div id="dark-background">
+        <div id="createForm-association">
+            <div id="formHeader">
+                <div></div>
+                <h2>Faire un don</h2>
+                <div id="cross">
+                    <div id="firstBar"></div>
+                    <div id="secondBar"></div>
+                </div>
+            </div>
+            <form action="" method="post" name="createForm">
+                <h3>{{ association.name }}</h3>
+                
+                <div id="mid-part">
+                    <input type="number" id="amount" name="amount" placeholder="Montant" required>
+                    <input type="submit" value="Donner" id="postButton" name="postButton">
+                </div>
+                <div id="bottom-part">
+                    <p>Valeur en €: ...€</p>
+                    <a href="">En savoir plus</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div id="association-page">
 
-        <div>
-            <img src="/assets/images/Icon awesome-arrow-left.png" alt="Exit arrow">
-            <img src="/assets/images/{{ association.logo }}.png" alt="Association logo">
-            <a href="/association/{{ association.id }}/donate">Faire un don</a>
-        </div>
-        <div>
-            <div>
-                <p id="first-text">{{ association.firsttext }}</p>
-                <img src="/assets/images/{{ association.firstimage }}.jpg" alt="First Image description">
+        <div id="association-top-part">
+            <div id="top-left-part">
+                <img src="/assets/images/Icon awesome-arrow-left.png" alt="Exit arrow" id="exit-arrow" onclick="location.href='/associations'">
+                <img src="/assets/images/associations/logos/{{ association.logo }}.png" alt="Association logo" id="association-logo">
             </div>
-            <div>
+            <button id="popupButton">Faire un don</button>
+        </div>
+        <div id="association-content-part">
+            <div id="first-part">
+                <p id="first-text">{{ association.firsttext }}</p>
+                <img src="/assets/images/{{ association.firstimage }}.png" alt="First Image description">
+            </div>
+            <div id="second-part">
+                <img src="/assets/images/{{ association.secondimage }}.png" alt="Second Image description">
                 <p id="second-text">{{ association.secondtext }}</p>
-                <img src="/assets/images/{{ association.secondimage }}.jpg" alt="Second Image description">
             </div>
         </div>
 

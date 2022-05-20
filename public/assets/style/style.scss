@@ -1471,7 +1471,7 @@ $secondary-dark-green: #394032;
                 }
     
                 #globalSearch{
-                    width: 60%;
+                    width: 100%;
                     height: 2.75em;
                     border: solid 1px lightgrey;
                     border-radius: 50px;
@@ -1487,9 +1487,14 @@ $secondary-dark-green: #394032;
                         margin-left: 0.2em;
                         font-size: 1.3em;
                         color:#394032;
+                        font-size: 1em;
     
                         &:focus{
                             outline: none;
+                        }
+
+                        &::placeholder{
+                            color: lightgray;
                         }
                     }
     
@@ -1506,13 +1511,13 @@ $secondary-dark-green: #394032;
             display: flex;
             column-gap: 2em;
             row-gap: 2em;
-            padding: 2em 6em;
+            padding: 2em 4em;
             flex-wrap: wrap;
+            justify-content: center;
 
             .association{
                 background-color: white;
                 width: 20em;
-                flex-grow: 1;
                 height: 10em;
                 border: solid 1px black;
                 border-radius: 15px;
@@ -1529,11 +1534,16 @@ $secondary-dark-green: #394032;
                     z-index: 2;       
                     
                     .donationButton{
-                        background-color: rgb(80, 80, 80);
+                        background-color: $secondary-dark-green;
                         color: white;
                         border-radius: 5px;
                         text-decoration: none;
                         padding: 0.2em;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: $main-green;
+                        }
                     }
                 }
             }
@@ -1565,8 +1575,190 @@ $secondary-dark-green: #394032;
 
     // Page Association
 
+    #dark-background{
+        display: none;
+        z-index: 10;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+
+        #createForm-association{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 1px lightgray;
+            background-color: $light-background;
+            border-radius: 10px;
+            width: 33em;
+
+            #formHeader{
+                display: flex;
+                align-items: center;
+                border-bottom: solid 1px grey;
+                justify-content: space-between;
+
+                h2{
+                    padding: 1rem;
+                }
+
+                #cross{
+                    margin-right: 1em;
+                    position: relative;
+                    cursor: pointer;
+
+                    div{
+                        width: 2em;
+                        height: 0.5em;
+                        background-color: rgb(233, 233, 233);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    #firstBar{
+                        transform: rotate(45deg)
+                    }
+
+                    #secondBar{
+                        transform: rotate(-45deg)
+                    }
+
+                    &:hover{
+                        div{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+            }
+
+            form{
+                padding: 1.5em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+                align-items: center;
+
+                h3{
+                    padding: 0;
+                }
+
+                #mid-part{
+                    display: flex;
+                    column-gap: 1.5em;
+
+                    input{
+                        border-radius: 10px;
+                        border: solid 1px lightgrey;
+                        flex-grow: 1;
+                        padding: 0.5em;
+                    }
+
+                    #postButton {
+                        align-self: center;
+                        background-color: $secondary-dark-green;
+                        color: white;
+                        font-size: 1em;
+                        padding: 0.5em 0.8em;
+                        cursor: pointer;
+                        text-align: center;
+    
+                        &:hover{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+
+                #bottom-part{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.5em;
+
+                    a{
+                        align-self: center;
+                        background-color: $secondary-dark-green;
+                        color: white;
+                        font-size: 0.7em;
+                        padding: 0.5em 0.8em;
+                        border-radius: 5px;
+                        text-align: center;
+                        text-decoration: none;
+    
+                        &:hover{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     #association-page{
         margin-top: 10vh;
+        padding: 5vh 12em;
+
+        #association-top-part{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            #top-left-part{
+                display: flex;
+                column-gap: 1em;
+
+                #exit-arrow{
+                    object-fit: contain;
+                    align-self: flex-start;
+                    cursor: pointer;
+                }
+
+                #association-logo{
+                    width: 12em;
+                    height: 5em;
+                    object-fit: cover;
+                }
+            }
+
+            #popupButton{
+                justify-self: flex-end;
+                background-color: $secondary-dark-green;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+                padding: 0.5em 0.8em;
+                font-size: 1.2em;
+                cursor: pointer;
+                border: none;
+
+                &:hover{
+                    background-color: $main-green;
+                }
+            }
+        }
+
+        #association-content-part{
+            display: flex;
+            flex-direction: column;
+            padding: 0 2.6em;
+
+            div{
+                display: flex;
+                column-gap: 4em;
+                align-items: center;
+
+                p{
+                    font-size: 1.5em;
+                    line-height: 1.4em;
+                }
+
+                img{
+                    width: 35em;
+                    height: 20em;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 
     // Page Trajets
@@ -1581,7 +1773,7 @@ $secondary-dark-green: #394032;
 
         #createForm{
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;

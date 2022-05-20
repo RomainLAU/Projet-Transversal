@@ -64,9 +64,16 @@ class AssociationController extends Controller
     
     public function showAssociationById($id) {
 
-        $association = $this->associationModel->getAssociationById($id);
+        $newJourneyCreated = false;
 
-        // dd($association);
+        if (isset($_POST['postButton']) && isset($_POST['trajetType']) && isset($_POST['date']) && strlen($_POST['date']) == 16 && isset($_POST['place']) && strlen($_POST['place']) > 0 && isset($_POST['duration'])  && strlen($_POST['place']) > 2 && isset($_POST['description']) && isset($_POST['tags'])) {
+
+            $this->journeyModel->createJourney($_POST['trajetType'], $_POST['date'], $_POST['place'], $_POST['duration'], $_POST['description'], $_POST['tags']);
+
+            $newJourneyCreated = true;
+        }
+
+        $association = $this->associationModel->getAssociationById($id);
 
         echo $this->twig->render('/association/association.html.twig', [
             'association' => $association,
