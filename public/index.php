@@ -44,6 +44,8 @@ $router->get('/association/(\d+)', 'Mvc\Controller\AssociationController@showAss
 
 $router->post('/association/(\d+)', 'Mvc\Controller\DonationController@donateToAssociation');
 
+$router->post('/associations/donate/(\d+)', 'Mvc\Controller\DonationController@donateToAssociation');
+
 $router->get('/association/favorite/(\d+)', 'Mvc\Controller\AssociationController@addAssociationToFavorites');
 
 $router->get('/association/unfav/(\d+)', 'Mvc\Controller\AssociationController@deleteFromFavorites');

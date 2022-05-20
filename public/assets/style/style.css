@@ -21,7 +21,7 @@
   position: fixed;
   top: 0;
   margin-bottom: 10vh;
-  z-index: 2;
+  z-index: 100;
 }
 #body header #logo-home {
   height: 100%;
@@ -1232,6 +1232,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 1em;
+  cursor: pointer;
 }
 #body #associations-body #associations .association .side-buttons {
   display: flex;
@@ -1241,15 +1242,16 @@
   justify-content: space-between;
   z-index: 2;
 }
-#body #associations-body #associations .association .side-buttons .donationButton {
+#body #associations-body #associations .association .side-buttons .popupButton {
   background-color: #394032;
   color: white;
   border-radius: 5px;
   text-decoration: none;
   padding: 0.2em;
   cursor: pointer;
+  z-index: 5;
 }
-#body #associations-body #associations .association .side-buttons .donationButton:hover {
+#body #associations-body #associations .association .side-buttons .popupButton:hover {
   background-color: #8DAB7F;
 }
 #body #associations-body #see-more-div {

@@ -1,7 +1,33 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Associations{% endblock %}
+{% block scripts %}<script src="/assets/scripts/associations.js"></script>{% endblock %}
 {% block content %}
+
+    <div id="dark-background">
+        <div id="createForm-association">
+            <div id="formHeader">
+                <div></div>
+                <h2>Faire un don</h2>
+                <div id="cross">
+                    <div id="firstBar"></div>
+                    <div id="secondBar"></div>
+                </div>
+            </div>
+            <form action="" method="post" name="createForm">
+                <h3>{{ association.name }}</h3>
+                
+                <div id="mid-part">
+                    <input type="number" id="amount" name="amount" placeholder="Montant" required>
+                    <input type="submit" value="Donner" id="postButton" name="postButton">
+                </div>
+                <div id="bottom-part">
+                    <p>Valeur en €: ...€</p>
+                    <a href="">En savoir plus</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div id="associations-body">
 
@@ -43,7 +69,7 @@
                             {% else %}
                                 <a href="/association/favorite/{{ association.id }}"><img src="/assets/images/empty-heart.png" alt="favorite icon" class="empty-heart"></a>
                             {% endif %}
-                            <a href="/association/{{ association.id }}/donate" class="donationButton">Faire un don</a>
+                            <a class="popupButton">Faire un don</a>
                         </div>
                     </div>
                 {% endfor %}

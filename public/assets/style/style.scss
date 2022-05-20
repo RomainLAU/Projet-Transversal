@@ -32,7 +32,7 @@ $secondary-dark-green: #394032;
         position: fixed;
         top: 0;
         margin-bottom: 10vh;
-        z-index: 2;
+        z-index: 100;
 
         #logo-home{
             height: 100%;
@@ -1524,6 +1524,7 @@ $secondary-dark-green: #394032;
                 background-repeat: no-repeat;
                 background-size: cover;
                 padding: 1em;
+                cursor: pointer;
 
                 .side-buttons{
                     display: flex;
@@ -1533,13 +1534,14 @@ $secondary-dark-green: #394032;
                     justify-content: space-between;
                     z-index: 2;       
                     
-                    .donationButton{
+                    .popupButton{
                         background-color: $secondary-dark-green;
                         color: white;
                         border-radius: 5px;
                         text-decoration: none;
                         padding: 0.2em;
                         cursor: pointer;
+                        z-index: 5;
 
                         &:hover{
                             background-color: $main-green;
