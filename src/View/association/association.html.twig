@@ -51,4 +51,19 @@
 
     </div>
 
+    {% if donated == true %}
+        <script>
+            Swal.fire({
+                position: 'top',
+                title: 'Votre don a bien été enregistré',
+                html: '<a href="">Voir mon porte-monnaie</a>',
+                timer: 1000,
+                showConfirmButton: false,
+                background: '#F8FFE6',
+                backdrop: 'none',
+                customClass: 'swal-border',
+            })
+        </script>
+    {% endif %}
+
 {% endblock %}

@@ -77,6 +77,7 @@ class AssociationController extends Controller
 
         echo $this->twig->render('/association/association.html.twig', [
             'association' => $association,
+            'donated' => false,
         ]);
     }
 
