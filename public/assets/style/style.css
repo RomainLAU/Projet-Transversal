@@ -1174,6 +1174,9 @@
 #body #associations-body #see-more-div #see-more:hover {
   background-color: #8DAB7F;
 }
+#body #association-page {
+  margin-top: 10vh;
+}
 #body #dark-background {
   display: none;
   z-index: 10;
