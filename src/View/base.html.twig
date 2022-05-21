@@ -20,7 +20,7 @@
 
                 <a href="/" id="logo-home"><img src="/assets/images/logo-blanc.png" alt="logo-bee-brave"></a>
                 
-                {% if session %}
+                {% if session and session.user.role == "user" %}
                 
                     <nav class="nav-co">
             
@@ -31,7 +31,19 @@
                         <li><a href="/account">Mon compte</a></li>
             
                     </nav>
+
+                {% elseif session and session.user.role == "admin" %}
+
+
+                    <nav class="nav-admin">
                 
+                        <li><a href="/admin/journey">Trajets</a></li>
+                        <li><a href="/admin/associations">Associations</a></li>
+                        <li><a href="/admin/donations">Dons</a></li>
+                        <li><a href="/admin/users">Comptes</a></li>
+            
+                    </nav>
+
                 {% else %}
 
                     <nav class="nav-deco">

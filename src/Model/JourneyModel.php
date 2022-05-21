@@ -22,7 +22,7 @@ class JourneyModel extends Model
     }
 
     public function getJourneys() {
-        $statement = $this->pdo->prepare('SELECT * FROM `journey` ORDER BY `id` DESC LIMIT 6');
+        $statement = $this->pdo->prepare('SELECT * FROM `journey`');
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
