@@ -45,12 +45,6 @@ class UserController extends Controller
                     'beez' => $account['beez'],
                 ];
 
-                // if ($_SESSION['user']['timeRole'] === date('Y-m-d')) {
-
-                //     $this->userModel->changeRole();
-                //     $_SESSION['user']['role'] = 'user';
-                // }
-
                 header('Location: /');
                 exit();
             }
