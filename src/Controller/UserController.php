@@ -43,6 +43,7 @@ class UserController extends Controller
                     'firstname' => $account['firstname'],
                     'mail' => $account['mail'],
                     'beez' => $account['beez'],
+                    'role' => $account['role']
                 ];
 
                 header('Location: /');

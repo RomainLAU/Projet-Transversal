@@ -1,0 +1,43 @@
+{% extends "/base.html.twig" %}
+
+
+{% block content %} 
+
+<div class="table-journeys">
+
+    <table>
+
+        <tr>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Durée</th>
+            <th>Description</th>
+            <th>Tags</th>
+            <th>Status</th>
+        </tr>
+
+
+        {% for journey in journeys %}
+
+
+        <tr>
+            <td>{{ journey.date }}</td>
+            <td>{{ journey.place }}</td>
+            <td>{{ journey.duration }}</td>
+            <td>{{ journey.description }}</td>
+            <td>{{ journey.tags }}</td>
+            <td>{{ journey.status }}</td>
+        </tr>
+
+
+
+
+        {% endfor %}
+
+
+    </table>
+    
+</div>
+
+
+{% endblock %}

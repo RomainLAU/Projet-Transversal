@@ -65,6 +65,13 @@ $router->get('/deconnection', function() {
     header('location: /');
 });
 
+$router->get('/admin', 'Mvc\Controller\AdminController@displayAdmin');
+$router->get('/admin/journey', 'Mvc\Controller\AdminController@listJourneys');
+$router->get('/admin/associations', 'Mvc\Controller\AdminController@listJourneys');
+$router->get('/admin/donations', 'Mvc\Controller\AdminController@listJourneys');
+$router->get('/admin/users', 'Mvc\Controller\AdminController@listJourneys');
+
+
 $router->run();
 
 ?>

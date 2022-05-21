@@ -74,6 +74,34 @@ $secondary-dark-green: #394032;
             }
         }
 
+        .nav-admin {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            width: 38%;
+            margin-right: 10em;
+            margin-top: 3.2em;
+
+            li {
+                list-style: none;
+
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 17px;
+                    display: block;
+                    padding-bottom: 1.5em;
+                    border-bottom: 4px solid transparent;
+                }
+
+                a:hover { 
+                    border-bottom: 4px solid #CFEE9E;
+                }
+            }
+        }
+
 
         .nav-deco {
             display: flex;
@@ -151,7 +179,6 @@ $secondary-dark-green: #394032;
         display: flex;
         justify-content:center;
         gap: 300px;
-        
     }
     .register-photos-login{
         display: flex;
@@ -2229,5 +2256,31 @@ $secondary-dark-green: #394032;
                 }
             }
         }
+    }
+
+
+    // pages admin
+
+
+    // journeys 
+
+
+    .table-journeys {
+
+        margin-top: 14vh;
+
+            table {
+                border: 1px solid black;
+                width: 90%;
+            }
+
+            th {
+                border: 1px solid black;
+                font-weight: bold;
+            }
+
+            td {
+                border: 1px solid black;
+            }
     }
 }

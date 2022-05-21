@@ -56,6 +56,29 @@
 #body header .nav-co li a:hover {
   border-bottom: 4px solid #CFEE9E;
 }
+#body header .nav-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 38%;
+  margin-right: 10em;
+  margin-top: 3.2em;
+}
+#body header .nav-admin li {
+  list-style: none;
+}
+#body header .nav-admin li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  padding-bottom: 1.5em;
+  border-bottom: 4px solid transparent;
+}
+#body header .nav-admin li a:hover {
+  border-bottom: 4px solid #CFEE9E;
+}
 #body header .nav-deco {
   display: flex;
   align-items: center;
@@ -1818,6 +1841,20 @@
 }
 #body #journeys-body #journeys-right-part #see-more:hover {
   background-color: #8DAB7F;
+}
+#body .table-journeys {
+  margin-top: 14vh;
+}
+#body .table-journeys table {
+  border: 1px solid black;
+  width: 90%;
+}
+#body .table-journeys th {
+  border: 1px solid black;
+  font-weight: bold;
+}
+#body .table-journeys td {
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=style.css.map */
