@@ -42,11 +42,11 @@
 }
 #body header .nav-co {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   color: white;
   width: 38%;
   margin-top: 3.2em;
+  column-gap: 6em;
 }
 #body header .nav-co li {
   list-style: none;
@@ -705,6 +705,10 @@
   font-size: 22px;
   font-weight: bold;
 }
+#body .sub:hover {
+  background-color: #8DAB7F;
+  color: white;
+}
 #body #btn {
   position: absolute;
   right: 16px;
@@ -716,6 +720,7 @@
   border-left: 1px solid #E3E4E5;
   border-bottom-right-radius: 9px;
   border-top-right-radius: 9px;
+  cursor: pointer;
 }
 #body footer {
   width: 100%;

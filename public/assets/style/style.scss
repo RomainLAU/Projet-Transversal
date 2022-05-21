@@ -56,11 +56,11 @@ $secondary-dark-green: #394032;
 
         .nav-co {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             color: white;
             width: 38%;
             margin-top: 3.2em;
+            column-gap: 6em;
 
             li {
                 list-style: none;
@@ -866,6 +866,11 @@ $secondary-dark-green: #394032;
      border-radius: 12px;
      font-size: 22px;
      font-weight:bold;
+
+     &:hover{
+         background-color: $main-green;
+         color: white;
+     }
  }
 
 
@@ -881,6 +886,7 @@ $secondary-dark-green: #394032;
     border-left: 1px solid #E3E4E5;
     border-bottom-right-radius: 9px;
     border-top-right-radius: 9px;
+    cursor: pointer;
 }
    
     // fin page register

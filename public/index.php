@@ -26,6 +26,125 @@ $router->before('GET', '/account', function() {
     }
 });
 
+$router->before('GET', '/associations', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('POST', '/associations', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/association/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/association/unfav/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/association/favorite/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/journey', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('POST', '/journey', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/journey/favorite/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/journey/unfav/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('POST', '/journey/search', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/journey/join/(\d+)', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/journey', function() {
+    if (!isset($_SESSION['user'])) {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/admin', function() {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/admin/journey', function() {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/admin/associtions', function() {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/admin/donations', function() {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        header('location: /login');
+        exit();
+    }
+});
+
+$router->before('GET', '/admin/users', function() {
+    if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+        header('location: /login');
+        exit();
+    }
+});
+
 $router->get('/', 'Mvc\Controller\AccueilController@displayAccueil');
 
 $router->get('/journey', 'Mvc\Controller\JourneyController@listJourneys');
