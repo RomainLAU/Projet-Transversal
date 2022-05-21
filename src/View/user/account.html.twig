@@ -115,42 +115,62 @@
                     <input type="radio" name="favorites" id="historique">
                     <ul>
                         <li><label for="trajets">Trajets</label></li>
-                        <li><label for="association">Association</label></li>
+                        <li><label for="association">Associations</label></li>
                         <li><label for="historique">Historique</label></li>
                     </ul>
                     <div id="trajets-content">
                         {% for journey in favoriteJourneys|slice(0, 4) %}
+                            <div class="journey">
+                                <img src="/assets/images/map-picture.png" alt="map" class="map">
+                                <div class="right-part">
+                                    <div class="top-right-part">
+                                        <div class="journey-details">
+                                            <p>Point de départ:</p>
+                                            <p class="data">
+                                                {{ journey.place|slice(0, 25) }}
+                                            </p>
+                                            <p>Date et heure de départ:</p>
+                                            <p class="data">
+                                                {{ journey.date }}
+                                            </p>
+                                            <p>Description:</p>
+                                            <p class="data">
+                                                {{ journey.description|slice(0, 25) }}
+                                            </p>
+                                        </div>
+                                        <div class="side-buttons">
+                                            <a href="/journey/unfav/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
 
-                                <div class="journey">
-                                    <img src="/assets/images/map-picture.png" alt="map" class="map">
-                                    <div class="right-part">
-                                        <div class="top-right-part">
-                                            <div class="journey-details">
-                                                <p>Point de départ:</p>
-                                                <p class="data">
-                                                    {{ journey.place|slice(0, 25) }}
-                                                </p>
-                                                <p>Date et heure de départ:</p>
-                                                <p class="data">
-                                                    {{ journey.date }}
-                                                </p>
-                                                <p>Description:</p>
-                                                <p class="data">
-                                                    {{ journey.description|slice(0, 25) }}
-                                                </p>
-                                            </div>
-                                            <div class="side-buttons">
-                                                <a href="/journey/unfav/{{ journey.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
-
-                                                <img src="/assets/images/information.png" alt="information icon">
-                                            </div>
+                                            <img src="/assets/images/information.png" alt="information icon">
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         {% endfor %}
                     </div>
-                    <div id="association-content">
-                        <p>Associations</p>
+                    <div id="associations-content">
+                        {% for association in favoriteAssociations|slice(0, 4) %}
+                            <div class="association">
+                                <img src="/assets/images/associations/logos/{{ association.logo }}.png" alt="Association logo" class="association-logo">
+                                <div class="right-part">
+                                    <div class="top-right-part">
+                                        <div class="association-details">
+                                            <p>Nom:</p>
+                                            <p class="data">
+                                                {{ association.name }}
+                                            </p>
+                                            <p>Résumé:</p>
+                                            <p class="data">
+                                                {{ association.firsttext|slice(0, 100) }}
+                                            </p>
+                                        </div>
+                                        <div class="side-buttons">
+                                            <a href="/association/unfav/{{ association.id }}"><img src="/assets/images/filled-heart.png" alt="favorite icon" class="filled-heart"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                     <div id="historique-content">
                         <p>Historique</p>

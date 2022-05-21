@@ -21,7 +21,7 @@
   position: fixed;
   top: 0;
   margin-bottom: 10vh;
-  z-index: 2;
+  z-index: 100;
 }
 #body header #logo-home {
   height: 100%;
@@ -1054,7 +1054,6 @@
   bottom: 0;
   left: 50%;
   padding: 0.8em 4em;
-  z-index: 2;
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 10px;
@@ -1108,17 +1107,17 @@
   display: none;
 }
 #body #account-body #right-column #bottom-right-column #favorites #trajets:checked ~ #trajets-content,
-#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ #association-content,
+#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ #associations-content,
 #body #account-body #right-column #bottom-right-column #favorites #historique:checked ~ #historique-content {
   display: flex;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content, #body #account-body #right-column #bottom-right-column #favorites #associations-content {
   padding: 0 1.5em;
   column-gap: 1em;
   flex-wrap: wrap;
   row-gap: 1em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association {
   display: flex;
   background-color: white;
   border: solid 1px lightgrey;
@@ -1127,21 +1126,21 @@
   overflow: hidden;
   flex-grow: 1;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .map {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .map, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .association-logo, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .map, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .association-logo, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .map, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .association-logo, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .map, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .association-logo {
   width: 30%;
   object-fit: cover;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
   flex-grow: 1;
   padding: 1em 0.5em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part {
   display: flex;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .association-details {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
@@ -1149,16 +1148,16 @@
   flex-wrap: wrap;
   word-break: break-word;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details :not(.data) {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .association-details :not(.data) {
   font-weight: bold;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .side-buttons {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
   padding-left: 1em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons img {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .side-buttons img {
   cursor: pointer;
 }
 #body .big-form {
@@ -1174,6 +1173,285 @@
 #body .big-form input {
   height: 3em;
 }
+#body #associations-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+#body #associations-body #associations-top-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#body #associations-body #associations-top-part #search-part {
+  display: flex;
+  align-items: center;
+}
+#body #associations-body #associations-top-part #search-part #filter-part {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: fit-content;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  padding: 0.6em 1em;
+  column-gap: 1em;
+  cursor: pointer;
+}
+#body #associations-body #associations-top-part #search-part #filter-part h3 {
+  padding: 0;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+#body #associations-body #associations-top-part #search-part #filter-part h3 a {
+  text-decoration: none;
+  color: black;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch {
+  width: 100%;
+  height: 2.75em;
+  border: solid 1px lightgrey;
+  border-radius: 50px;
+  margin-left: 4.5em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput {
+  flex-grow: 1;
+  height: 100%;
+  border: none;
+  margin-left: 0.2em;
+  font-size: 1.3em;
+  color: #394032;
+  font-size: 1em;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput:focus {
+  outline: none;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch #globalSearchInput::placeholder {
+  color: lightgray;
+}
+#body #associations-body #associations-top-part #search-part #globalSearch label[for=globalSearchInput] {
+  width: fit-content;
+  margin-left: 1em;
+  background-color: white;
+}
+#body #associations-body #associations {
+  display: flex;
+  column-gap: 2em;
+  row-gap: 2em;
+  padding: 2em 4em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#body #associations-body #associations .association {
+  background-color: white;
+  width: 20em;
+  height: 10em;
+  border: solid 1px black;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em;
+  cursor: pointer;
+}
+#body #associations-body #associations .association .side-buttons {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 2;
+}
+#body #associations-body #associations .association .side-buttons .popupButton {
+  background-color: #394032;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.2em;
+  cursor: pointer;
+  z-index: 5;
+}
+#body #associations-body #associations .association .side-buttons .popupButton:hover {
+  background-color: #8DAB7F;
+}
+#body #associations-body #see-more-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#body #associations-body #see-more-div #see-more {
+  margin-top: 2em;
+  width: 6em;
+  font-size: 1.5em;
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+}
+#body #associations-body #see-more-div #see-more:hover {
+  background-color: #8DAB7F;
+}
+#body #dark-background {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+#body #dark-background #createForm-association {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px lightgray;
+  background-color: #FDFFF8;
+  border-radius: 10px;
+  width: 33em;
+}
+#body #dark-background #createForm-association #formHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px grey;
+  justify-content: space-between;
+}
+#body #dark-background #createForm-association #formHeader h2 {
+  padding: 1rem;
+}
+#body #dark-background #createForm-association #formHeader #cross {
+  margin-right: 1em;
+  position: relative;
+  cursor: pointer;
+}
+#body #dark-background #createForm-association #formHeader #cross div {
+  width: 2em;
+  height: 0.5em;
+  background-color: rgb(233, 233, 233);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#body #dark-background #createForm-association #formHeader #cross #firstBar {
+  transform: rotate(45deg);
+}
+#body #dark-background #createForm-association #formHeader #cross #secondBar {
+  transform: rotate(-45deg);
+}
+#body #dark-background #createForm-association #formHeader #cross:hover div {
+  background-color: #8DAB7F;
+}
+#body #dark-background #createForm-association form {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  align-items: center;
+}
+#body #dark-background #createForm-association form h3 {
+  padding: 0;
+}
+#body #dark-background #createForm-association form #mid-part {
+  display: flex;
+  column-gap: 1.5em;
+}
+#body #dark-background #createForm-association form #mid-part input {
+  border-radius: 10px;
+  border: solid 1px lightgrey;
+  flex-grow: 1;
+  padding: 0.5em;
+}
+#body #dark-background #createForm-association form #mid-part #postButton {
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  font-size: 1em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  text-align: center;
+}
+#body #dark-background #createForm-association form #mid-part #postButton:hover {
+  background-color: #8DAB7F;
+}
+#body #dark-background #createForm-association form #bottom-part {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+}
+#body #dark-background #createForm-association form #bottom-part a {
+  align-self: center;
+  background-color: #394032;
+  color: white;
+  font-size: 0.7em;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+#body #dark-background #createForm-association form #bottom-part a:hover {
+  background-color: #8DAB7F;
+}
+#body #association-page {
+  margin-top: 10vh;
+  padding: 5vh 12em;
+}
+#body #association-page #association-top-part {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#body #association-page #association-top-part #top-left-part {
+  display: flex;
+  column-gap: 1em;
+}
+#body #association-page #association-top-part #top-left-part #exit-arrow {
+  object-fit: contain;
+  align-self: flex-start;
+  cursor: pointer;
+}
+#body #association-page #association-top-part #top-left-part #association-logo {
+  width: 12em;
+  height: 5em;
+  object-fit: cover;
+}
+#body #association-page #association-top-part #popupButton {
+  justify-self: flex-end;
+  background-color: #394032;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.5em 0.8em;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+}
+#body #association-page #association-top-part #popupButton:hover {
+  background-color: #8DAB7F;
+}
+#body #association-page #association-content-part {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.6em;
+}
+#body #association-page #association-content-part div {
+  display: flex;
+  column-gap: 4em;
+  align-items: center;
+}
+#body #association-page #association-content-part div p {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+#body #association-page #association-content-part div img {
+  width: 35em;
+  height: 20em;
+  object-fit: cover;
+}
 #body #dark-background {
   display: none;
   z-index: 10;
@@ -1184,7 +1462,7 @@
 }
 #body #dark-background #createForm {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px lightgray;

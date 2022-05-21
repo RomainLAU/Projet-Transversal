@@ -38,12 +38,15 @@ class JourneyModel extends Model
     }
 
     public function getFavoriteJourneysOfUser() {
-        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` INNER JOIN user ON user_id = user.id WHERE user_id = user.id = :session_id');
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_journeys` INNER JOIN user ON user_id = user.id WHERE user.id = :session_id');
         $statement->execute([
             'session_id' => $_SESSION['user']['id'],
         ]);
 
         $favoriteJourneyIds = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        // dd($favoriteJourneyIds);
+        // dd($statement);
 
         $favoriteJourneys = [];
 
@@ -170,6 +173,26 @@ class JourneyModel extends Model
         $statement = $this->pdo->prepare($query);
 
         $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function joinJourney($journeyId) {
+
+        $statement = $this->pdo->prepare('INSERT INTO `user_has_journey` (`user_id`, `journey_id`) VALUES (:user_id, :journey_id)');
+
+        $statement->execute([
+            'user_id' => $_SESSION['user']['id'],
+            'journey_id' => $journeyId,
+        ]);
+    }
+
+    public function getJoinedJourneys() {
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_journey` WHERE `user_id` = :user_id');
+
+        $statement->execute([
+            'user_id' => $_SESSION['user']['id'],
+        ]);
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }

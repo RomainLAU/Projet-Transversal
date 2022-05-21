@@ -32,7 +32,7 @@ $secondary-dark-green: #394032;
         position: fixed;
         top: 0;
         margin-bottom: 10vh;
-        z-index: 2;
+        z-index: 100;
 
         #logo-home{
             height: 100%;
@@ -1309,7 +1309,6 @@ $secondary-dark-green: #394032;
                         bottom: 0;
                         left: 50%;
                         padding: 0.8em 4em;
-                        z-index: 2;
                         transform: translate(-50%, -50%);
                         background-color: white;
                         border-radius: 10px;
@@ -1375,18 +1374,18 @@ $secondary-dark-green: #394032;
                     }
 
                     #trajets:checked ~ #trajets-content,
-                    #association:checked ~ #association-content,
+                    #association:checked ~ #associations-content,
                     #historique:checked ~ #historique-content {
                         display: flex;
                     }
 
-                    #trajets-content{
+                    #trajets-content, #associations-content{
                         padding: 0 1.5em;
                         column-gap: 1em;
                         flex-wrap: wrap;
                         row-gap: 1em;
 
-                        .journey{
+                        .journey, .association{
                             display: flex;
                             background-color: white;
                             border: solid 1px lightgrey;
@@ -1395,7 +1394,7 @@ $secondary-dark-green: #394032;
                             overflow: hidden;
                             flex-grow: 1;
 
-                            .map{
+                            .map, .association-logo{
                                 width: 30%;
                                 object-fit: cover;
                             }
@@ -1410,7 +1409,7 @@ $secondary-dark-green: #394032;
                                 .top-right-part{
                                     display: flex;
 
-                                    .journey-details{
+                                    .journey-details, .association-details{
                                         display: flex;
                                         flex-direction: column;
                                         row-gap: 1em;
@@ -1457,6 +1456,340 @@ $secondary-dark-green: #394032;
         }
     }
 
+    // Page Associations
+
+    #associations-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+
+
+        #associations-top-part{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            #search-part{
+                display: flex;
+                align-items: center;
+    
+                #filter-part{
+                    display: flex;
+                    align-items: center;
+                    background-color: white;
+                    width: fit-content;
+                    border: solid 1px lightgrey;
+                    border-radius: 10px;
+                    padding: 0.6em 1em;
+                    column-gap: 1em;
+                    cursor: pointer;
+    
+                    h3{
+                        padding: 0;
+                        font-weight: normal;
+                        font-size: 1.2em;
+
+                        a{
+                            text-decoration: none;
+                            color: black;
+                        }
+                    }
+                }
+    
+                #globalSearch{
+                    width: 100%;
+                    height: 2.75em;
+                    border: solid 1px lightgrey;
+                    border-radius: 50px;
+                    margin-left: 4.5em;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+    
+                    #globalSearchInput{
+                        flex-grow: 1;
+                        height: 100%;
+                        border: none;
+                        margin-left: 0.2em;
+                        font-size: 1.3em;
+                        color:#394032;
+                        font-size: 1em;
+    
+                        &:focus{
+                            outline: none;
+                        }
+
+                        &::placeholder{
+                            color: lightgray;
+                        }
+                    }
+    
+                    label[for=globalSearchInput] {
+                        width: fit-content;
+                        margin-left: 1em;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+        #associations{
+            display: flex;
+            column-gap: 2em;
+            row-gap: 2em;
+            padding: 2em 4em;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .association{
+                background-color: white;
+                width: 20em;
+                height: 10em;
+                border: solid 1px black;
+                border-radius: 15px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 1em;
+                cursor: pointer;
+
+                .side-buttons{
+                    display: flex;
+                    height: 100%;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    z-index: 2;       
+                    
+                    .popupButton{
+                        background-color: $secondary-dark-green;
+                        color: white;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        padding: 0.2em;
+                        cursor: pointer;
+                        z-index: 5;
+
+                        &:hover{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+            }
+        }
+
+        #see-more-div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            #see-more{
+                margin-top: 2em;
+                width: 6em;
+                font-size: 1.5em;
+                align-self: center;
+                background-color: #394032;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0.2em 0.4em;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: $main-green;
+                }
+            }
+        }
+    }
+
+    // Page Association
+
+    #dark-background{
+        display: none;
+        z-index: 10;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+
+        #createForm-association{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 1px lightgray;
+            background-color: $light-background;
+            border-radius: 10px;
+            width: 33em;
+
+            #formHeader{
+                display: flex;
+                align-items: center;
+                border-bottom: solid 1px grey;
+                justify-content: space-between;
+
+                h2{
+                    padding: 1rem;
+                }
+
+                #cross{
+                    margin-right: 1em;
+                    position: relative;
+                    cursor: pointer;
+
+                    div{
+                        width: 2em;
+                        height: 0.5em;
+                        background-color: rgb(233, 233, 233);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+
+                    #firstBar{
+                        transform: rotate(45deg)
+                    }
+
+                    #secondBar{
+                        transform: rotate(-45deg)
+                    }
+
+                    &:hover{
+                        div{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+            }
+
+            form{
+                padding: 1.5em;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1em;
+                align-items: center;
+
+                h3{
+                    padding: 0;
+                }
+
+                #mid-part{
+                    display: flex;
+                    column-gap: 1.5em;
+
+                    input{
+                        border-radius: 10px;
+                        border: solid 1px lightgrey;
+                        flex-grow: 1;
+                        padding: 0.5em;
+                    }
+
+                    #postButton {
+                        align-self: center;
+                        background-color: $secondary-dark-green;
+                        color: white;
+                        font-size: 1em;
+                        padding: 0.5em 0.8em;
+                        cursor: pointer;
+                        text-align: center;
+    
+                        &:hover{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+
+                #bottom-part{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.5em;
+
+                    a{
+                        align-self: center;
+                        background-color: $secondary-dark-green;
+                        color: white;
+                        font-size: 0.7em;
+                        padding: 0.5em 0.8em;
+                        border-radius: 5px;
+                        text-align: center;
+                        text-decoration: none;
+    
+                        &:hover{
+                            background-color: $main-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #association-page{
+        margin-top: 10vh;
+        padding: 5vh 12em;
+
+        #association-top-part{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            #top-left-part{
+                display: flex;
+                column-gap: 1em;
+
+                #exit-arrow{
+                    object-fit: contain;
+                    align-self: flex-start;
+                    cursor: pointer;
+                }
+
+                #association-logo{
+                    width: 12em;
+                    height: 5em;
+                    object-fit: cover;
+                }
+            }
+
+            #popupButton{
+                justify-self: flex-end;
+                background-color: $secondary-dark-green;
+                color: white;
+                border-radius: 10px;
+                text-decoration: none;
+                padding: 0.5em 0.8em;
+                font-size: 1.2em;
+                cursor: pointer;
+                border: none;
+
+                &:hover{
+                    background-color: $main-green;
+                }
+            }
+        }
+
+        #association-content-part{
+            display: flex;
+            flex-direction: column;
+            padding: 0 2.6em;
+
+            div{
+                display: flex;
+                column-gap: 4em;
+                align-items: center;
+
+                p{
+                    font-size: 1.5em;
+                    line-height: 1.4em;
+                }
+
+                img{
+                    width: 35em;
+                    height: 20em;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
     // Page Trajets
 
     #dark-background{
@@ -1469,7 +1802,7 @@ $secondary-dark-green: #394032;
 
         #createForm{
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;

@@ -37,6 +37,21 @@ $router->get('/journey/unfav/(\d+)', 'Mvc\Controller\JourneyController@deleteFro
 
 $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
+$router->get('/journey/join/(\d+)', 'Mvc\Controller\JourneyController@joinJourney');
+
+
+$router->get('/associations', 'Mvc\Controller\AssociationController@listAssociations');
+
+$router->get('/association/(\d+)', 'Mvc\Controller\AssociationController@showAssociationById');
+
+$router->post('/association/(\d+)', 'Mvc\Controller\DonationController@donateToAssociation');
+
+$router->get('/association/favorite/(\d+)', 'Mvc\Controller\AssociationController@addAssociationToFavorites');
+
+$router->get('/association/unfav/(\d+)', 'Mvc\Controller\AssociationController@deleteFromFavorites');
+
+$router->post('/associations', 'Mvc\Controller\AssociationController@filterAssociations');
+
 $router->get('/account', 'Mvc\Controller\AccountController@displayAccount');
 
 $router->get('/register', 'Mvc\Controller\UserController@register');
