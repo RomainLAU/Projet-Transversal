@@ -1,7 +1,10 @@
 {% extends "base.html.twig" %}
 
 {% block title %}{{ association.name }}{% endblock %}
-{% block scripts %}<script src="/assets/scripts/script.js"></script>{% endblock %}
+{% block scripts %}
+    <script src="/assets/scripts/script.js"></script>
+    <script src="/assets/scripts/beezConvertion.js"></script>
+{% endblock %}
 {% block content %}
 
     <div id="dark-background">
@@ -22,7 +25,7 @@
                     <input type="submit" value="Donner" id="postButton" name="postButton">
                 </div>
                 <div id="bottom-part">
-                    <p>Valeur en €: ...€</p>
+                    <p>Valeur en €: <span id="convertion"></span>€</p>
                     <a href="">En savoir plus</a>
                 </div>
             </form>
