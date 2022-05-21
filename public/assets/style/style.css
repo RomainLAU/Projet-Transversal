@@ -1084,17 +1084,17 @@
   display: none;
 }
 #body #account-body #right-column #bottom-right-column #favorites #trajets:checked ~ #trajets-content,
-#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ #association-content,
+#body #account-body #right-column #bottom-right-column #favorites #association:checked ~ #associations-content,
 #body #account-body #right-column #bottom-right-column #favorites #historique:checked ~ #historique-content {
   display: flex;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content, #body #account-body #right-column #bottom-right-column #favorites #associations-content {
   padding: 0 1.5em;
   column-gap: 1em;
   flex-wrap: wrap;
   row-gap: 1em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association {
   display: flex;
   background-color: white;
   border: solid 1px lightgrey;
@@ -1103,21 +1103,21 @@
   overflow: hidden;
   flex-grow: 1;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .map {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .map, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .association-logo, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .map, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .association-logo, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .map, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .association-logo, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .map, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .association-logo {
   width: 30%;
   object-fit: cover;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
   flex-grow: 1;
   padding: 1em 0.5em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part {
   display: flex;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .association-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .journey-details, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .association-details {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
@@ -1125,16 +1125,16 @@
   flex-wrap: wrap;
   word-break: break-word;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details :not(.data) {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .association-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .journey-details :not(.data), #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .association-details :not(.data) {
   font-weight: bold;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .side-buttons, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .side-buttons {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
   padding-left: 1em;
 }
-#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons img {
+#body #account-body #right-column #bottom-right-column #favorites #trajets-content .journey .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #trajets-content .association .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #associations-content .journey .right-part .top-right-part .side-buttons img, #body #account-body #right-column #bottom-right-column #favorites #associations-content .association .right-part .top-right-part .side-buttons img {
   cursor: pointer;
 }
 #body .big-form {

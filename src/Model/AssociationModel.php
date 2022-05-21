@@ -35,12 +35,14 @@ class AssociationModel extends Model
     }
 
     public function getFavoriteAssociationsOfUser() {
-        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_associations` INNER JOIN user ON user_id = user.id WHERE user.id = :session_id');
+        $statement = $this->pdo->prepare('SELECT * FROM `user_has_favorite_associations` INNER JOIN user ON `user_id` = `user`.id WHERE `user`.id = :session_id');
         $statement->execute([
             'session_id' => $_SESSION['user']['id'],
         ]);
 
         $favoriteAssociationIds = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // dd($statement);
 
         $favoriteAssociations = [];
 

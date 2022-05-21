@@ -1347,18 +1347,18 @@ $secondary-dark-green: #394032;
                     }
 
                     #trajets:checked ~ #trajets-content,
-                    #association:checked ~ #association-content,
+                    #association:checked ~ #associations-content,
                     #historique:checked ~ #historique-content {
                         display: flex;
                     }
 
-                    #trajets-content{
+                    #trajets-content, #associations-content{
                         padding: 0 1.5em;
                         column-gap: 1em;
                         flex-wrap: wrap;
                         row-gap: 1em;
 
-                        .journey{
+                        .journey, .association{
                             display: flex;
                             background-color: white;
                             border: solid 1px lightgrey;
@@ -1367,7 +1367,7 @@ $secondary-dark-green: #394032;
                             overflow: hidden;
                             flex-grow: 1;
 
-                            .map{
+                            .map, .association-logo{
                                 width: 30%;
                                 object-fit: cover;
                             }
@@ -1382,7 +1382,7 @@ $secondary-dark-green: #394032;
                                 .top-right-part{
                                     display: flex;
 
-                                    .journey-details{
+                                    .journey-details, .association-details{
                                         display: flex;
                                         flex-direction: column;
                                         row-gap: 1em;

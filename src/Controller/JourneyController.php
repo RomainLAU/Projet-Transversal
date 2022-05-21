@@ -111,4 +111,12 @@ class JourneyController extends Controller
         header('location: /account');
         exit();
     }
+
+    public function joinJourney($journeyId) {
+
+        $this->journeyModel->joinJourney($journeyId);
+
+        header('location: /journey');
+        exit();
+    }
 }

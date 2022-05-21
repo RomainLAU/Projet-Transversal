@@ -37,8 +37,10 @@ $router->get('/journey/unfav/(\d+)', 'Mvc\Controller\JourneyController@deleteFro
 
 $router->post('/journey/search', 'Mvc\Controller\JourneyController@filterJourneys');
 
-$router->get('/associations', 'Mvc\Controller\AssociationController@listAssociations');
+$router->get('/journey/join/(\d+)', 'Mvc\Controller\JourneyController@joinJourney');
 
+
+$router->get('/associations', 'Mvc\Controller\AssociationController@listAssociations');
 
 $router->get('/association/(\d+)', 'Mvc\Controller\AssociationController@showAssociationById');
 
