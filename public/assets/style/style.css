@@ -501,7 +501,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 10em;
 }
 #body .bloc-partenaires .rond-partenaires {
   height: 12em;
