@@ -29,4 +29,12 @@ class DonationModel extends Model
             'amount' => $amount,
         ]);
     }
+
+    public function deleteDonation($donationId) {
+        $statement = $this->pdo->prepare('DELETE `donations` FROM `donations` WHERE `id` = :donation_id');
+
+        $statement->execute([
+            'donation_id' => $donationId,
+        ]);
+    }
 }

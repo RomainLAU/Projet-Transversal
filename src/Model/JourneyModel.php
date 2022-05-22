@@ -44,9 +44,6 @@ class JourneyModel extends Model
         ]);
 
         $favoriteJourneyIds = $statement->fetchAll(PDO::FETCH_ASSOC);
-        
-        // dd($favoriteJourneyIds);
-        // dd($statement);
 
         $favoriteJourneys = [];
 
@@ -195,5 +192,13 @@ class JourneyModel extends Model
         ]);
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function deleteJourney($journeyId) {
+        $statement = $this->pdo->prepare('DELETE `journey` FROM `journey` WHERE `id` = :journey_id');
+
+        $statement->execute([
+            'journey_id' => $journeyId,
+        ]);
     }
 }

@@ -2380,6 +2380,15 @@ $secondary-dark-green: #394032;
                 border: 1px solid black;
                 word-break: break-word;
                 padding: 0.2em;
+
+                a{
+                    background-color: $secondary-dark-green;
+                    color: red;
+                    font-weight: bold;
+                    padding: 0.2em 0.5em;
+                    word-break: keep-all;
+                    border-radius: 5px;
+                }
             }
     }
 }

@@ -12,6 +12,7 @@
             <th>Association ID</th>
             <th>Date</th>
             <th>Montant</th>
+            <th>Action</th>
         </tr>
 
 
@@ -23,6 +24,7 @@
             <td>{{ donation.association_id }}</td>
             <td>{{ donation.date }}</td>
             <td>{{ donation.amount }}</td>
+            <td><a href="/admin/donations/delete/{{ donation.id }}">Delete</a></td>
         </tr>
 
 

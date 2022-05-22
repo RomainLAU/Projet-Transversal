@@ -12,6 +12,7 @@
             <th>Secteur</th>
             <th>Premier texte</th>
             <th>Deuxième texte</th>
+            <th>Action</th>
         </tr>
 
 
@@ -23,6 +24,7 @@
             <td>{{ association.sector }}</td>
             <td>{{ association.firsttext }}</td>
             <td>{{ association.secondtext }}</td>
+            <td><a href="/admin/associations/delete/{{ association.id }}">Delete</a></td>
         </tr>
 
 

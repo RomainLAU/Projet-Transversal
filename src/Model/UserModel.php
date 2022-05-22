@@ -53,27 +53,11 @@ class UserModel extends Model
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // public function buyHost() {
+    public function deleteUser($userId) {
+        $statement = $this->pdo->prepare('DELETE `user` FROM `user` WHERE `id` = :user_id');
 
-    //     $statement = $this->pdo->prepare('UPDATE `user` SET `role` = :role, `token` = :token, `timeRole`= :timeRole WHERE `id` = :id');
-
-    //     $statement->execute([
-    //         'role' => 'host',
-    //         'token' => intval($_SESSION['user']['token']) - 1000,
-    //         'id' => $_SESSION['user']['id'],
-    //         'timeRole' => date("Y-m-d", mktime(0, 0, 0, date("m") + 1, date("d"), date("Y"))),
-    //     ]);
-
-    //     $_SESSION["user"]["timeRole"] = date("Y-m-d", mktime(0, 0, 0, date("m") + 1, date("d"), date("Y"))); 
-    // }
-
-    // public function changeRole() {
-
-    //     $statement = $this->pdo->prepare('UPDATE `user` SET `role` = :role, `timeRole`= :timeRole WHERE `id` = :id');
-    //     $statement->execute([
-    //         'role' => "user",
-    //         'id' => $_SESSION['user']['id'], 
-    //         'timeRole' => '0',
-    //     ]);
-    // }
+        $statement->execute([
+            'user_id' => $userId,
+        ]);
+    }
 }

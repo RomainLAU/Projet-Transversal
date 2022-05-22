@@ -42,8 +42,6 @@ class AssociationModel extends Model
 
         $favoriteAssociationIds = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        // dd($statement);
-
         $favoriteAssociations = [];
 
         foreach($favoriteAssociationIds as $id) {
@@ -94,5 +92,13 @@ class AssociationModel extends Model
                 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+
+    public function deleteAssociation($associationId) {
+        $statement = $this->pdo->prepare('DELETE `associations` FROM `associations` WHERE `id` = :association_id');
+
+        $statement->execute([
+            'assiciation_id' => $associationId,
+        ]);
     }
 }

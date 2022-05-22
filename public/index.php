@@ -194,6 +194,11 @@ $router->get('/admin/donations', 'Mvc\Controller\AdminController@listDonations')
 $router->get('/admin/users', 'Mvc\Controller\AdminController@listUsers');
 
 
+$router->get('/admin/journey/delete/(\d+)', 'Mvc\Controller\AdminController@deleteJourney');
+$router->get('/admin/associations/delete/(\d+)', 'Mvc\Controller\AdminController@deleteAssociation');
+$router->get('/admin/donations/delete/(\d+)', 'Mvc\Controller\AdminController@deleteDonation');
+$router->get('/admin/users/delete/(\d+)', 'Mvc\Controller\AdminController@deleteUser');
+
 $router->run();
 
 ?>

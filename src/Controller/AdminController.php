@@ -41,6 +41,13 @@ class AdminController extends Controller
 
     }
 
+    public function deleteJourney($journeyId) {
+        $this->journeyModel->deleteJourney($journeyId);
+
+        header('location: /admin/journey');
+        exit();
+    }
+
     public function listAssociations() {
 
         $associations = $this->associationModel->getAssociations();
@@ -49,6 +56,13 @@ class AdminController extends Controller
             'associations' => $associations
         ]);
 
+    }
+
+    public function deleteAssociation($associationId) {
+        $this->associationModel->deleteAssociation($associationId);
+
+        header('location: /admin/associations');
+        exit();
     }
 
     public function listDonations() {
@@ -61,6 +75,13 @@ class AdminController extends Controller
 
     }
 
+    public function deleteDonation($donationId) {
+        $this->donationModel->deleteDonation($donationId);
+
+        header('location: /admin/donations');
+        exit();
+    }
+
     public function listUsers() {
 
         $users = $this->userModel->getUsers();
@@ -71,4 +92,10 @@ class AdminController extends Controller
 
     }
 
+    public function deleteUser($userId) {
+        $this->userModel->deleteUser($userId);
+
+        header('location: /admin/users');
+        exit();
+    }
 }

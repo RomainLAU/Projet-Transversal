@@ -1956,5 +1956,13 @@
   word-break: break-word;
   padding: 0.2em;
 }
+#body .table-journeys td a {
+  background-color: #394032;
+  color: red;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  word-break: keep-all;
+  border-radius: 5px;
+}
 
 /*# sourceMappingURL=style.css.map */
