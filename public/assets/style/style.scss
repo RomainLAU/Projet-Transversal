@@ -695,29 +695,80 @@ $secondary-dark-green: #394032;
                     }
             }
 
-
-            .partenaires {
-                width: 40%;
-                margin-top: 3%;
+            #slider{
+                margin-top: 1em;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column-reverse;
+                align-items: center;
+                row-gap: 1.5em;
 
+                .partenaires {
+                    display: none;
+                    width: 60em;
+                    margin-top: 3%;
+                    justify-content: center;
+                    column-gap: 2em;
+    
                     .partenaire {
-                        height: 100%;
-                        width: 19%;
-                        border-radius: 15px;
-
-                            img {
-                                height: 100%;
-                                width: 100%;
-                            }
+                        width: 15em;
+                        height: 9em;
+    
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: none;
+                            border-radius: 15px;
+                        }
                     }
+                }
+
+                input {
+                    display: none;
+                }
+
+                label{
+                    width: 1em;
+                    height: 1em;
+                    border-radius: 50%;
+                    background-color: $lighter-background;
+                    border: none;
+                }
+
+                #first:checked ~ ul > li > label[for="first"],
+                #second:checked ~ ul > li > label[for="second"],
+                #third:checked ~ ul > li > label[for="third"] {
+                    background-color: $secondary-dark-green;
+                }
+
+                ul{
+                    display: flex;
+                    column-gap: 1em;
+                    margin-bottom: 5em;
+        
+                    li{
+                        text-align: center;
+        
+                        label{
+                            cursor: pointer;
+                            display: block;
+        
+                            &:hover{
+                                color: $secondary-dark-green;
+                            }
+                        }
+                    }
+                }
+
+                #first:checked ~ #first-assos,
+                #second:checked ~ #second-assos,
+                #third:checked ~ #third-assos {
+                    display: flex;
+                }
             }
     }
     
     #review-bloc{
         background-color: $secondary-dark-green;
-        // width: 100;
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
