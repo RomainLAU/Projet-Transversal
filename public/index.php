@@ -37,6 +37,9 @@ $router->before('POST', '/associations', function() {
     if (!isset($_SESSION['user'])) {
         header('location: /login');
         exit();
+    } else if (isset($_SESSION['user']) && strlen($_POST['globalSearch']) == 0) {
+        header('location: /associations');
+        exit();
     }
 });
 

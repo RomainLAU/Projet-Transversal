@@ -712,12 +712,55 @@ $secondary-dark-green: #394032;
                             }
                     }
             }
-
-        
     }
     
+    #review-bloc{
+        background-color: $secondary-dark-green;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5em;
+        justify-content: center;
+        align-items: center;
+        padding: 4em;
 
+        h2{
+            color: white;
+            font-family: 'Eras ITC';
+            text-align: center;
+            padding: 0;
+            font-size: 2.5em;
+        }
 
+        #reviews{
+            display: flex;
+            column-gap: 4em;
+            overflow-x: hidden;
+            flex-wrap: nowrap;
+            margin-right: 5em;
+
+            .review{
+                background-color: white;
+                position: relative;
+                padding: 2em 3em;
+                border-radius: 15px;
+                width: 25em;
+                height: 15em;
+
+                img{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+
+                p{
+                    word-break: break-word;
+                    text-align: center;
+                    font-family: 'Rubik';
+                }
+            }
+        }
+    }
 
 
 
@@ -962,12 +1005,12 @@ $secondary-dark-green: #394032;
 
 
             .rs {
-
                 height: 100%;
-                width: 15%;
+                width: 20%;
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-end;
+                align-items: center;
+                cursor: pointer;
 
                     .facebook-blanc {
                         width: 40%;
@@ -994,9 +1037,6 @@ $secondary-dark-green: #394032;
     
         }
 
-
-
-
         .trait-blanc {
             margin-top: 2%;
             border-bottom: 1px solid #6b6968;
@@ -1011,41 +1051,11 @@ $secondary-dark-green: #394032;
         }
 
         .footer-links {
-            height: 8vh;
             width: 37vw;
             margin-top: 5vh;
             display: flex;
-            justify-content: space-between;
-            margin-left: 0.5em;
-
-
-                .links-b1 {
-
-                    height: 100%;
-                    width: 32%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-
-                .links-b2 {
-
-                    height: 100%;
-                    width: 32%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-
-                .links-b3 {
-
-                    height: 100%;
-                    width: 32%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-
-                }
+            justify-content: center;
+            column-gap: 10em;
         }
 
 
@@ -1127,17 +1137,20 @@ $secondary-dark-green: #394032;
         font-weight: bold;
         padding: 2rem;
         font-size: 1.5em;
+        font-family: "Eras ITC";
     }
 
     h3{
         font-weight: bold;
         padding: 2rem;
         font-size: 1.5em;
+        font-family: "Eras ITC";
     }
 
     h4{
         padding: 2rem;
         font-size: 1.5em;
+        font-family: "Eras ITC";
     }
 
     // Page Mon Compte
@@ -1620,10 +1633,11 @@ $secondary-dark-green: #394032;
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
         height: 100vh;
+        top: 0;
 
         #createForm-association{
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;
@@ -1808,10 +1822,11 @@ $secondary-dark-green: #394032;
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
         height: 100vh;
+        top: 0;
 
         #createForm{
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: solid 1px lightgray;

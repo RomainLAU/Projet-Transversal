@@ -571,6 +571,48 @@
   height: 100%;
   width: 100%;
 }
+#body #review-bloc {
+  background-color: #394032;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5em;
+  justify-content: center;
+  align-items: center;
+  padding: 4em;
+}
+#body #review-bloc h2 {
+  color: white;
+  font-family: "Eras ITC";
+  text-align: center;
+  padding: 0;
+  font-size: 2.5em;
+}
+#body #review-bloc #reviews {
+  display: flex;
+  column-gap: 4em;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  margin-right: 5em;
+}
+#body #review-bloc #reviews .review {
+  background-color: white;
+  position: relative;
+  padding: 2em 3em;
+  border-radius: 15px;
+  width: 25em;
+  height: 15em;
+}
+#body #review-bloc #reviews .review img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#body #review-bloc #reviews .review p {
+  word-break: break-word;
+  text-align: center;
+  font-family: "Rubik";
+}
 #body .bloc-register {
   margin-top: 15vh;
   display: flex;
@@ -780,10 +822,11 @@
 }
 #body footer .stores-rs .rs {
   height: 100%;
-  width: 15%;
+  width: 20%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  cursor: pointer;
 }
 #body footer .stores-rs .rs .facebook-blanc {
   width: 40%;
@@ -815,33 +858,11 @@
   margin-top: 1.5em;
 }
 #body footer .footer-links {
-  height: 8vh;
   width: 37vw;
   margin-top: 5vh;
   display: flex;
-  justify-content: space-between;
-  margin-left: 0.5em;
-}
-#body footer .footer-links .links-b1 {
-  height: 100%;
-  width: 32%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#body footer .footer-links .links-b2 {
-  height: 100%;
-  width: 32%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#body footer .footer-links .links-b3 {
-  height: 100%;
-  width: 32%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 10em;
 }
 #body footer .footer-contact {
   height: 5vh;
@@ -903,15 +924,18 @@
   font-weight: bold;
   padding: 2rem;
   font-size: 1.5em;
+  font-family: "Eras ITC";
 }
 #body h3 {
   font-weight: bold;
   padding: 2rem;
   font-size: 1.5em;
+  font-family: "Eras ITC";
 }
 #body h4 {
   padding: 2rem;
   font-size: 1.5em;
+  font-family: "Eras ITC";
 }
 #body #account-body {
   display: flex;
@@ -1313,10 +1337,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
+  top: 0;
 }
 #body #dark-background #createForm-association {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px lightgray;
@@ -1468,10 +1493,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
+  top: 0;
 }
 #body #dark-background #createForm {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px lightgray;
