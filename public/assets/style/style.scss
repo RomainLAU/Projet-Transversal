@@ -35,6 +35,7 @@ $secondary-dark-green: #394032;
     header{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         background-color: black;
         height: max-content;
         width: 100vw;
@@ -104,7 +105,7 @@ $secondary-dark-green: #394032;
                 }
 
                 &:hover { 
-                    border-bottom: 2px solid #CFEE9E;
+                    border-bottom: 2px solid $light-green;
                 }
             }
         }
@@ -113,20 +114,20 @@ $secondary-dark-green: #394032;
 
             display: flex;
             align-items: center;
-            color: #CFEE9E;
-            margin-top: 1%;
+            color: $light-green;
             width: 18%;
             margin-right: 10em;
             column-gap: 1em;
+            height: 36px;
             
                 a {
-                    color: #CFEE9E;
+                    color: $light-green;
                     text-decoration: none;
                 }
 
                 .dl {
                     border-radius: 10px;
-                    background-color: #CFEE9E;
+                    background-color: $light-green;
                      
                     a {
                         font-size: 14px;
@@ -149,15 +150,14 @@ $secondary-dark-green: #394032;
     // Début page login
 
     .bloc-login {
-        margin-top: 20vh;
+        margin-top: 15vh;
         display: flex;
-        justify-content:center;
-        gap: 300px;
+        justify-content:space-around;
+        margin-bottom: 5em;
     }
     .register-photos-login{
         display: flex;
         flex-direction: column;
-        margin-top: -60px;
     }
     .register-logo{
         width: 360px;
@@ -188,8 +188,9 @@ $secondary-dark-green: #394032;
         gap: 25px;
         background-color: rgb(255, 255, 255);
         border-radius: 3%;
-        border: 1px solid black;
-        box-shadow: 2px 2px 10px;
+        border: 1px solid lightgrey;
+        box-shadow: 2px 2px 10px grey;
+        margin-top: 5em;
     }
 
     .containerA .row100{
@@ -294,7 +295,7 @@ $secondary-dark-green: #394032;
     }
     .mdpoub {
     margin-top: 30px;
-    color: blue;
+    color: #1877F2;
     text-decoration: none;
     }
     a.inscrivez  {
@@ -401,7 +402,7 @@ $secondary-dark-green: #394032;
 
 
     .bloc-prez {
-        background-color: $main-green;
+        background-color: $secondary-light-green;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -660,8 +661,8 @@ $secondary-dark-green: #394032;
                 justify-content: space-between;
 
                     .abeille-grise-gauche {
-                        height: 85%;
-                        width: 15%;
+                        height: 90%;
+                        width: 20%;
 
                             img {
                                 height: 100%;
@@ -670,8 +671,8 @@ $secondary-dark-green: #394032;
                     }
 
                     .abeille-grise-droite {
-                        height: 85%;
-                        width: 15%;
+                        height: 90%;
+                        width: 20%;
 
                         img {
                             height: 100%;
@@ -716,10 +717,11 @@ $secondary-dark-green: #394032;
     
     #review-bloc{
         background-color: $secondary-dark-green;
-        width: 100vw;
+        // width: 100;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        row-gap: 5em;
+        row-gap: 6em;
         justify-content: center;
         align-items: center;
         padding: 4em;
@@ -735,28 +737,31 @@ $secondary-dark-green: #394032;
         #reviews{
             display: flex;
             column-gap: 4em;
-            overflow-x: hidden;
             flex-wrap: nowrap;
-            margin-right: 5em;
+            margin-right: 12.5em;
 
             .review{
                 background-color: white;
                 position: relative;
-                padding: 2em 3em;
+                padding: 3em 3em;
                 border-radius: 15px;
                 width: 25em;
                 height: 15em;
 
                 img{
                     position: absolute;
-                    left: 0;
-                    top: 0;
+                    left: -35px;
+                    top: -20px;
                 }
 
                 p{
                     word-break: break-word;
                     text-align: center;
                     font-family: 'Rubik';
+                    font-size: 1.2em;
+                    font-weight: 400;
+                    color: grey;
+                    line-height: 1.2em;
                 }
             }
         }
@@ -771,6 +776,7 @@ $secondary-dark-green: #394032;
         margin-top: 15vh;
         display: flex;
         justify-content:space-around;
+        margin-bottom: 5em;
         
     }
     .register-photos{
@@ -807,8 +813,8 @@ $secondary-dark-green: #394032;
      gap: 25px;
      background-color: rgb(255, 255, 255);
      border-radius: 3%;
-     border: 1px solid black;
-     box-shadow: 2px 2px 10px;
+     border: 1px solid lightgrey;
+     box-shadow: 2px 2px 10px grey;
  }
 
  .container .row100{
@@ -942,7 +948,6 @@ $secondary-dark-green: #394032;
     footer{
         width: 100%;
         background-color: black;
-        margin-top: 4%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1134,14 +1139,12 @@ $secondary-dark-green: #394032;
     }
 
     h2{
-        font-weight: bold;
         padding: 2rem;
         font-size: 1.5em;
         font-family: "Eras ITC";
     }
 
     h3{
-        font-weight: bold;
         padding: 2rem;
         font-size: 1.5em;
         font-family: "Eras ITC";
@@ -1169,6 +1172,7 @@ $secondary-dark-green: #394032;
             background-color: #e1eecd;
             border-radius: 15px;
             padding: 2em;
+            height: 47em;
 
             #picture-account{
                 display: flex;
@@ -1485,6 +1489,7 @@ $secondary-dark-green: #394032;
         flex-direction: column;
         align-items: center;
         margin-top: 10vh;
+        margin-bottom: 5em;
 
 
         #associations-top-part{
@@ -1511,10 +1516,11 @@ $secondary-dark-green: #394032;
                         padding: 0;
                         font-weight: normal;
                         font-size: 1.2em;
+                        font-family: 'Rubik';
 
                         a{
                             text-decoration: none;
-                            color: black;
+                            color: grey;
                         }
                     }
                 }
@@ -1705,6 +1711,11 @@ $secondary-dark-green: #394032;
                         border: solid 1px lightgrey;
                         flex-grow: 1;
                         padding: 0.5em;
+
+                        &:focus{
+                            border: none;
+                            outline: solid 1px $main-green;
+                        }
                     }
 
                     #postButton {
@@ -1927,6 +1938,7 @@ $secondary-dark-green: #394032;
         display: flex;
         flex-direction: row;
         margin-top: 10vh;
+        margin-bottom: 5em;
 
         #journeys-left-part{
             display: flex;
@@ -2155,6 +2167,11 @@ $secondary-dark-green: #394032;
                     &:focus{
                         outline: none;
                     }
+
+                    &::placeholder{
+                        font-size: 1em;
+                        color: lightgrey;
+                    }
                 }
 
                 label[for=globalSearchInput] {
@@ -2291,14 +2308,16 @@ $secondary-dark-green: #394032;
 
     .table-journeys {
 
-        margin-top: 14vh;
+        margin-top: 10vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 15em;
 
             table {
                 border: 1px solid black;
                 width: 90%;
+                margin-top: 5em;
             }
 
             th {

@@ -56,7 +56,7 @@ class UserController extends Controller
 
     public function listUser() {
         var_dump($users);
-        $users = $this->userModel->findAllUsers();
+        $users = $this->userModel->getUsers();
 
         echo $this->twig->render('tournament/listTournament.html.twig', [
             'users' => $users

@@ -1,0 +1,41 @@
+{% extends "/base.html.twig" %}
+{% block title %}Backoffice - Utilisateurs{% endblock %}
+
+{% block content %} 
+
+<div class="table-journeys">
+
+    <table>
+
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Mail</th>
+            <th>Beez</th>
+            <th>Role</th>
+        </tr>
+
+
+        {% for user in users %}
+
+
+        <tr>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.mail }}</td>
+            <td>{{ user.beez }}</td>
+            <td>{{ user.role }}</td>
+        </tr>
+
+
+
+
+        {% endfor %}
+
+
+    </table>
+    
+</div>
+
+
+{% endblock %}

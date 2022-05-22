@@ -1,0 +1,39 @@
+{% extends "/base.html.twig" %}
+{% block title %}Backoffice - Associations{% endblock %}
+
+{% block content %} 
+
+<div class="table-journeys">
+
+    <table>
+
+        <tr>
+            <th>Nom</th>
+            <th>Secteur</th>
+            <th>Premier texte</th>
+            <th>Deuxième texte</th>
+        </tr>
+
+
+        {% for association in associations %}
+
+
+        <tr>
+            <td>{{ association.name }}</td>
+            <td>{{ association.sector }}</td>
+            <td>{{ association.firsttext }}</td>
+            <td>{{ association.secondtext }}</td>
+        </tr>
+
+
+
+
+        {% endfor %}
+
+
+    </table>
+    
+</div>
+
+
+{% endblock %}

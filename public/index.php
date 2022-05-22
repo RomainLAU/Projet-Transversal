@@ -127,7 +127,7 @@ $router->before('GET', '/admin/journey', function() {
     }
 });
 
-$router->before('GET', '/admin/associtions', function() {
+$router->before('GET', '/admin/associations', function() {
     if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         header('location: /login');
         exit();
@@ -189,9 +189,9 @@ $router->get('/deconnection', function() {
 
 $router->get('/admin', 'Mvc\Controller\AdminController@displayAdmin');
 $router->get('/admin/journey', 'Mvc\Controller\AdminController@listJourneys');
-$router->get('/admin/associations', 'Mvc\Controller\AdminController@listJourneys');
-$router->get('/admin/donations', 'Mvc\Controller\AdminController@listJourneys');
-$router->get('/admin/users', 'Mvc\Controller\AdminController@listJourneys');
+$router->get('/admin/associations', 'Mvc\Controller\AdminController@listAssociations');
+$router->get('/admin/donations', 'Mvc\Controller\AdminController@listDonations');
+$router->get('/admin/users', 'Mvc\Controller\AdminController@listUsers');
 
 
 $router->run();

@@ -1,0 +1,39 @@
+{% extends "/base.html.twig" %}
+{% block title %}Backoffice - Dons{% endblock %}
+
+{% block content %} 
+
+<div class="table-journeys">
+
+    <table>
+
+        <tr>
+            <th>User ID</th>
+            <th>Association ID</th>
+            <th>Date</th>
+            <th>Montant</th>
+        </tr>
+
+
+        {% for donation in donations %}
+
+
+        <tr>
+            <td>{{ donation.user_id }}</td>
+            <td>{{ donation.association_id }}</td>
+            <td>{{ donation.date }}</td>
+            <td>{{ donation.amount }}</td>
+        </tr>
+
+
+
+
+        {% endfor %}
+
+
+    </table>
+    
+</div>
+
+
+{% endblock %}

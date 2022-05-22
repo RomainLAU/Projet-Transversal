@@ -45,6 +45,14 @@ class UserModel extends Model
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getUsers() {
+        $statement = $this->pdo->prepare('SELECT * FROM `user`');
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // public function buyHost() {
 
     //     $statement = $this->pdo->prepare('UPDATE `user` SET `role` = :role, `token` = :token, `timeRole`= :timeRole WHERE `id` = :id');
